@@ -13,9 +13,34 @@
 		13D195B2227CF4D800E0B8F0 /* IPizza.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13D195B0227CF4D800E0B8F0 /* IPizza.xcdatamodeld */; };
 		13D195B4227CF4DB00E0B8F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D195B3227CF4DB00E0B8F0 /* Assets.xcassets */; };
 		13D195B7227CF4DB00E0B8F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D195B5227CF4DB00E0B8F0 /* LaunchScreen.storyboard */; };
+		13D195D0227CF5EF00E0B8F0 /* MenuContaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C2227CF5EE00E0B8F0 /* MenuContaViewController.swift */; };
+		13D195D1227CF5EF00E0B8F0 /* EnderecosTelefonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C3227CF5EE00E0B8F0 /* EnderecosTelefonesViewController.swift */; };
+		13D195D2227CF5EF00E0B8F0 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C4227CF5EE00E0B8F0 /* CadastroViewController.swift */; };
+		13D195D3227CF5EF00E0B8F0 /* TelefonesEmpresasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C5227CF5EE00E0B8F0 /* TelefonesEmpresasViewController.swift */; };
+		13D195D4227CF5EF00E0B8F0 /* EnderecosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C6227CF5EE00E0B8F0 /* EnderecosTableViewController.swift */; };
+		13D195D5227CF5EF00E0B8F0 /* TelefonesEmpresaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C7227CF5EE00E0B8F0 /* TelefonesEmpresaTableViewController.swift */; };
+		13D195D6227CF5EF00E0B8F0 /* TelefonesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C8227CF5EF00E0B8F0 /* TelefonesTableViewController.swift */; };
+		13D195D7227CF5EF00E0B8F0 /* TelaInicialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C9227CF5EF00E0B8F0 /* TelaInicialViewController.swift */; };
+		13D195D8227CF5EF00E0B8F0 /* BemVindoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195CA227CF5EF00E0B8F0 /* BemVindoViewController.swift */; };
+		13D195D9227CF5EF00E0B8F0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195CB227CF5EF00E0B8F0 /* LoginViewController.swift */; };
+		13D195DA227CF5EF00E0B8F0 /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195CC227CF5EF00E0B8F0 /* MapaViewController.swift */; };
+		13D195DB227CF5EF00E0B8F0 /* ContaSideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195CD227CF5EF00E0B8F0 /* ContaSideMenuTableViewController.swift */; };
+		13D195DC227CF5EF00E0B8F0 /* PizzariaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195CE227CF5EF00E0B8F0 /* PizzariaViewController.swift */; };
+		13D195DD227CF5EF00E0B8F0 /* MenuPizzariasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195CF227CF5EF00E0B8F0 /* MenuPizzariasTableViewController.swift */; };
+		13D195E1227CF5F900E0B8F0 /* MenuContaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195DE227CF5F900E0B8F0 /* MenuContaViewModel.swift */; };
+		13D195E2227CF5F900E0B8F0 /* CadastroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195DF227CF5F900E0B8F0 /* CadastroViewModel.swift */; };
+		13D195E3227CF5F900E0B8F0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195E0227CF5F900E0B8F0 /* LoginViewModel.swift */; };
+		13D195E5227CF60D00E0B8F0 /* Usuarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195E4227CF60D00E0B8F0 /* Usuarios.swift */; };
+		13D195EB227CF63600E0B8F0 /* IPizza.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D195E7227CF63500E0B8F0 /* IPizza.png */; };
+		13D195EC227CF63600E0B8F0 /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D195E8227CF63600E0B8F0 /* 1024.png */; };
+		13D195ED227CF63600E0B8F0 /* SetaDropDown.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13D195E9227CF63600E0B8F0 /* SetaDropDown.jpg */; };
+		13D195EE227CF63600E0B8F0 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D195EA227CF63600E0B8F0 /* user.png */; };
+		13D195F0227CF6E100E0B8F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13D195EF227CF6E100E0B8F0 /* GoogleService-Info.plist */; };
+		4D84037289319A1F78F23A49 /* Pods_IPizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CFF786D0BE5E814579B1EA /* Pods_IPizza.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A31AB71BCBB90CA242E0284 /* Pods-IPizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPizza.debug.xcconfig"; path = "Target Support Files/Pods-IPizza/Pods-IPizza.debug.xcconfig"; sourceTree = "<group>"; };
 		13D195A6227CF4D800E0B8F0 /* IPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D195A9227CF4D800E0B8F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13D195AB227CF4D800E0B8F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +49,31 @@
 		13D195B3227CF4DB00E0B8F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13D195B6227CF4DB00E0B8F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13D195B8227CF4DB00E0B8F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13D195C2227CF5EE00E0B8F0 /* MenuContaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContaViewController.swift; sourceTree = "<group>"; };
+		13D195C3227CF5EE00E0B8F0 /* EnderecosTelefonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnderecosTelefonesViewController.swift; sourceTree = "<group>"; };
+		13D195C4227CF5EE00E0B8F0 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
+		13D195C5227CF5EE00E0B8F0 /* TelefonesEmpresasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelefonesEmpresasViewController.swift; sourceTree = "<group>"; };
+		13D195C6227CF5EE00E0B8F0 /* EnderecosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnderecosTableViewController.swift; sourceTree = "<group>"; };
+		13D195C7227CF5EE00E0B8F0 /* TelefonesEmpresaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelefonesEmpresaTableViewController.swift; sourceTree = "<group>"; };
+		13D195C8227CF5EF00E0B8F0 /* TelefonesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelefonesTableViewController.swift; sourceTree = "<group>"; };
+		13D195C9227CF5EF00E0B8F0 /* TelaInicialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelaInicialViewController.swift; sourceTree = "<group>"; };
+		13D195CA227CF5EF00E0B8F0 /* BemVindoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BemVindoViewController.swift; sourceTree = "<group>"; };
+		13D195CB227CF5EF00E0B8F0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		13D195CC227CF5EF00E0B8F0 /* MapaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
+		13D195CD227CF5EF00E0B8F0 /* ContaSideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContaSideMenuTableViewController.swift; sourceTree = "<group>"; };
+		13D195CE227CF5EF00E0B8F0 /* PizzariaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzariaViewController.swift; sourceTree = "<group>"; };
+		13D195CF227CF5EF00E0B8F0 /* MenuPizzariasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPizzariasTableViewController.swift; sourceTree = "<group>"; };
+		13D195DE227CF5F900E0B8F0 /* MenuContaViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContaViewModel.swift; sourceTree = "<group>"; };
+		13D195DF227CF5F900E0B8F0 /* CadastroViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewModel.swift; sourceTree = "<group>"; };
+		13D195E0227CF5F900E0B8F0 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		13D195E4227CF60D00E0B8F0 /* Usuarios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuarios.swift; sourceTree = "<group>"; };
+		13D195E7227CF63500E0B8F0 /* IPizza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IPizza.png; sourceTree = "<group>"; };
+		13D195E8227CF63600E0B8F0 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024.png; sourceTree = "<group>"; };
+		13D195E9227CF63600E0B8F0 /* SetaDropDown.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SetaDropDown.jpg; sourceTree = "<group>"; };
+		13D195EA227CF63600E0B8F0 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		13D195EF227CF6E100E0B8F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5DAEDADB0DB02431F9C8D2C9 /* Pods-IPizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPizza.release.xcconfig"; path = "Target Support Files/Pods-IPizza/Pods-IPizza.release.xcconfig"; sourceTree = "<group>"; };
+		F6CFF786D0BE5E814579B1EA /* Pods_IPizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IPizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D84037289319A1F78F23A49 /* Pods_IPizza.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +93,8 @@
 			children = (
 				13D195A8227CF4D800E0B8F0 /* IPizza */,
 				13D195A7227CF4D800E0B8F0 /* Products */,
+				F10B7FFE5AE5F714D98B8AA5 /* Pods */,
+				62EC745B952778E19D62BF05 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +109,95 @@
 		13D195A8227CF4D800E0B8F0 /* IPizza */ = {
 			isa = PBXGroup;
 			children = (
-				13D195A9227CF4D800E0B8F0 /* AppDelegate.swift */,
-				13D195AB227CF4D800E0B8F0 /* ViewController.swift */,
+				13D195E6227CF62400E0B8F0 /* Image */,
+				13D195C1227CF5A400E0B8F0 /* Model */,
+				13D195C0227CF59D00E0B8F0 /* ViewModel */,
+				13D195BF227CF59600E0B8F0 /* Controller */,
+				13D195BE227CF58B00E0B8F0 /* View */,
+				13D195B8227CF4DB00E0B8F0 /* Info.plist */,
+				13D195B0227CF4D800E0B8F0 /* IPizza.xcdatamodeld */,
+				13D195EF227CF6E100E0B8F0 /* GoogleService-Info.plist */,
+			);
+			path = IPizza;
+			sourceTree = "<group>";
+		};
+		13D195BE227CF58B00E0B8F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				13D195AD227CF4D800E0B8F0 /* Main.storyboard */,
 				13D195B3227CF4DB00E0B8F0 /* Assets.xcassets */,
 				13D195B5227CF4DB00E0B8F0 /* LaunchScreen.storyboard */,
-				13D195B8227CF4DB00E0B8F0 /* Info.plist */,
-				13D195B0227CF4D800E0B8F0 /* IPizza.xcdatamodeld */,
 			);
-			path = IPizza;
+			path = View;
+			sourceTree = "<group>";
+		};
+		13D195BF227CF59600E0B8F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				13D195A9227CF4D800E0B8F0 /* AppDelegate.swift */,
+				13D195AB227CF4D800E0B8F0 /* ViewController.swift */,
+				13D195CA227CF5EF00E0B8F0 /* BemVindoViewController.swift */,
+				13D195C4227CF5EE00E0B8F0 /* CadastroViewController.swift */,
+				13D195CD227CF5EF00E0B8F0 /* ContaSideMenuTableViewController.swift */,
+				13D195C6227CF5EE00E0B8F0 /* EnderecosTableViewController.swift */,
+				13D195C3227CF5EE00E0B8F0 /* EnderecosTelefonesViewController.swift */,
+				13D195CB227CF5EF00E0B8F0 /* LoginViewController.swift */,
+				13D195CC227CF5EF00E0B8F0 /* MapaViewController.swift */,
+				13D195C2227CF5EE00E0B8F0 /* MenuContaViewController.swift */,
+				13D195CF227CF5EF00E0B8F0 /* MenuPizzariasTableViewController.swift */,
+				13D195CE227CF5EF00E0B8F0 /* PizzariaViewController.swift */,
+				13D195C9227CF5EF00E0B8F0 /* TelaInicialViewController.swift */,
+				13D195C5227CF5EE00E0B8F0 /* TelefonesEmpresasViewController.swift */,
+				13D195C7227CF5EE00E0B8F0 /* TelefonesEmpresaTableViewController.swift */,
+				13D195C8227CF5EF00E0B8F0 /* TelefonesTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		13D195C0227CF59D00E0B8F0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				13D195DF227CF5F900E0B8F0 /* CadastroViewModel.swift */,
+				13D195E0227CF5F900E0B8F0 /* LoginViewModel.swift */,
+				13D195DE227CF5F900E0B8F0 /* MenuContaViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		13D195C1227CF5A400E0B8F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13D195E4227CF60D00E0B8F0 /* Usuarios.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		13D195E6227CF62400E0B8F0 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				13D195E8227CF63600E0B8F0 /* 1024.png */,
+				13D195E7227CF63500E0B8F0 /* IPizza.png */,
+				13D195E9227CF63600E0B8F0 /* SetaDropDown.jpg */,
+				13D195EA227CF63600E0B8F0 /* user.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		62EC745B952778E19D62BF05 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6CFF786D0BE5E814579B1EA /* Pods_IPizza.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F10B7FFE5AE5F714D98B8AA5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A31AB71BCBB90CA242E0284 /* Pods-IPizza.debug.xcconfig */,
+				5DAEDADB0DB02431F9C8D2C9 /* Pods-IPizza.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +207,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13D195BB227CF4DB00E0B8F0 /* Build configuration list for PBXNativeTarget "IPizza" */;
 			buildPhases = (
+				55A6380B88B701288C2FF5A4 /* [CP] Check Pods Manifest.lock */,
 				13D195A2227CF4D800E0B8F0 /* Sources */,
 				13D195A3227CF4D800E0B8F0 /* Frameworks */,
 				13D195A4227CF4D800E0B8F0 /* Resources */,
+				76B4EA08FF8924D9FAFF8F6C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,7 +260,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D195EB227CF63600E0B8F0 /* IPizza.png in Resources */,
+				13D195F0227CF6E100E0B8F0 /* GoogleService-Info.plist in Resources */,
 				13D195B7227CF4DB00E0B8F0 /* LaunchScreen.storyboard in Resources */,
+				13D195EC227CF63600E0B8F0 /* 1024.png in Resources */,
+				13D195ED227CF63600E0B8F0 /* SetaDropDown.jpg in Resources */,
+				13D195EE227CF63600E0B8F0 /* user.png in Resources */,
 				13D195B4227CF4DB00E0B8F0 /* Assets.xcassets in Resources */,
 				13D195AF227CF4D800E0B8F0 /* Main.storyboard in Resources */,
 			);
@@ -133,14 +273,89 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		55A6380B88B701288C2FF5A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IPizza-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76B4EA08FF8924D9FAFF8F6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IPizza/Pods-IPizza-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/JMMaskTextField-Swift/JMMaskTextField_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JMMaskTextField_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IPizza/Pods-IPizza-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		13D195A2227CF4D800E0B8F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D195DC227CF5EF00E0B8F0 /* PizzariaViewController.swift in Sources */,
+				13D195E5227CF60D00E0B8F0 /* Usuarios.swift in Sources */,
 				13D195B2227CF4D800E0B8F0 /* IPizza.xcdatamodeld in Sources */,
+				13D195D2227CF5EF00E0B8F0 /* CadastroViewController.swift in Sources */,
+				13D195E2227CF5F900E0B8F0 /* CadastroViewModel.swift in Sources */,
+				13D195E1227CF5F900E0B8F0 /* MenuContaViewModel.swift in Sources */,
+				13D195D0227CF5EF00E0B8F0 /* MenuContaViewController.swift in Sources */,
+				13D195DD227CF5EF00E0B8F0 /* MenuPizzariasTableViewController.swift in Sources */,
+				13D195D3227CF5EF00E0B8F0 /* TelefonesEmpresasViewController.swift in Sources */,
+				13D195E3227CF5F900E0B8F0 /* LoginViewModel.swift in Sources */,
+				13D195D7227CF5EF00E0B8F0 /* TelaInicialViewController.swift in Sources */,
+				13D195D4227CF5EF00E0B8F0 /* EnderecosTableViewController.swift in Sources */,
+				13D195D8227CF5EF00E0B8F0 /* BemVindoViewController.swift in Sources */,
+				13D195D6227CF5EF00E0B8F0 /* TelefonesTableViewController.swift in Sources */,
+				13D195D5227CF5EF00E0B8F0 /* TelefonesEmpresaTableViewController.swift in Sources */,
 				13D195AC227CF4D800E0B8F0 /* ViewController.swift in Sources */,
 				13D195AA227CF4D800E0B8F0 /* AppDelegate.swift in Sources */,
+				13D195DA227CF5EF00E0B8F0 /* MapaViewController.swift in Sources */,
+				13D195D9227CF5EF00E0B8F0 /* LoginViewController.swift in Sources */,
+				13D195D1227CF5EF00E0B8F0 /* EnderecosTelefonesViewController.swift in Sources */,
+				13D195DB227CF5EF00E0B8F0 /* ContaSideMenuTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +499,7 @@
 		};
 		13D195BC227CF4DB00E0B8F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A31AB71BCBB90CA242E0284 /* Pods-IPizza.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -301,6 +517,7 @@
 		};
 		13D195BD227CF4DB00E0B8F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DAEDADB0DB02431F9C8D2C9 /* Pods-IPizza.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
