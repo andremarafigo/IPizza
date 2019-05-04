@@ -56,8 +56,6 @@ class CadastroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cadastroVM = CadastroViewModel()
-        
         swtEmpresaOnOff()
         
         datePicker = UIDatePicker()

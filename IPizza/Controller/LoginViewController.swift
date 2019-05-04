@@ -36,5 +36,7 @@ class LoginViewController: UIViewController {
         let senha: String = txtSenha.text!
         
         loginVM.login(email: email, senha: senha)
+        
+        self.performSegue(withIdentifier: "bemVindo", sender: nil)
     }
 }
