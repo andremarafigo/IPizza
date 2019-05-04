@@ -16,7 +16,7 @@
 		13D195D0227CF5EF00E0B8F0 /* MenuContaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C2227CF5EE00E0B8F0 /* MenuContaViewController.swift */; };
 		13D195D1227CF5EF00E0B8F0 /* EnderecosTelefonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C3227CF5EE00E0B8F0 /* EnderecosTelefonesViewController.swift */; };
 		13D195D2227CF5EF00E0B8F0 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C4227CF5EE00E0B8F0 /* CadastroViewController.swift */; };
-		13D195D3227CF5EF00E0B8F0 /* TelefonesEmpresasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C5227CF5EE00E0B8F0 /* TelefonesEmpresasViewController.swift */; };
+		13D195D3227CF5EF00E0B8F0 /* TelefonesEmpresaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C5227CF5EE00E0B8F0 /* TelefonesEmpresaViewController.swift */; };
 		13D195D4227CF5EF00E0B8F0 /* EnderecosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C6227CF5EE00E0B8F0 /* EnderecosTableViewController.swift */; };
 		13D195D5227CF5EF00E0B8F0 /* TelefonesEmpresaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C7227CF5EE00E0B8F0 /* TelefonesEmpresaTableViewController.swift */; };
 		13D195D6227CF5EF00E0B8F0 /* TelefonesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C8227CF5EF00E0B8F0 /* TelefonesTableViewController.swift */; };
@@ -52,7 +52,7 @@
 		13D195C2227CF5EE00E0B8F0 /* MenuContaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContaViewController.swift; sourceTree = "<group>"; };
 		13D195C3227CF5EE00E0B8F0 /* EnderecosTelefonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnderecosTelefonesViewController.swift; sourceTree = "<group>"; };
 		13D195C4227CF5EE00E0B8F0 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
-		13D195C5227CF5EE00E0B8F0 /* TelefonesEmpresasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelefonesEmpresasViewController.swift; sourceTree = "<group>"; };
+		13D195C5227CF5EE00E0B8F0 /* TelefonesEmpresaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelefonesEmpresaViewController.swift; sourceTree = "<group>"; };
 		13D195C6227CF5EE00E0B8F0 /* EnderecosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnderecosTableViewController.swift; sourceTree = "<group>"; };
 		13D195C7227CF5EE00E0B8F0 /* TelefonesEmpresaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelefonesEmpresaTableViewController.swift; sourceTree = "<group>"; };
 		13D195C8227CF5EF00E0B8F0 /* TelefonesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelefonesTableViewController.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 				13D195CF227CF5EF00E0B8F0 /* MenuPizzariasTableViewController.swift */,
 				13D195CE227CF5EF00E0B8F0 /* PizzariaViewController.swift */,
 				13D195C9227CF5EF00E0B8F0 /* TelaInicialViewController.swift */,
-				13D195C5227CF5EE00E0B8F0 /* TelefonesEmpresasViewController.swift */,
+				13D195C5227CF5EE00E0B8F0 /* TelefonesEmpresaViewController.swift */,
 				13D195C7227CF5EE00E0B8F0 /* TelefonesEmpresaTableViewController.swift */,
 				13D195C8227CF5EF00E0B8F0 /* TelefonesTableViewController.swift */,
 			);
@@ -343,7 +343,7 @@
 				13D195E1227CF5F900E0B8F0 /* MenuContaViewModel.swift in Sources */,
 				13D195D0227CF5EF00E0B8F0 /* MenuContaViewController.swift in Sources */,
 				13D195DD227CF5EF00E0B8F0 /* MenuPizzariasTableViewController.swift in Sources */,
-				13D195D3227CF5EF00E0B8F0 /* TelefonesEmpresasViewController.swift in Sources */,
+				13D195D3227CF5EF00E0B8F0 /* TelefonesEmpresaViewController.swift in Sources */,
 				13D195E3227CF5F900E0B8F0 /* LoginViewModel.swift in Sources */,
 				13D195D7227CF5EF00E0B8F0 /* TelaInicialViewController.swift in Sources */,
 				13D195D4227CF5EF00E0B8F0 /* EnderecosTableViewController.swift in Sources */,

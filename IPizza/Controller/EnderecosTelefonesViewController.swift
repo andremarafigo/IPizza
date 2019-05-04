@@ -12,7 +12,7 @@ import JMMaskTextField_Swift
 
 class EnderecosTelefonesViewController: UIViewController {
     
-    
+    var cadastroVM : CadastroViewModel!
     
     var owner : CadastroViewController?
     var usuario : [String : Any]?
@@ -44,8 +44,12 @@ class EnderecosTelefonesViewController: UIViewController {
         enderecoOrTelefone()
     }
     
-    @IBAction func btnVoltarOnClick(_ sender: Any) {
+    @IBAction func btnCancelarOnClick(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func btnFinalizarOnClick(_ sender: Any) {
+        key = cadastroVM.createUsuario(usuario: usuario!, email: email, senha: senha)
     }
     
     func enderecoOrTelefone() {
@@ -59,6 +63,19 @@ class EnderecosTelefonesViewController: UIViewController {
             ctvEnderecos.isHidden = true
             svTelefones.isHidden = false
             ctvTelefones.isHidden = false
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let next = segue.destination as! TelefonesEmpresaViewController
+        next.owner = self
+
+        if segue.identifier == "telefonesEmpresa" {
+            next.usuario = usuario
+            next.email = email
+            next.senha = senha
+        } else {
+            next.usuario = nil
         }
     }
 }

@@ -11,11 +11,8 @@ import JMMaskTextField_Swift
 
 class CadastroViewController: UIViewController {
     
-    var cadastroVM : CadastroViewModel!
-    
     var email: String = ""
     var senha: String = ""
-    var key: String = ""
     var usuario: [String: Any]? = nil
     
     @IBOutlet weak var txtNome: UITextField!
@@ -94,13 +91,13 @@ class CadastroViewController: UIViewController {
         swtEmpresaOnOff()
     }
     
-    @IBAction func signup(_ sender: Any) {
-        email = txtEmail.text!
-        senha = txtSenha.text!
-
-        usuario = buscaDadosUsuario()
-        
-        key = cadastroVM.createUsuario(usuario: usuario!, email: email, senha: senha)
+    @IBAction func btnContinuarOnClick(_ sender: Any) {
+//        email = txtEmail.text!
+//        senha = txtSenha.text!
+//
+//        usuario = buscaDadosUsuario()
+//
+//        key = cadastroVM.createUsuario(usuario: usuario!, email: email, senha: senha)
     }
     
     @IBAction func btnCancelarOnClick(_ sender: Any) {
@@ -240,7 +237,6 @@ class CadastroViewController: UIViewController {
         
         if segue.identifier == "enderecosTelefones" {
             next.usuario = usuario
-            next.key = key
             next.email = email
             next.senha = senha
         } else {

@@ -8,14 +8,20 @@
 
 import UIKit
 
-class TelefonesEmpresasViewController: UIViewController {
+class TelefonesEmpresaViewController: UIViewController {
 
+    var owner : EnderecosTelefonesViewController?
+    var usuario : [String : Any]?
+    var email: String = ""
+    var senha: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.viewTapped(gestureRecognizer:)))
         
         view.addGestureRecognizer(tapGesture)
+        
     }
     
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
