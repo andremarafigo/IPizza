@@ -15,6 +15,8 @@ class LoginViewModel {
 
     var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    var owner : LoginViewController!
+    
     var users : [User]
     var user : User
     let requestUser: NSFetchRequest<User> = User.fetchRequest()
@@ -23,9 +25,19 @@ class LoginViewModel {
         user = User (context: contexto)
         users = []
         loadData()
+        if users.count > 0 {
+            for x in users {
+                if x.email == nil {
+                    contexto.delete(x)
+                }
+            }
+            loadData()
+        }
     }
     
     func login (email: String, senha: String) {
+        var x: Bool = false
+        
         Auth.auth().signIn(withEmail: email, password: senha) { (result, error) in
             
             guard let user = result?.user
@@ -39,7 +51,17 @@ class LoginViewModel {
             Analytics.setUserProperty("sim", forName: "Entrou")
             
             Analytics.logEvent("login", parameters: ["nome: ": email])
-        }        
+            
+            x = true
+        }
+        
+        if x == true {
+            self.owner.loginVM.user.email = email
+            self.owner.loginVM.user.senha = senha
+            self.owner.loginVM.users[0] = self.owner.loginVM.user
+            self.owner.loginVM.saveData()
+        }
+        
     }
     
     func saveData() {

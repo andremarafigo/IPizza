@@ -20,7 +20,22 @@ class MenuContaViewModel {
     let requestUser: NSFetchRequest<User> = User.fetchRequest()
     
     init() {
-        user = User (context: contexto)
+        loadData()
+//        if users.count == 0 {
+//            user = User (context: contexto)
+//            user.email = "andremarafigo11@gmail.com"
+//            user.senha = "123456"
+//            users.append(user)
+//            saveData()
+//        }
+    }
+    
+    func saveData() {
+        do {
+            try contexto.save()
+        } catch  {
+            print("Erro ao salvar o contexto: \(error) ")
+        }
         loadData()
     }
     

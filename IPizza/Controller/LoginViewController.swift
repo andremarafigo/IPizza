@@ -11,7 +11,7 @@ import Firebase
 
 class LoginViewController: UIViewController {
 
-    var loginVM : LoginViewModel!
+    var loginVM : LoginViewModel = LoginViewModel()
     
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtSenha: UITextField!
@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginVM = LoginViewModel()
+        //loginVM = LoginViewModel()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.viewTapped(gestureRecognizer:)))
         
@@ -37,6 +37,11 @@ class LoginViewController: UIViewController {
         
         loginVM.login(email: email, senha: senha)
         
-        self.performSegue(withIdentifier: "bemVindo", sender: nil)
+        //self.performSegue(withIdentifier: "bemVindo", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let next = segue.destination as! LoginViewModel
+        next.owner = self
     }
 }

@@ -28,19 +28,22 @@ class MenuContaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if menuContaVM.users[0].email != nil {
-//            btnAlterarConta.isHidden = false
-//            btnPedidosEmAndamento.isHidden = false
-//            btnPedidosFinalizados.isHidden = false
-//            btnPaginaDaPizzaria.isHidden = false
-//            btnEfetuarLogin.isHidden = true
-//        }else {
-//            btnAlterarConta.isHidden = true
-//            btnPedidosEmAndamento.isHidden = true
-//            btnPedidosFinalizados.isHidden = true
-//            btnPaginaDaPizzaria.isHidden = true
-//            btnEfetuarLogin.isHidden = false
-//        }
+        menuContaVM = MenuContaViewModel()
+        
+        if menuContaVM.users.count == 1 {
+            btnAlterarConta.isHidden = false
+            btnPedidosEmAndamento.isHidden = false
+            btnPedidosFinalizados.isHidden = false
+            btnPaginaDaPizzaria.isHidden = false
+            btnEfetuarLogin.isHidden = true
+        }else {
+            btnAlterarConta.isHidden = true
+            btnPedidosEmAndamento.isHidden = true
+            btnPedidosFinalizados.isHidden = true
+            btnPaginaDaPizzaria.isHidden = true
+            btnEfetuarLogin.isHidden = false
+        }
+        menuContaVM.loadData()
     }
     
 }
