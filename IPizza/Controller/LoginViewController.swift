@@ -31,17 +31,21 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signin(_ sender: Any) {
-        
+        var x: Bool = false
         let email: String = txtEmail.text!
         let senha: String = txtSenha.text!
         
-        loginVM.login(email: email, senha: senha)
+        
+        loginVM.owner = self
+        x = loginVM.login(email: email, senha: senha)
+        
+        
         
         //self.performSegue(withIdentifier: "bemVindo", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let next = segue.destination as! LoginViewModel
-        next.owner = self
+        //let next = segue.destination as! LoginViewModel
+        //next.owner = self
     }
 }

@@ -35,7 +35,7 @@ class LoginViewModel {
         }
     }
     
-    func login (email: String, senha: String) {
+    func login (email: String, senha: String) -> Bool{
         var x: Bool = false
         
         Auth.auth().signIn(withEmail: email, password: senha) { (result, error) in
@@ -53,15 +53,19 @@ class LoginViewModel {
             Analytics.logEvent("login", parameters: ["nome: ": email])
             
             x = true
+            
+            self.salvaUserCoreData(valida: x, usuario: email, password: senha)
         }
-        
-        if x == true {
-            self.owner.loginVM.user.email = email
-            self.owner.loginVM.user.senha = senha
-            self.owner.loginVM.users[0] = self.owner.loginVM.user
-            self.owner.loginVM.saveData()
+        return x
+    }
+    
+    func salvaUserCoreData(valida: Bool, usuario: String, password: String) {
+        if valida == true {
+            owner.loginVM.user.email = usuario
+            owner.loginVM.user.senha = password
+            owner.loginVM.users[0] = self.owner.loginVM.user
+            owner.loginVM.saveData()
         }
-        
     }
     
     func saveData() {
