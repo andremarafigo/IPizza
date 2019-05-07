@@ -10,16 +10,12 @@ import UIKit
 import Firebase
 
 class LoginViewController: UIViewController {
-
-    var loginVM : LoginViewModel = LoginViewModel()
     
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtSenha: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //loginVM = LoginViewModel()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.viewTapped(gestureRecognizer:)))
         
@@ -34,13 +30,10 @@ class LoginViewController: UIViewController {
         var x: Bool = false
         let email: String = txtEmail.text!
         let senha: String = txtSenha.text!
-        
-        
-        loginVM.owner = self
-        x = loginVM.login(email: email, senha: senha)
-        
-        
-        
+
+        //loginVM.owner = self
+        x = LoginViewModel.shared.login(email: email, senha: senha)
+
         //self.performSegue(withIdentifier: "bemVindo", sender: nil)
     }
     

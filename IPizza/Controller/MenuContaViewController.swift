@@ -10,8 +10,6 @@ import UIKit
 
 class MenuContaViewController: UIViewController {
     
-    var menuContaVM : MenuContaViewModel!
-    
     @IBOutlet weak var btnAlterarConta: UIButton!
     @IBOutlet weak var btnPedidosEmAndamento: UIButton!
     @IBOutlet weak var btnPedidosFinalizados: UIButton!
@@ -28,9 +26,7 @@ class MenuContaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        menuContaVM = MenuContaViewModel()
-        
-        if menuContaVM.users.count == 1 {
+        if LoginViewModel.shared.users.count == 1 {
             btnAlterarConta.isHidden = false
             btnPedidosEmAndamento.isHidden = false
             btnPedidosFinalizados.isHidden = false
@@ -43,7 +39,12 @@ class MenuContaViewController: UIViewController {
             btnPaginaDaPizzaria.isHidden = true
             btnEfetuarLogin.isHidden = false
         }
-        menuContaVM.loadData()
+        LoginViewModel.shared.loadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //let next = segue.destination as! LoginViewController
+        //next.loginVM = loginVM
     }
     
 }

@@ -13,17 +13,18 @@ import CoreData
 
 class LoginViewModel {
 
+    static let shared = LoginViewModel()
+    
     var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var owner : LoginViewController!
+    //var owner : LoginViewController!
     
-    var users : [User]
+    var users : [User] = []
     var user : User
     let requestUser: NSFetchRequest<User> = User.fetchRequest()
     
     init() {
         user = User (context: contexto)
-        users = []
         loadData()
         if users.count > 0 {
             for x in users {
@@ -61,10 +62,14 @@ class LoginViewModel {
     
     func salvaUserCoreData(valida: Bool, usuario: String, password: String) {
         if valida == true {
-            owner.loginVM.user.email = usuario
-            owner.loginVM.user.senha = password
-            owner.loginVM.users[0] = self.owner.loginVM.user
-            owner.loginVM.saveData()
+            user.email = usuario
+            user.senha = password
+            if users.count > 0 {
+                users[0] = user
+            }else{
+                users.append(user)
+            }
+            saveData()
         }
     }
     
