@@ -31,9 +31,9 @@ class LoginViewController: UIViewController {
         let email: String = txtEmail.text!
         let senha: String = txtSenha.text!
 
-        //loginVM.owner = self
         x = LoginViewModel.shared.login(email: email, senha: senha)
 
+        navigationController?.popViewController(animated: true)
         //self.performSegue(withIdentifier: "bemVindo", sender: nil)
     }
     

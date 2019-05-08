@@ -1138,9 +1138,6 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="signin:" destination="kZR-Rz-cMs" eventType="touchUpInside" id="fin-Yh-GlU"/>
-                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -1209,7 +1206,6 @@
                     <connections>
                         <outlet property="txtEmail" destination="2So-7Q-fkJ" id="JA5-fD-SqB"/>
                         <outlet property="txtSenha" destination="pae-79-rQe" id="bpA-lQ-Edv"/>
-                        <segue destination="j1Q-VC-7LG" kind="show" identifier="bemVindo" id="ve5-ng-we9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UwG-Xw-eYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1225,7 +1221,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBI-c8-ffO">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1813"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="1764"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68L-bs-OwY" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1764"/>
@@ -1658,7 +1654,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8F-qQ-sar">
-                                <rect key="frame" x="0.0" y="44" width="375" height="1122"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="1073"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ce-I3-daW" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="-3" width="375" height="1180"/>
@@ -2240,7 +2236,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2o5-sw-LTU">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kz-Vd-ObV">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
@@ -4412,7 +4408,6 @@
         <image name="user.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ve5-ng-we9"/>
         <segue reference="NfG-7O-53A"/>
         <segue reference="buY-41-rUf"/>
         <segue reference="1bN-Ma-p0C"/>
