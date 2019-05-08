@@ -20,7 +20,7 @@ class MenuContaViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        tabBarItem = UITabBarItem(title: "Conta", image: UIImage(named: "icons8-usuário-de-gênero-neutro-48"), tag: 3)
+        tabBarItem = UITabBarItem(title: "Conta", image: UIImage(named: "icons8-usuario-de-genero-neutro-48"), tag: 3)
     }
     
     override func viewDidLoad() {
