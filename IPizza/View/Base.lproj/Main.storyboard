@@ -1284,7 +1284,7 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome completo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HPB-Ee-8FW">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="André" borderStyle="roundedRect" placeholder="Nome completo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HPB-Ee-8FW">
                                                         <rect key="frame" x="0.0" y="42" width="300" height="30"/>
                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1300,7 +1300,7 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="000.000.000-00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r0f-DS-Ajv" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="111.111.111-11" borderStyle="roundedRect" placeholder="000.000.000-00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r0f-DS-Ajv" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                         <rect key="frame" x="75" y="126" width="150" height="30"/>
                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1319,7 +1319,7 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00/00/0000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPd-2w-JUC" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="11/11/1991" borderStyle="roundedRect" placeholder="00/00/0000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPd-2w-JUC" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                         <rect key="frame" x="75" y="210" width="150" height="30"/>
                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1338,7 +1338,7 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@email.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2cB-9E-f5m">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="andre@email.com" borderStyle="roundedRect" placeholder="email@email.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2cB-9E-f5m">
                                                         <rect key="frame" x="0.0" y="294" width="300" height="30"/>
                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1354,7 +1354,7 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qKo-QD-eib">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qKo-QD-eib">
                                                         <rect key="frame" x="0.0" y="378" width="300" height="30"/>
                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1363,7 +1363,7 @@
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="719-eX-kyV">
                                                         <rect key="frame" x="18" y="420" width="264" height="30"/>
@@ -1386,7 +1386,7 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ij-wn-BSW">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Razão Social" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ij-wn-BSW">
                                                         <rect key="frame" x="0.0" y="504" width="300" height="30"/>
                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1402,7 +1402,7 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W9D-I6-tsF">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Nome Fantasia" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W9D-I6-tsF">
                                                         <rect key="frame" x="0.0" y="588" width="300" height="30"/>
                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1418,7 +1418,7 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00.000.000/0000-00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aNl-sy-YUb" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="11.111.111/1111-11" borderStyle="roundedRect" placeholder="00.000.000/0000-00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aNl-sy-YUb" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                         <rect key="frame" x="65" y="672" width="170" height="30"/>
                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1437,7 +1437,7 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00000-00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bmh-ab-qwI" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="11111-11" borderStyle="roundedRect" placeholder="00000-00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bmh-ab-qwI" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                         <rect key="frame" x="65" y="756" width="170" height="30"/>
                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1456,7 +1456,7 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome da rua" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IGk-84-VFR">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Rua Teste" borderStyle="roundedRect" placeholder="Nome da rua" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IGk-84-VFR">
                                                         <rect key="frame" x="0.0" y="840" width="300" height="30"/>
                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1472,7 +1472,7 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="000000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NkB-oX-Pw2" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="000000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NkB-oX-Pw2" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                         <rect key="frame" x="100" y="924" width="100" height="30"/>
                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1491,7 +1491,7 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do bairro" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wqz-mY-2Ow">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bairro Teste" borderStyle="roundedRect" placeholder="Nome do bairro" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wqz-mY-2Ow">
                                                         <rect key="frame" x="0.0" y="1008" width="300" height="30"/>
                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1507,7 +1507,7 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome da cidade" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5I-Fz-K9M">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Cidade Teste" borderStyle="roundedRect" placeholder="Nome da cidade" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5I-Fz-K9M">
                                                         <rect key="frame" x="0.0" y="1092" width="300" height="30"/>
                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1523,7 +1523,7 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do estado" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1sW-g0-71Z">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Estado Teste" borderStyle="roundedRect" placeholder="Nome do estado" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1sW-g0-71Z">
                                                         <rect key="frame" x="0.0" y="1176" width="300" height="30"/>
                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1691,7 +1691,7 @@
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome da rua" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6DM-so-gpf">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Rua Teste" borderStyle="roundedRect" placeholder="Nome da rua" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6DM-so-gpf">
                                                                         <rect key="frame" x="78" y="0.0" width="264" height="30"/>
                                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
@@ -1719,7 +1719,7 @@
                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="000000" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1f0-NL-ITG" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="000000" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1f0-NL-ITG" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                                                 <rect key="frame" x="78" y="0.0" width="100" height="30"/>
                                                                                 <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <constraints>
@@ -1747,7 +1747,7 @@
                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00000-00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6X2-Xf-Nn5" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="11111-11" borderStyle="roundedRect" placeholder="00000-00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6X2-Xf-Nn5" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                                                 <rect key="frame" x="56" y="0.0" width="100" height="30"/>
                                                                                 <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <constraints>
@@ -1773,7 +1773,7 @@
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do bairro" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eyT-ss-c9P">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bairro Teste" borderStyle="roundedRect" placeholder="Nome do bairro" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eyT-ss-c9P">
                                                                         <rect key="frame" x="77.5" y="0.0" width="264" height="30"/>
                                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
@@ -1794,7 +1794,7 @@
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome da cidade" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6SU-2k-pBB">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Cidade Teste" borderStyle="roundedRect" placeholder="Nome da cidade" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6SU-2k-pBB">
                                                                         <rect key="frame" x="77.5" y="0.0" width="264" height="30"/>
                                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
@@ -1815,7 +1815,7 @@
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do estado" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i5k-pG-7at">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Estado Teste" borderStyle="roundedRect" placeholder="Nome do estado" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i5k-pG-7at">
                                                                         <rect key="frame" x="78" y="0.0" width="264" height="30"/>
                                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
@@ -1872,7 +1872,7 @@
                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="+00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZQt-aT-Chb">
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+55" borderStyle="roundedRect" placeholder="+00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZQt-aT-Chb">
                                                                                 <rect key="frame" x="0.0" y="28.5" width="47.5" height="30"/>
                                                                                 <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <constraints>
@@ -1893,7 +1893,7 @@
                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZu-ve-IuE">
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="41" borderStyle="roundedRect" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZu-ve-IuE">
                                                                                 <rect key="frame" x="0.0" y="28.5" width="40" height="30"/>
                                                                                 <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <constraints>
@@ -1915,7 +1915,7 @@
                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="000000000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fil-FH-NQ0" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="999999999" borderStyle="roundedRect" placeholder="000000000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fil-FH-NQ0" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                                                 <rect key="frame" x="0.0" y="28.5" width="100" height="30"/>
                                                                                 <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <constraints>
@@ -2315,7 +2315,7 @@
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m4x-OU-YbT">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+55" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m4x-OU-YbT">
                                                                         <rect key="frame" x="0.0" y="28.5" width="40" height="30"/>
                                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
@@ -2336,7 +2336,7 @@
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-2b-M6g">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="41" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-2b-M6g">
                                                                         <rect key="frame" x="0.0" y="28.5" width="40" height="30"/>
                                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
@@ -2357,7 +2357,7 @@
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-D9-YBJ">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="33333333" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-D9-YBJ">
                                                                         <rect key="frame" x="0.0" y="28.5" width="97" height="30"/>
                                                                         <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>

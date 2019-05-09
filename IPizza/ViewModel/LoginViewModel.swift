@@ -25,14 +25,14 @@ class LoginViewModel {
     init() {
         user = User (context: contexto)
         loadData()
-        if users.count > 0 {
-            for x in users {
-                if x.email == nil {
-                    contexto.delete(x)
-                }
-            }
-            loadData()
-        }
+//        if users.count > 0 {
+//            for x in users {
+//                if x.email == nil {
+//                    contexto.delete(x)
+//                }
+//            }
+//            loadData()
+//        }
     }
     
     func login (email: String, senha: String){

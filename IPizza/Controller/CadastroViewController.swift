@@ -88,17 +88,8 @@ class CadastroViewController: UIViewController {
         swtEmpresaOnOff()
     }
     
-//    @IBAction func btnContinuarOnClick(_ sender: Any) {
-//        email = txtEmail.text!
-//        senha = txtSenha.text!
-//
-//        usuario = buscaDadosUsuario()
-//
-//        key = cadastroVM.createUsuario(usuario: usuario!, email: email, senha: senha)
-//    }
-    
     @IBAction func btnCancelarOnClick(_ sender: Any) {
-        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.popToRootViewController(animated: true)
     }
 
     func swtEmpresaOnOff() {

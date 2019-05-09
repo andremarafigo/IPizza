@@ -52,8 +52,7 @@ class EnderecosTelefonesViewController: UIViewController {
     }
     
     @IBAction func btnCancelarOnClick(_ sender: Any) {
-        self.navigationController?.popViewController(animated: false)
-        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func btnFinalizarOnClick(_ sender: Any) {

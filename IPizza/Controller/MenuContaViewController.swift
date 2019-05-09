@@ -27,11 +27,19 @@ class MenuContaViewController: UIViewController {
         super.viewDidLoad()
         
         if LoginViewModel.shared.users.count == 1 {
-            btnAlterarConta.isHidden = false
-            btnPedidosEmAndamento.isHidden = false
-            btnPedidosFinalizados.isHidden = false
-            btnPaginaDaPizzaria.isHidden = false
-            btnEfetuarLogin.isHidden = true
+            if LoginViewModel.shared.users[0].email != nil {
+                btnAlterarConta.isHidden = false
+                btnPedidosEmAndamento.isHidden = false
+                btnPedidosFinalizados.isHidden = false
+                btnPaginaDaPizzaria.isHidden = false
+                btnEfetuarLogin.isHidden = true
+            }else {
+                btnAlterarConta.isHidden = true
+                btnPedidosEmAndamento.isHidden = true
+                btnPedidosFinalizados.isHidden = true
+                btnPaginaDaPizzaria.isHidden = true
+                btnEfetuarLogin.isHidden = false
+            }
         }else {
             btnAlterarConta.isHidden = true
             btnPedidosEmAndamento.isHidden = true
