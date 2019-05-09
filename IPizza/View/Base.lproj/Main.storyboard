@@ -1040,7 +1040,7 @@
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2So-7Q-fkJ">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="andremarafigo11@gmail.com" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2So-7Q-fkJ">
                                                                 <rect key="frame" x="0.0" y="30.5" width="308" height="30"/>
                                                                 <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
@@ -1074,7 +1074,7 @@
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pae-79-rQe">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pae-79-rQe">
                                                                 <rect key="frame" x="0.0" y="30.5" width="308" height="30"/>
                                                                 <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
@@ -1118,7 +1118,7 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
-                                                                    <segue destination="hJd-kd-FU7" kind="show" id="O7T-yI-euo"/>
+                                                                    <segue destination="hJd-kd-FU7" kind="show" id="uj2-4W-Tl6"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ej-cc-Gcl">
@@ -1138,6 +1138,9 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="signin:" destination="kZR-Rz-cMs" eventType="touchUpInside" id="Xbx-5K-eze"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -1573,7 +1576,7 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
-                                                                    <segue destination="lHX-Go-3VY" kind="show" identifier="enderecosTelefones" id="5ao-tP-cNi"/>
+                                                                    <segue destination="lHX-Go-3VY" kind="show" identifier="enderecosTelefones" id="UTZ-kv-Fne"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -2008,7 +2011,7 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
-                                                                    <action selector="btnVoltarOnClick:" destination="lHX-Go-3VY" eventType="touchUpInside" id="7Uj-Vk-tzI"/>
+                                                                    <action selector="btnCancelarOnClick:" destination="lHX-Go-3VY" eventType="touchUpInside" id="dKe-19-njf"/>
                                                                 </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J5r-sM-nIG">
@@ -2031,9 +2034,6 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
-                                                                        <connections>
-                                                                            <action selector="btnFinalizarOnClick:" destination="lHX-Go-3VY" eventType="touchUpInside" id="Sm5-bh-AcA"/>
-                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rR0-nX-TFM">
                                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
@@ -2053,7 +2053,7 @@
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
-                                                                            <segue destination="rtg-aR-qx5" kind="show" identifier="telefonesEmpresa" id="W7V-lW-hQi"/>
+                                                                            <segue destination="rtg-aR-qx5" kind="show" id="r3Z-Ax-RWt"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -2154,6 +2154,8 @@
                     <navigationItem key="navigationItem" title="ENDEREÇOS / TELEFONES" id="QPJ-Wb-2sp"/>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
+                        <outlet property="btnContinuar" destination="rR0-nX-TFM" id="LOo-Qf-IcD"/>
+                        <outlet property="btnFinalizar" destination="IZJ-Af-nv0" id="d6z-3k-av4"/>
                         <outlet property="ctvEnderecos" destination="BXh-GE-YIR" id="56a-en-KEs"/>
                         <outlet property="ctvTelefones" destination="Apj-6t-awn" id="ZDc-lm-eWt"/>
                         <outlet property="segControlEnderecoTelefone" destination="D4i-hJ-aCm" id="QEe-KU-TdZ"/>
@@ -2408,11 +2410,6 @@
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="btnVoltarOnClick:" destination="lHX-Go-3VY" eventType="touchUpInside" id="OC4-TV-kPr"/>
-                                                            <action selector="btnVoltarOnClick:" destination="SAg-HL-Aib" eventType="touchUpInside" id="gxD-Ha-3MO"/>
-                                                            <action selector="btnVoltarOnClick:" destination="rtg-aR-qx5" eventType="touchUpInside" id="vx3-wP-wsv"/>
-                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icT-FW-DYj">
                                                         <rect key="frame" x="240" y="0.0" width="100" height="30"/>
@@ -2475,7 +2472,6 @@
                     <navigationItem key="navigationItem" title="TELEFONES EMPRESA" id="6hY-3X-o00"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LRQ-9X-lhw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="SAg-HL-Aib" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1997" y="912"/>
         </scene>

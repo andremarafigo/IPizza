@@ -21,7 +21,6 @@ class LoginViewModel {
     
     var users : [User] = []
     var user : User
-    let requestUser: NSFetchRequest<User> = User.fetchRequest()
     
     init() {
         user = User (context: contexto)
@@ -36,7 +35,7 @@ class LoginViewModel {
         }
     }
     
-    func login (email: String, senha: String) -> Bool{
+    func login (email: String, senha: String){
         var x: Bool = false
         
         Auth.auth().signIn(withEmail: email, password: senha) { (result, error) in
@@ -56,8 +55,9 @@ class LoginViewModel {
             x = true
             
             self.salvaUserCoreData(valida: x, usuario: email, password: senha)
+            
+            LoginViewController.shared.navigationController?.popViewController(animated: true)
         }
-        return x
     }
     
     func salvaUserCoreData(valida: Bool, usuario: String, password: String) {
@@ -83,9 +83,14 @@ class LoginViewModel {
     }
     
     func loadData() {
+        let requestUser: NSFetchRequest<User> = User.fetchRequest()
         do
         {
-            users = try contexto.fetch(requestUser)
+            print(users)
+            let usurs = try contexto.fetch(requestUser)
+            print(usurs)
+            users = usurs
+            print(users)
         }
         catch
         {

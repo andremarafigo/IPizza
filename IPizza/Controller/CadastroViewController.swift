@@ -50,7 +50,6 @@ class CadastroViewController: UIViewController {
     @IBOutlet weak var lblEstado: UILabel!
     @IBOutlet weak var txtEstado: UITextField!
     
-    @IBOutlet weak var btnTelefonesEmpresa: UIButton!
     private var datePicker: UIDatePicker?
     
     override func viewDidLoad() {
@@ -89,17 +88,17 @@ class CadastroViewController: UIViewController {
         swtEmpresaOnOff()
     }
     
-    @IBAction func btnContinuarOnClick(_ sender: Any) {
+//    @IBAction func btnContinuarOnClick(_ sender: Any) {
 //        email = txtEmail.text!
 //        senha = txtSenha.text!
 //
 //        usuario = buscaDadosUsuario()
 //
 //        key = cadastroVM.createUsuario(usuario: usuario!, email: email, senha: senha)
-    }
+//    }
     
     @IBAction func btnCancelarOnClick(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
 
     func swtEmpresaOnOff() {
@@ -124,7 +123,6 @@ class CadastroViewController: UIViewController {
             txtCidade.isHidden = false
             txtEstado.isHidden = false
             
-            btnTelefonesEmpresa.isHidden = false
         }else{
             lblRazaoSocial.isHidden = true
             lblNomeFantasia.isHidden = true
@@ -146,7 +144,6 @@ class CadastroViewController: UIViewController {
             txtCidade.isHidden = true
             txtEstado.isHidden = true
             
-            btnTelefonesEmpresa.isHidden = true
         }
     }
     
@@ -237,6 +234,7 @@ class CadastroViewController: UIViewController {
             next.usuario = usuario
             next.email = email
             next.senha = senha
+            next.swtEmpresa = swtEmpresa.isOn
         } else {
             next.usuario = nil
         }
