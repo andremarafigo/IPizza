@@ -20,6 +20,7 @@ class EnderecosTelefonesViewController: UIViewController {
     var email: String = ""
     var senha: String = ""
     var swtEmpresa: Bool?
+    var per: Bool = false
     
     @IBOutlet weak var svEnderecos: UIStackView!
     @IBOutlet weak var svTelefones: UIStackView!
@@ -31,6 +32,8 @@ class EnderecosTelefonesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        per = true
         
         enderecoOuTelefone()
         usuarioOuEmpresa()
@@ -49,8 +52,8 @@ class EnderecosTelefonesViewController: UIViewController {
     }
     
     @IBAction func btnCancelarOnClick(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.popViewController(animated: false)
     }
     
     @IBAction func btnFinalizarOnClick(_ sender: Any) {
@@ -82,16 +85,18 @@ class EnderecosTelefonesViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let next = segue.destination as! TelefonesEmpresaViewController
-        next.owner = self
-
-        if segue.identifier == "telefonesEmpresa" {
-            next.usuario = usuario
-            next.key = key
-            next.email = email
-            next.senha = senha
-        } else {
-            next.usuario = nil
+        if per == true {
+            if segue.identifier == "telefonesEmpresa" {
+                let next = segue.destination as! TelefonesEmpresaViewController
+                next.owner = self
+                next.usuario = usuario
+                next.key = key
+                next.email = email
+                next.senha = senha
+            } else {
+                let next = segue.destination as! TelefonesEmpresaViewController
+                next.usuario = nil
+            }
         }
     }
 }

@@ -29,8 +29,10 @@ class TelefonesEmpresaViewController: UIViewController {
         view.endEditing(true)
     }
     
-    @IBAction func btnVoltarOnClick(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+    @IBAction func btnCancelarOnClick(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.popViewController(animated: false)
     }
     
 }

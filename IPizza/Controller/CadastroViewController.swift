@@ -98,7 +98,7 @@ class CadastroViewController: UIViewController {
 //    }
     
     @IBAction func btnCancelarOnClick(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: false)
     }
 
     func swtEmpresaOnOff() {
