@@ -11,8 +11,6 @@ import Firebase
 
 class LoginViewController: UIViewController {
     
-    static let shared = LoginViewController()
-    
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtSenha: UITextField!
     
@@ -32,7 +30,7 @@ class LoginViewController: UIViewController {
         let email: String = txtEmail.text!
         let senha: String = txtSenha.text!
 
-        LoginViewModel.shared.login(email: email, senha: senha)
+        LoginViewModel.shared.login(owner: self, email: email, senha: senha)
 
         //self.performSegue(withIdentifier: "bemVindo", sender: nil)
     }

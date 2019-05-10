@@ -25,17 +25,22 @@ class LoginViewModel {
     init() {
         user = User (context: contexto)
         loadData()
-//        if users.count > 0 {
-//            for x in users {
-//                if x.email == nil {
-//                    contexto.delete(x)
-//                }
-//            }
-//            loadData()
-//        }
+        if users.count > 0 {
+            var y: Int = 0
+            for x in users {
+                if x.email == nil {
+                    contexto.delete(x)
+                }else if y > 0 {
+                    contexto.delete(x)
+                }else {
+                    y = 1
+                }
+            }
+            loadData()
+        }
     }
     
-    func login (email: String, senha: String){
+    func login (owner: LoginViewController, email: String, senha: String){
         var x: Bool = false
         
         Auth.auth().signIn(withEmail: email, password: senha) { (result, error) in
@@ -56,7 +61,7 @@ class LoginViewModel {
             
             self.salvaUserCoreData(valida: x, usuario: email, password: senha)
             
-            LoginViewController.shared.navigationController?.popViewController(animated: true)
+            owner.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -79,6 +84,14 @@ class LoginViewModel {
         } catch  {
             print("Erro ao salvar o contexto: \(error) ")
         }
+        loadData()
+    }
+    
+    func deletData() {
+        for x in users {
+            contexto.delete(x)
+        }
+        saveData()
         loadData()
     }
     

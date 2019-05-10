@@ -232,13 +232,36 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELc-Ud-4Tx">
+                                                <rect key="frame" x="57" y="703" width="300" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="Nsu-8M-RMa"/>
+                                                    <constraint firstAttribute="height" constant="50" id="jLI-ss-Zrm"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <state key="normal" title="Sair" image="icons8-sair-48">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnSairOnClick:" destination="SZv-vX-Aja" eventType="touchUpInside" id="awU-yq-vb0"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ASa-jP-dxR" firstAttribute="top" secondItem="jQG-rc-hDC" secondAttribute="top" constant="153.5" id="TSd-ym-a5C"/>
                                             <constraint firstItem="sSL-cf-i9L" firstAttribute="top" secondItem="jQG-rc-hDC" secondAttribute="top" id="W8F-Bz-EwI"/>
                                             <constraint firstItem="ASa-jP-dxR" firstAttribute="centerX" secondItem="jQG-rc-hDC" secondAttribute="centerX" id="cPR-ZA-9eJ"/>
+                                            <constraint firstItem="ELc-Ud-4Tx" firstAttribute="centerX" secondItem="jQG-rc-hDC" secondAttribute="centerX" id="dDd-y9-hBx"/>
                                             <constraint firstItem="sSL-cf-i9L" firstAttribute="centerX" secondItem="jQG-rc-hDC" secondAttribute="centerX" id="h7a-EF-cdq"/>
+                                            <constraint firstAttribute="bottom" secondItem="ELc-Ud-4Tx" secondAttribute="bottom" constant="8" id="yqz-9Q-I2m"/>
                                             <constraint firstAttribute="bottom" secondItem="ASa-jP-dxR" secondAttribute="bottom" constant="132.5" id="zBC-yo-slf"/>
                                         </constraints>
                                     </view>
@@ -293,6 +316,7 @@
                         <outlet property="btnPaginaDaPizzaria" destination="YTQ-Lq-DeS" id="ypf-LE-u3Q"/>
                         <outlet property="btnPedidosEmAndamento" destination="ECR-fV-0SU" id="ome-Rv-7nS"/>
                         <outlet property="btnPedidosFinalizados" destination="hcG-Ys-JRs" id="DHI-Ie-Rgd"/>
+                        <outlet property="btnSair" destination="ELc-Ud-4Tx" id="Vbb-sd-Ow2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxF-gS-TCW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4404,6 +4428,7 @@
         <image name="icons8-entrega-48" width="36" height="36"/>
         <image name="icons8-facebook" width="48" height="48"/>
         <image name="icons8-home" width="72" height="72"/>
+        <image name="icons8-sair-48" width="36" height="36"/>
         <image name="icons8-settings" width="75" height="75"/>
         <image name="icons8-usuário-de-gênero-neutro-48" width="36" height="36"/>
         <image name="icons8-verificar-48" width="36" height="36"/>
