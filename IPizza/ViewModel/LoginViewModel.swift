@@ -24,8 +24,13 @@ class LoginViewModel {
     var users : [User] = []
     var user : User!
     
+    let usuario = Usuarios()
+    
     init() {
         loadData()
+        if users[0].email != nil {
+            loadDataFireBase(key: users[0].key!)
+        }
     }
     
     func login (owner: LoginViewController, email: String, senha: String){
@@ -36,6 +41,13 @@ class LoginViewModel {
             guard let user = result?.user
                 else {
                     print(error!)
+                    let alert = UIAlertController(title: "Usuário ou Senha inválidos.", message: "Tente novamente!", preferredStyle: UIAlertController.Style.alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    }))
+                    
+                    // show the alert
+                    owner.present(alert, animated: true, completion: nil)
                     return
             }
             
@@ -45,63 +57,63 @@ class LoginViewModel {
             
             Analytics.logEvent("login", parameters: ["nome: ": email])
             
-            self.loadDataFireBase(key: user.uid)
-            
             x = true
             
-            self.salvaUserCoreData(valida: x, key: user.uid, usuario: email, password: senha)
+            self.loadDataFireBase(key: user.uid)
+            
+            self.salvaUserCoreData(valida: x, key: user.uid, usuario: email, password: senha, pizzaria: self.usuario.pizzaria!)
             
             owner.navigationController?.popViewController(animated: true)
         }
     }
     
     func loadDataFireBase(key: String){
+        
+        database = Database.database().reference()
         self.database.child("Usuarios").child(key).observe(.value, with: { (snapshot: DataSnapshot) in
             if let value = snapshot.value as? [String : Any] {
-                var usuarios = [Usuarios]()
-                let usuario = Usuarios()
                 
-                usuario.nome = value["Nome"] as? String
-                usuario.cpf = value["CPF"] as? String
-                usuario.dataNascimento = value["DataNascimento"] as? String
-                usuario.email = value["Email"] as? String
-                usuario.ddi = value["DDI"] as? String
-                usuario.ddd = value["DDD"] as? String
-                usuario.telefone = value["Telefone"] as? String
-                usuario.cep = value["CEP"] as? String
-                usuario.rua = value["Rua"] as? String
-                usuario.numero = value["Numero"] as? String
-                usuario.bairro = value["Bairro"] as? String
-                usuario.cidade = value["Cidade"] as? String
-                usuario.estado = value["Estado"] as? String
-                usuario.pizzaria = value["Pizzaria"] as? Bool
-                if usuario.pizzaria == true {
-                    usuario.razaoSocial = value["RazaoSocial"] as? String
-                    usuario.nomeFantasia = value["NomeFantasia"] as? String
-                    usuario.cnpj = value["CNPJ"] as? String
-                    usuario.cepPizzaria = value["CEPPizzaria"] as? String
-                    usuario.ruaPizzaria = value["RuaPizzaria"] as? String
-                    usuario.numeroPizzaria = value["NumeroPizzaria"] as? String
-                    usuario.bairroPizzaria = value["BairroPizzaria"] as? String
-                    usuario.cidadePizzaria = value["CidadePizzaria"] as? String
-                    usuario.estadoPizzaria = value["EstadoPizzaria"] as? String
-                    usuario.ddiPizzaria = value["DDIPizzaria"] as? String
-                    usuario.dddPizzaria = value["DDDPizzaria"] as? String
-                    usuario.telefonePizzaria = value["TelefonePizzaria"] as? String
+                self.usuario.nome = value["Nome"] as? String
+                self.usuario.cpf = value["CPF"] as? String
+                self.usuario.dataNascimento = value["DataNascimento"] as? String
+                self.usuario.email = value["Email"] as? String
+                self.usuario.ddi = value["DDI"] as? String
+                self.usuario.ddd = value["DDD"] as? String
+                self.usuario.telefone = value["Telefone"] as? String
+                self.usuario.cep = value["CEP"] as? String
+                self.usuario.rua = value["Rua"] as? String
+                self.usuario.numero = value["Numero"] as? String
+                self.usuario.bairro = value["Bairro"] as? String
+                self.usuario.cidade = value["Cidade"] as? String
+                self.usuario.estado = value["Estado"] as? String
+                self.usuario.pizzaria = value["Pizzaria"] as? Bool
+                if self.usuario.pizzaria == true {
+                    self.usuario.razaoSocial = value["RazaoSocial"] as? String
+                    self.usuario.nomeFantasia = value["NomeFantasia"] as? String
+                    self.usuario.cnpj = value["CNPJ"] as? String
+                    self.usuario.cepPizzaria = value["CEPPizzaria"] as? String
+                    self.usuario.ruaPizzaria = value["RuaPizzaria"] as? String
+                    self.usuario.numeroPizzaria = value["NumeroPizzaria"] as? String
+                    self.usuario.bairroPizzaria = value["BairroPizzaria"] as? String
+                    self.usuario.cidadePizzaria = value["CidadePizzaria"] as? String
+                    self.usuario.estadoPizzaria = value["EstadoPizzaria"] as? String
+                    self.usuario.ddiPizzaria = value["DDIPizzaria"] as? String
+                    self.usuario.dddPizzaria = value["DDDPizzaria"] as? String
+                    self.usuario.telefonePizzaria = value["TelefonePizzaria"] as? String
                 }
                 
-                usuarios.append(usuario)
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: USERINFO), object: nil, userInfo: ["usuarios": usuarios])
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: USERINFO), object: nil, userInfo: ["usuario": self.usuario])
             }
         })
     }
     
-    func salvaUserCoreData(valida: Bool, key: String, usuario: String, password: String) {
+    func salvaUserCoreData(valida: Bool, key: String, usuario: String, password: String, pizzaria: Bool) {
         if valida == true {
             user = User (context: contexto)
             user.key = key
             user.email = usuario
             user.senha = password
+            user.pizzaria = pizzaria
             if users.count > 0 {
                 users[0] = user
             }else{
