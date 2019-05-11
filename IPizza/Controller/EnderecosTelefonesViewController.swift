@@ -12,8 +12,6 @@ import JMMaskTextField_Swift
 
 class EnderecosTelefonesViewController: UIViewController {
     
-    var cadastroVM : CadastroViewModel!
-    
     var owner : CadastroViewController?
     var usuario : [String : Any]?
     var key : String = ""
@@ -52,11 +50,11 @@ class EnderecosTelefonesViewController: UIViewController {
     }
     
     @IBAction func btnCancelarOnClick(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func btnFinalizarOnClick(_ sender: Any) {
-        key = cadastroVM.createUsuario(usuario: usuario!, email: email, senha: senha)
+        CadastroViewModel.shared.createUsuario(usuario: usuario, email: email, senha: senha)
     }
     
     func enderecoOuTelefone() {

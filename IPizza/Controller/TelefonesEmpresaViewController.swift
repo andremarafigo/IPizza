@@ -30,7 +30,7 @@ class TelefonesEmpresaViewController: UIViewController {
     }
     
     @IBAction func btnCancelarOnClick(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

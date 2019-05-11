@@ -28,6 +28,19 @@ class MenuContaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        criaBotoes()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        criaBotoes()
+    }
+    
+    @IBAction func btnSairOnClick(_ sender: Any) {
+        LoginViewModel.shared.deleteData()
+        criaBotoes()
+    }
+    
+    func criaBotoes() {
         if LoginViewModel.shared.users.count == 1 {
             if LoginViewModel.shared.users[0].email != nil {
                 btnAlterarConta.isHidden = false
@@ -41,6 +54,7 @@ class MenuContaViewController: UIViewController {
                 btnPedidosEmAndamento.isHidden = true
                 btnPedidosFinalizados.isHidden = true
                 btnPaginaDaPizzaria.isHidden = true
+                btnSair.isHidden = true
                 btnEfetuarLogin.isHidden = false
             }
         }else {
@@ -51,17 +65,13 @@ class MenuContaViewController: UIViewController {
             btnSair.isHidden = true
             btnEfetuarLogin.isHidden = false
         }
-        LoginViewModel.shared.loadData()
-    }
-    
-    @IBAction func btnSairOnClick(_ sender: Any) {
-        LoginViewModel.shared.deletData()
-        viewDidLoad()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //let next = segue.destination as! LoginViewController
-        //next.loginVM = loginVM
+        if segue.identifier == "efetuarLogin" {
+            let next = segue.destination as! LoginViewController
+            next.owner = self
+        }
     }
     
 }

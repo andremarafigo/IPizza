@@ -12,15 +12,17 @@ import FirebaseDatabase
 
 class CadastroViewModel {
     
+    static let shared = CadastroViewModel()
+    
     var refUsuarios: DatabaseReference!
     
     init() {
         refUsuarios = Database.database().reference().child("usuarios")
     }
     
-    func createUsuario (usuario: [String : Any], email: String, senha: String) -> String {
-        let key = refUsuarios.childByAutoId().key
-        
+    func createUsuario (usuario: [String : Any]?, email: String, senha: String){
+        //let key = refUsuarios.childByAutoId().key
+        var key: String = ""
         Auth.auth().createUser(withEmail: email, password: senha) { (result, error) in
             
             guard (result?.user) != nil
@@ -29,11 +31,11 @@ class CadastroViewModel {
                     return
             }
             print("Deu certo")
-        }
-        
-        refUsuarios.child(key!).setValue(usuario)
-        
-        return key!
+            
+            key = (result?.user.uid)!
+            
+            self.refUsuarios.child(key).setValue(usuario)
+        } 
     }
     
 }

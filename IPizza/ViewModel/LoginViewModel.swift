@@ -20,24 +20,37 @@ class LoginViewModel {
     //var owner : LoginViewController!
     
     var users : [User] = []
-    var user : User
+    var user : User!
     
     init() {
-        user = User (context: contexto)
-        loadData()
-        if users.count > 0 {
-            var y: Int = 0
-            for x in users {
-                if x.email == nil {
-                    contexto.delete(x)
-                }else if y > 0 {
-                    contexto.delete(x)
-                }else {
-                    y = 1
-                }
-            }
+//        user = User (context: contexto)
+//        if users.count > 0 {
+//            var y: Int = 0
+//            for x in users {
+//                if x.email == nil {
+//                    contexto.delete(x)
+//                }else if y > 0 {
+//                    contexto.delete(x)
+//                }else {
+//                    y = 1
+//                }
+//            }
+//            //loadData()
+//        }else {
             loadData()
-        }
+//            if users.count > 0 {
+//                var y: Int = 0
+//                for x in users {
+//                    if x.email == nil {
+//                        contexto.delete(x)
+//                    }else if y > 0 {
+//                        contexto.delete(x)
+//                    }else {
+//                        y = 1
+//                    }
+//                }
+//            }
+//       }
     }
     
     func login (owner: LoginViewController, email: String, senha: String){
@@ -67,6 +80,7 @@ class LoginViewModel {
     
     func salvaUserCoreData(valida: Bool, usuario: String, password: String) {
         if valida == true {
+            user = User (context: contexto)
             user.email = usuario
             user.senha = password
             if users.count > 0 {
@@ -84,15 +98,13 @@ class LoginViewModel {
         } catch  {
             print("Erro ao salvar o contexto: \(error) ")
         }
-        loadData()
+        //loadData()
     }
     
-    func deletData() {
-        for x in users {
-            contexto.delete(x)
-        }
+    func deleteData() {
+        contexto.delete(users[0])
         saveData()
-        loadData()
+        //loadData()
     }
     
     func loadData() {
