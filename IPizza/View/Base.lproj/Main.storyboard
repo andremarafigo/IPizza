@@ -1066,7 +1066,7 @@
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="andremarafigo11@gmail.com" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2So-7Q-fkJ">
                                                                 <rect key="frame" x="0.0" y="30.5" width="308" height="30"/>
-                                                                <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.55350631475448608" green="0.84778708219528198" blue="0.96889442205429077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="308" id="eR1-Hm-mMB"/>
                                                                     <constraint firstAttribute="height" constant="30" id="nO4-je-bG7"/>
@@ -1100,7 +1100,7 @@
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pae-79-rQe">
                                                                 <rect key="frame" x="0.0" y="30.5" width="308" height="30"/>
-                                                                <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.55350631475448608" green="0.84778708219528198" blue="0.96889442205429077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="308" id="bMD-8f-FAh"/>
                                                                     <constraint firstAttribute="height" constant="30" id="j9x-Pp-jwn"/>
@@ -1244,14 +1244,14 @@
             <objects>
                 <viewController id="hJd-kd-FU7" customClass="CadastroViewController" customModule="IPizza" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ndw-h2-ZEv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="2340"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBI-c8-ffO">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1764"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="2304"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68L-bs-OwY" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1764"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2304"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bxr-QU-kQP">
                                                 <rect key="frame" x="57" y="0.0" width="300" height="60"/>
@@ -1301,7 +1301,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="5mW-hX-yxl">
-                                                <rect key="frame" x="57" y="68" width="300" height="1248"/>
+                                                <rect key="frame" x="57" y="68" width="300" height="1962"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mff-Vf-WGU">
                                                         <rect key="frame" x="123" y="0.0" width="54" height="30"/>
@@ -1310,7 +1310,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="André" borderStyle="roundedRect" placeholder="Nome completo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HPB-Ee-8FW">
                                                         <rect key="frame" x="0.0" y="42" width="300" height="30"/>
-                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="32O-Ev-NtS"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="AYW-Y3-de0"/>
@@ -1326,7 +1326,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="111.111.111-11" borderStyle="roundedRect" placeholder="000.000.000-00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r0f-DS-Ajv" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                         <rect key="frame" x="75" y="126" width="150" height="30"/>
-                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="hHV-Cs-hOp"/>
                                                             <constraint firstAttribute="height" constant="30" id="yGR-VP-3Fm"/>
@@ -1345,7 +1345,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="11/11/1991" borderStyle="roundedRect" placeholder="00/00/0000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPd-2w-JUC" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                         <rect key="frame" x="75" y="210" width="150" height="30"/>
-                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="6Mf-NZ-Tig"/>
                                                             <constraint firstAttribute="height" constant="30" id="Uyp-dq-IHW"/>
@@ -1362,9 +1362,9 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="andre@email.com" borderStyle="roundedRect" placeholder="email@email.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2cB-9E-f5m">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="andremarafigo11@gmail.com" borderStyle="roundedRect" placeholder="email@email.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2cB-9E-f5m">
                                                         <rect key="frame" x="0.0" y="294" width="300" height="30"/>
-                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="3WA-c1-9Vc"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Joo-4o-s40"/>
@@ -1380,7 +1380,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qKo-QD-eib">
                                                         <rect key="frame" x="0.0" y="378" width="300" height="30"/>
-                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="0yX-f2-4cX"/>
                                                             <constraint firstAttribute="width" constant="300" id="Ri3-Ze-kob"/>
@@ -1388,9 +1388,166 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                        <connections>
+                                                            <action selector="txtSenhaEditEnd:" destination="hJd-kd-FU7" eventType="editingDidEnd" id="g3V-hN-mwm"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deve conter mais de 6 caracteres." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YP7-vy-p4m">
+                                                        <rect key="frame" x="19" y="420" width="262" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ss-6c-yVG">
+                                                        <rect key="frame" x="115" y="462" width="70.5" height="30"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="N6S-Hg-F70">
+                                                        <rect key="frame" x="45" y="504" width="210.5" height="30"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+55" borderStyle="roundedRect" placeholder="+00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zrd-tD-EH1">
+                                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="30"/>
+                                                                <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="kuP-tX-wvO"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="w58-Xb-ug2"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="41" borderStyle="roundedRect" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="469-Ed-cWG">
+                                                                <rect key="frame" x="52.5" y="0.0" width="40" height="30"/>
+                                                                <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="Qbl-h5-9fv"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="k5m-W9-HRG"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9-9999-9999" borderStyle="roundedRect" placeholder="000000000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bx4-Dg-qgy" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
+                                                                <rect key="frame" x="97.5" y="0.0" width="113" height="30"/>
+                                                                <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="KgS-AY-CLZ"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="w1I-rh-1jZ"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="0-0000-0000"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CEP:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VxL-68-yzX">
+                                                        <rect key="frame" x="130.5" y="546" width="39" height="30"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="11111-11" borderStyle="roundedRect" placeholder="00000-00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TOb-03-cf1" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
+                                                        <rect key="frame" x="75" y="588" width="150" height="30"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="lOx-RB-dwI"/>
+                                                            <constraint firstAttribute="height" constant="30" id="saR-Yx-vDm"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="postal-code"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="00000-00"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rua:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITy-TN-DSB">
+                                                        <rect key="frame" x="131.5" y="630" width="37" height="30"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Rua Teste" borderStyle="roundedRect" placeholder="Nome da rua" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ya9-Tk-U4C">
+                                                        <rect key="frame" x="0.0" y="672" width="300" height="30"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="JYO-SV-48z"/>
+                                                            <constraint firstAttribute="height" constant="30" id="ZMa-Xk-1zX"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsY-x1-aQG">
+                                                        <rect key="frame" x="114.5" y="714" width="71" height="30"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="000000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="juB-iS-01m" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
+                                                        <rect key="frame" x="75" y="756" width="150" height="30"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="7ZC-Ix-mYK"/>
+                                                            <constraint firstAttribute="height" constant="30" id="GWu-yd-3rD"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="000000"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bairro:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRh-vk-DHP">
+                                                        <rect key="frame" x="122.5" y="798" width="55.5" height="30"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bairro Teste" borderStyle="roundedRect" placeholder="Nome do bairro" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SNh-pR-WS5">
+                                                        <rect key="frame" x="0.0" y="840" width="300" height="30"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="PA5-AH-8ks"/>
+                                                            <constraint firstAttribute="height" constant="30" id="YyO-pz-n4b"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cidade:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1z-7C-AoB">
+                                                        <rect key="frame" x="118.5" y="882" width="63.5" height="30"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Cidade Teste" borderStyle="roundedRect" placeholder="Nome da cidade" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8hF-IW-ghv">
+                                                        <rect key="frame" x="0.0" y="924" width="300" height="30"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Xj7-9l-t3g"/>
+                                                            <constraint firstAttribute="height" constant="30" id="sgI-3g-Vi0"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="address-level2"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf8-pP-IKd">
+                                                        <rect key="frame" x="119" y="966" width="62" height="30"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Estado Teste" borderStyle="roundedRect" placeholder="Nome do estado" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ACA-2Z-VZk">
+                                                        <rect key="frame" x="0.0" y="1008" width="300" height="30"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="09C-sC-MkN"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="6xq-dX-sMM"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="address-level1"/>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="719-eX-kyV">
-                                                        <rect key="frame" x="18" y="420" width="264" height="30"/>
+                                                        <rect key="frame" x="18" y="1050" width="264" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastrar minha Pizzaria:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEn-BX-1ai">
                                                                 <rect key="frame" x="0.0" y="0.0" width="210" height="30"/>
@@ -1406,13 +1563,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Razão Social:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsO-ww-9N4">
-                                                        <rect key="frame" x="95.5" y="462" width="109.5" height="30"/>
+                                                        <rect key="frame" x="95.5" y="1092" width="109.5" height="30"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Razão Social" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ij-wn-BSW">
-                                                        <rect key="frame" x="0.0" y="504" width="300" height="30"/>
-                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="1134" width="300" height="30"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="0Wl-LF-TUB"/>
                                                             <constraint firstAttribute="width" constant="300" id="ahe-zJ-hJc"/>
@@ -1422,13 +1579,13 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Fantasia:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sd-fb-fIq">
-                                                        <rect key="frame" x="87" y="546" width="126.5" height="30"/>
+                                                        <rect key="frame" x="87" y="1176" width="126.5" height="30"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Nome Fantasia" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W9D-I6-tsF">
-                                                        <rect key="frame" x="0.0" y="588" width="300" height="30"/>
-                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="1218" width="300" height="30"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="300" id="6Lb-7k-gUg"/>
                                                             <constraint firstAttribute="height" constant="30" id="DGT-z1-X8j"/>
@@ -1438,16 +1595,16 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CNPJ:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xZ-EJ-qMI">
-                                                        <rect key="frame" x="124.5" y="630" width="51" height="30"/>
+                                                        <rect key="frame" x="124.5" y="1260" width="51" height="30"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="11.111.111/1111-11" borderStyle="roundedRect" placeholder="00.000.000/0000-00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aNl-sy-YUb" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
-                                                        <rect key="frame" x="65" y="672" width="170" height="30"/>
-                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="70.5" y="1302" width="159.5" height="30"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="2gh-pw-Qwn"/>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="bpd-Fl-ZgH"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="bpd-Fl-ZgH"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1457,15 +1614,15 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CEP:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ae7-q8-Rwm">
-                                                        <rect key="frame" x="130.5" y="714" width="39" height="30"/>
+                                                        <rect key="frame" x="130.5" y="1344" width="39" height="30"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="11111-11" borderStyle="roundedRect" placeholder="00000-00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bmh-ab-qwI" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
-                                                        <rect key="frame" x="65" y="756" width="170" height="30"/>
-                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="75" y="1386" width="150" height="30"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="U28-TE-OFp"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="U28-TE-OFp"/>
                                                             <constraint firstAttribute="height" constant="30" id="ah9-zY-dQu"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
@@ -1476,13 +1633,13 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rua:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gn-Vn-mSx">
-                                                        <rect key="frame" x="131.5" y="798" width="37" height="30"/>
+                                                        <rect key="frame" x="131.5" y="1428" width="37" height="30"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Rua Teste" borderStyle="roundedRect" placeholder="Nome da rua" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IGk-84-VFR">
-                                                        <rect key="frame" x="0.0" y="840" width="300" height="30"/>
-                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="1470" width="300" height="30"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="KKV-2X-qIy"/>
                                                             <constraint firstAttribute="height" constant="30" id="b6E-uq-Lfi"/>
@@ -1492,16 +1649,16 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeG-za-QMk">
-                                                        <rect key="frame" x="114.5" y="882" width="71" height="30"/>
+                                                        <rect key="frame" x="114.5" y="1512" width="71" height="30"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="000000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NkB-oX-Pw2" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
-                                                        <rect key="frame" x="100" y="924" width="100" height="30"/>
-                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="75" y="1554" width="150" height="30"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="4Vj-bN-ZS3"/>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="6a5-Ra-b4T"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="6a5-Ra-b4T"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1511,13 +1668,13 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bairro:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1Q-Rb-Pfz">
-                                                        <rect key="frame" x="122.5" y="966" width="55.5" height="30"/>
+                                                        <rect key="frame" x="122.5" y="1596" width="55.5" height="30"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bairro Teste" borderStyle="roundedRect" placeholder="Nome do bairro" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wqz-mY-2Ow">
-                                                        <rect key="frame" x="0.0" y="1008" width="300" height="30"/>
-                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="1638" width="300" height="30"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="bIN-IZ-kc6"/>
                                                             <constraint firstAttribute="height" constant="30" id="pbt-iQ-I1t"/>
@@ -1527,13 +1684,13 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cidade:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOJ-O0-0tT">
-                                                        <rect key="frame" x="118.5" y="1050" width="63.5" height="30"/>
+                                                        <rect key="frame" x="118.5" y="1680" width="63.5" height="30"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Cidade Teste" borderStyle="roundedRect" placeholder="Nome da cidade" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5I-Fz-K9M">
-                                                        <rect key="frame" x="0.0" y="1092" width="300" height="30"/>
-                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="1722" width="300" height="30"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Mp0-cx-QvB"/>
                                                             <constraint firstAttribute="height" constant="30" id="h0u-BL-tJw"/>
@@ -1543,13 +1700,13 @@
                                                         <textInputTraits key="textInputTraits" textContentType="address-level2"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WE-qV-08f">
-                                                        <rect key="frame" x="119" y="1134" width="62" height="30"/>
+                                                        <rect key="frame" x="119" y="1764" width="62" height="30"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Estado Teste" borderStyle="roundedRect" placeholder="Nome do estado" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1sW-g0-71Z">
-                                                        <rect key="frame" x="0.0" y="1176" width="300" height="30"/>
-                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="1806" width="300" height="30"/>
+                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="bFr-mJ-c3y"/>
                                                             <constraint firstAttribute="height" constant="30" id="qtV-mm-v0C"/>
@@ -1558,8 +1715,54 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="address-level1"/>
                                                     </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone da Pizzaria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2O-Gz-xET">
+                                                        <rect key="frame" x="68.5" y="1848" width="163.5" height="30"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iKL-Mt-PWL">
+                                                        <rect key="frame" x="51.5" y="1890" width="197.5" height="30"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+55" borderStyle="roundedRect" placeholder="+00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Sr-da-I5g">
+                                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="30"/>
+                                                                <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="c8v-lG-0wJ"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="nlK-bS-nsK"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="41" borderStyle="roundedRect" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQL-oF-EMd">
+                                                                <rect key="frame" x="52.5" y="0.0" width="40" height="30"/>
+                                                                <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="qMp-iT-uli"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="yfc-I8-qLi"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3333-3333" borderStyle="roundedRect" placeholder="000000000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gki-bT-pXb" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
+                                                                <rect key="frame" x="97.5" y="0.0" width="100" height="30"/>
+                                                                <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="mHI-Ml-wqF"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="oSF-gW-Z1r"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="0000-0000"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="0dR-9R-ZcY">
-                                                        <rect key="frame" x="0.0" y="1218" width="300" height="30"/>
+                                                        <rect key="frame" x="0.0" y="1932" width="300" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lh-Xg-5n4">
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
@@ -1590,7 +1793,7 @@
                                                                     <constraint firstAttribute="width" constant="100" id="sdh-jx-JrO"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                                <state key="normal" title="Continuar">
+                                                                <state key="normal" title="Cadastrar">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
@@ -1600,7 +1803,7 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
-                                                                    <segue destination="lHX-Go-3VY" kind="show" identifier="enderecosTelefones" id="UTZ-kv-Fne"/>
+                                                                    <action selector="btnCadastrarOnClick:" destination="hJd-kd-FU7" eventType="touchUpInside" id="Jz7-k1-RuL"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -1610,7 +1813,7 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Bxr-QU-kQP" firstAttribute="top" secondItem="68L-bs-OwY" secondAttribute="top" id="4Gj-aT-8qR"/>
-                                            <constraint firstAttribute="bottom" secondItem="5mW-hX-yxl" secondAttribute="bottom" constant="448" id="Pep-B8-XgN"/>
+                                            <constraint firstAttribute="bottom" secondItem="5mW-hX-yxl" secondAttribute="bottom" constant="274" id="9B2-fm-wLL"/>
                                             <constraint firstItem="Bxr-QU-kQP" firstAttribute="centerX" secondItem="68L-bs-OwY" secondAttribute="centerX" id="qCZ-jZ-vUS"/>
                                             <constraint firstItem="5mW-hX-yxl" firstAttribute="top" secondItem="Bxr-QU-kQP" secondAttribute="bottom" constant="8" id="xHn-IZ-dBg"/>
                                             <constraint firstItem="5mW-hX-yxl" firstAttribute="centerX" secondItem="68L-bs-OwY" secondAttribute="centerX" id="yi5-Tv-0Dq"/>
@@ -1640,37 +1843,51 @@
                         <barButtonItem key="backBarButtonItem" title="VOLTAR" id="6T8-Io-1BZ"/>
                         <barButtonItem key="rightBarButtonItem" title="SALVAR" id="hVg-1S-A2s"/>
                     </navigationItem>
-                    <size key="freeformSize" width="414" height="1800"/>
+                    <size key="freeformSize" width="414" height="2340"/>
                     <connections>
-                        <outlet property="lblBairro" destination="D1Q-Rb-Pfz" id="Crp-He-Pb3"/>
-                        <outlet property="lblCEP" destination="ae7-q8-Rwm" id="XGq-Fj-fQe"/>
+                        <outlet property="lblBairroPizzaria" destination="D1Q-Rb-Pfz" id="1gp-M9-aLP"/>
+                        <outlet property="lblCEPPizzaria" destination="ae7-q8-Rwm" id="PhB-fV-HY3"/>
                         <outlet property="lblCNPJ" destination="6xZ-EJ-qMI" id="BO8-Fm-VNc"/>
-                        <outlet property="lblCidade" destination="EOJ-O0-0tT" id="ok0-9p-b3r"/>
-                        <outlet property="lblEstado" destination="3WE-qV-08f" id="pWj-BK-fK9"/>
+                        <outlet property="lblCidadePizzaria" destination="EOJ-O0-0tT" id="7rv-bh-TMs"/>
+                        <outlet property="lblErrorSenha" destination="YP7-vy-p4m" id="eTn-LT-lTR"/>
+                        <outlet property="lblEstadoPizzaria" destination="3WE-qV-08f" id="gIa-ET-3GT"/>
                         <outlet property="lblNomeFantasia" destination="9Sd-fb-fIq" id="GNZ-fi-vJO"/>
-                        <outlet property="lblNumero" destination="JeG-za-QMk" id="vMK-P9-fX2"/>
+                        <outlet property="lblNumeroPizzaria" destination="JeG-za-QMk" id="QyH-RF-zUl"/>
                         <outlet property="lblRazaoSocial" destination="GsO-ww-9N4" id="Flf-Eq-NIs"/>
-                        <outlet property="lblRua" destination="5gn-Vn-mSx" id="QMz-M2-1Rh"/>
+                        <outlet property="lblRuaPizzaria" destination="5gn-Vn-mSx" id="IbW-kI-LkS"/>
+                        <outlet property="lblTelefonePizzaria" destination="w2O-Gz-xET" id="r30-1w-KXG"/>
                         <outlet property="swtEmpresa" destination="GO5-Ya-PJs" id="jbs-ai-eQq"/>
-                        <outlet property="txtBairro" destination="Wqz-mY-2Ow" id="zm6-Ks-MTg"/>
-                        <outlet property="txtCEP" destination="bmh-ab-qwI" id="oyh-25-jD3"/>
+                        <outlet property="txtBairro" destination="SNh-pR-WS5" id="nLf-gD-6nx"/>
+                        <outlet property="txtBairroPizzaria" destination="Wqz-mY-2Ow" id="xg7-tt-td5"/>
+                        <outlet property="txtCEP" destination="TOb-03-cf1" id="nIn-I8-BfQ"/>
+                        <outlet property="txtCEPPizzaria" destination="bmh-ab-qwI" id="mHQ-d7-il3"/>
                         <outlet property="txtCNPJ" destination="aNl-sy-YUb" id="ibD-N4-4mP"/>
                         <outlet property="txtCPF" destination="r0f-DS-Ajv" id="LDO-gI-J9z"/>
-                        <outlet property="txtCidade" destination="b5I-Fz-K9M" id="vIm-cY-l6Z"/>
+                        <outlet property="txtCidade" destination="8hF-IW-ghv" id="PUz-CG-e4D"/>
+                        <outlet property="txtCidadePizzaria" destination="b5I-Fz-K9M" id="If8-Fd-ihi"/>
+                        <outlet property="txtDDD" destination="469-Ed-cWG" id="UO6-V9-3aD"/>
+                        <outlet property="txtDDDPizzaria" destination="CQL-oF-EMd" id="Dqn-ox-X5N"/>
+                        <outlet property="txtDDI" destination="Zrd-tD-EH1" id="zfD-p2-WyS"/>
+                        <outlet property="txtDDIPizzaria" destination="4Sr-da-I5g" id="ald-G9-2fy"/>
                         <outlet property="txtDataNascimento" destination="ZPd-2w-JUC" id="lVO-Bw-Tks"/>
                         <outlet property="txtEmail" destination="2cB-9E-f5m" id="leD-s1-ma8"/>
-                        <outlet property="txtEstado" destination="1sW-g0-71Z" id="dGf-f6-D7z"/>
+                        <outlet property="txtEstado" destination="ACA-2Z-VZk" id="Icc-yY-ohS"/>
+                        <outlet property="txtEstadoPizzaria" destination="1sW-g0-71Z" id="BWh-si-BHJ"/>
                         <outlet property="txtNome" destination="HPB-Ee-8FW" id="Dsn-B4-MCf"/>
                         <outlet property="txtNomeFantasia" destination="W9D-I6-tsF" id="D0J-fJ-7u0"/>
-                        <outlet property="txtNumero" destination="NkB-oX-Pw2" id="oUV-ok-MPi"/>
+                        <outlet property="txtNumero" destination="juB-iS-01m" id="yO0-z2-Guj"/>
+                        <outlet property="txtNumeroPizzaria" destination="NkB-oX-Pw2" id="wq6-gU-bgK"/>
                         <outlet property="txtRazaoSocial" destination="8ij-wn-BSW" id="vwt-9I-BCh"/>
-                        <outlet property="txtRua" destination="IGk-84-VFR" id="fjf-8o-me8"/>
+                        <outlet property="txtRua" destination="ya9-Tk-U4C" id="l7d-AO-IyA"/>
+                        <outlet property="txtRuaPizzaria" destination="IGk-84-VFR" id="yNs-dw-3hd"/>
                         <outlet property="txtSenha" destination="qKo-QD-eib" id="oqF-VR-ZNf"/>
+                        <outlet property="txtTelefone" destination="bx4-Dg-qgy" id="zYV-96-TNG"/>
+                        <outlet property="txtTelefonePizzaria" destination="Gki-bT-pXb" id="wQ0-qZ-d9L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWq-9d-TCy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065.217391304348" y="132.58928571428572"/>
+            <point key="canvasLocation" x="1101" y="133"/>
         </scene>
         <!--ENDEREÇOS / TELEFONES-->
         <scene sceneID="8ob-CS-ECo">
@@ -1681,7 +1898,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8F-qQ-sar">
-                                <rect key="frame" x="0.0" y="44" width="375" height="1073"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="1122"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ce-I3-daW" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="-3" width="375" height="1180"/>
@@ -1717,7 +1934,7 @@
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Rua Teste" borderStyle="roundedRect" placeholder="Nome da rua" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6DM-so-gpf">
                                                                         <rect key="frame" x="78" y="0.0" width="264" height="30"/>
-                                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="2u9-zJ-Egi"/>
                                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="264" id="uqz-QV-sNa"/>
@@ -1745,7 +1962,7 @@
                                                                             </label>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="000000" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1f0-NL-ITG" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                                                 <rect key="frame" x="78" y="0.0" width="100" height="30"/>
-                                                                                <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="bKI-Kf-rPD"/>
                                                                                     <constraint firstAttribute="height" constant="30" id="wTl-08-wZe"/>
@@ -1773,7 +1990,7 @@
                                                                             </label>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="11111-11" borderStyle="roundedRect" placeholder="00000-00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6X2-Xf-Nn5" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                                                 <rect key="frame" x="56" y="0.0" width="100" height="30"/>
-                                                                                <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="30" id="gKO-GW-tcP"/>
                                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="lCH-Ao-bbO"/>
@@ -1799,7 +2016,7 @@
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bairro Teste" borderStyle="roundedRect" placeholder="Nome do bairro" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eyT-ss-c9P">
                                                                         <rect key="frame" x="77.5" y="0.0" width="264" height="30"/>
-                                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="6dw-O6-LrQ"/>
                                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="264" id="m2m-gW-6f7"/>
@@ -1820,7 +2037,7 @@
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Cidade Teste" borderStyle="roundedRect" placeholder="Nome da cidade" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6SU-2k-pBB">
                                                                         <rect key="frame" x="77.5" y="0.0" width="264" height="30"/>
-                                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="3JR-lG-6YS"/>
                                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="264" id="zfC-rf-E1L"/>
@@ -1841,7 +2058,7 @@
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Estado Teste" borderStyle="roundedRect" placeholder="Nome do estado" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i5k-pG-7at">
                                                                         <rect key="frame" x="78" y="0.0" width="264" height="30"/>
-                                                                        <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="Dd0-sA-7n4"/>
                                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="264" id="fjC-u7-oAx"/>
@@ -1864,6 +2081,9 @@
                                                                         <rect key="frame" x="256" y="0.0" width="86" height="30"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                         <state key="normal" title="ADICIONAR"/>
+                                                                        <connections>
+                                                                            <action selector="btnAdicionarOnClick:" destination="lHX-Go-3VY" eventType="touchUpInside" id="Uyr-jV-api"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -1898,7 +2118,7 @@
                                                                             </label>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+55" borderStyle="roundedRect" placeholder="+00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZQt-aT-Chb">
                                                                                 <rect key="frame" x="0.0" y="28.5" width="47.5" height="30"/>
-                                                                                <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="duM-cF-hEH"/>
                                                                                     <constraint firstAttribute="height" constant="30" id="tig-Nf-Zsg"/>
@@ -1919,7 +2139,7 @@
                                                                             </label>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="41" borderStyle="roundedRect" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZu-ve-IuE">
                                                                                 <rect key="frame" x="0.0" y="28.5" width="40" height="30"/>
-                                                                                <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="BPa-ju-j8F"/>
                                                                                     <constraint firstAttribute="height" constant="30" id="y2w-HE-BhN"/>
@@ -1941,7 +2161,7 @@
                                                                             </label>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="999999999" borderStyle="roundedRect" placeholder="000000000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fil-FH-NQ0" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                                                 <rect key="frame" x="0.0" y="28.5" width="100" height="30"/>
-                                                                                <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="backgroundColor" red="0.55350631480000001" green="0.84778708219999999" blue="0.96889442209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="eMg-MS-tyo"/>
                                                                                     <constraint firstAttribute="height" constant="30" id="tCG-9e-QyX"/>
@@ -2181,13 +2401,28 @@
                     <navigationItem key="navigationItem" title="ENDEREÇOS / TELEFONES" id="QPJ-Wb-2sp"/>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
+                        <outlet property="btnAdicionar" destination="xob-ww-UNm" id="czf-v3-Fdl"/>
+                        <outlet property="btnAdicionarTelefone" destination="Y4f-KJ-jSE" id="XPS-6K-Rzu"/>
                         <outlet property="btnContinuar" destination="rR0-nX-TFM" id="LOo-Qf-IcD"/>
                         <outlet property="btnFinalizar" destination="IZJ-Af-nv0" id="d6z-3k-av4"/>
+                        <outlet property="btnLimpar" destination="UXO-Vz-kHj" id="2lP-Mh-tEY"/>
+                        <outlet property="btnLimparTelefone" destination="HcB-MA-yD7" id="ji0-E8-U2Y"/>
                         <outlet property="ctvEnderecos" destination="BXh-GE-YIR" id="56a-en-KEs"/>
                         <outlet property="ctvTelefones" destination="Apj-6t-awn" id="ZDc-lm-eWt"/>
+                        <outlet property="lblListaEnderecos" destination="VOw-bI-b9h" id="n6d-To-tPt"/>
+                        <outlet property="lblListaTelefones" destination="VqU-7E-Ain" id="EAf-Qi-i60"/>
                         <outlet property="segControlEnderecoTelefone" destination="D4i-hJ-aCm" id="QEe-KU-TdZ"/>
                         <outlet property="svEnderecos" destination="71b-6b-rws" id="lKX-GD-l5Q"/>
                         <outlet property="svTelefones" destination="p6U-al-K6A" id="hUI-83-QhT"/>
+                        <outlet property="txtBairro" destination="eyT-ss-c9P" id="glR-HR-Cbk"/>
+                        <outlet property="txtCEP" destination="6X2-Xf-Nn5" id="TLC-Mb-7ya"/>
+                        <outlet property="txtCidade" destination="6SU-2k-pBB" id="xJc-HB-Xdq"/>
+                        <outlet property="txtDDD" destination="NZu-ve-IuE" id="HkP-si-Bip"/>
+                        <outlet property="txtDDI" destination="ZQt-aT-Chb" id="pzD-1f-PDd"/>
+                        <outlet property="txtEstado" destination="i5k-pG-7at" id="s3T-Ca-Th4"/>
+                        <outlet property="txtNumero" destination="fil-FH-NQ0" id="aFy-fU-v3T"/>
+                        <outlet property="txtNumeroFone" destination="fil-FH-NQ0" id="4sD-dq-Dnj"/>
+                        <outlet property="txtRua" destination="6DM-so-gpf" id="yUO-wO-Oub"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yXP-tQ-4tq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2265,7 +2500,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2o5-sw-LTU">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kz-Vd-ObV">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
@@ -4438,7 +4673,7 @@
         <segue reference="NfG-7O-53A"/>
         <segue reference="buY-41-rUf"/>
         <segue reference="1bN-Ma-p0C"/>
-        <segue reference="DQb-FI-f2o"/>
+        <segue reference="uj2-4W-Tl6"/>
         <segue reference="DuJ-mJ-ZdG"/>
     </inferredMetricsTieBreakers>
 </document>

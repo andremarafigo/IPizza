@@ -9,43 +9,30 @@
 import Foundation
 
 class Usuarios {
-    var nome : String
-    var cpf : String
-    var dataNascimento : Date
-    var email : String
-    var senha : String
-    var enderecos : [String]
-    var telefones : [String]
-    var pizzaria : Bool
-    var razaoSocial : String
-    var nomeFantasia : String
-    var cnpj : String
-    var cep : String
-    var rua : String
-    var numero : Int
-    var bairro : String
-    var cidade : String
-    var estado : String
-    var telefonesEmpresa : [String]
-    
-    init() {
-        nome = ""
-        cpf = ""
-        dataNascimento = Date()
-        email = ""
-        senha = ""
-        enderecos = []
-        telefones = []
-        pizzaria = false
-        razaoSocial = ""
-        nomeFantasia = ""
-        cnpj = ""
-        cep = ""
-        rua = ""
-        numero = 0
-        bairro = ""
-        cidade = ""
-        estado = ""
-        telefonesEmpresa = []
-    }
+    var nome : String?
+    var cpf : String?
+    var dataNascimento : String?
+    var email : String?
+    var ddi : String?
+    var ddd : String?
+    var telefone : String?
+    var cep : String?
+    var rua : String?
+    var numero : String?
+    var bairro : String?
+    var cidade : String?
+    var estado : String?
+    var pizzaria : Bool?
+    var razaoSocial : String?
+    var nomeFantasia : String?
+    var cnpj : String?
+    var cepPizzaria : String?
+    var ruaPizzaria : String?
+    var numeroPizzaria : String?
+    var bairroPizzaria : String?
+    var cidadePizzaria : String?
+    var estadoPizzaria : String?
+    var ddiPizzaria : String?
+    var dddPizzaria : String?
+    var telefonePizzaria : String?
 }

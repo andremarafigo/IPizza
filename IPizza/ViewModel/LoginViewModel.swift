@@ -11,46 +11,21 @@ import Firebase
 import FirebaseDatabase
 import CoreData
 
+let USERINFO = "users_info"
+
 class LoginViewModel {
 
     static let shared = LoginViewModel()
     
     var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    //var owner : LoginViewController!
+    var database : DatabaseReference!
     
     var users : [User] = []
     var user : User!
     
     init() {
-//        user = User (context: contexto)
-//        if users.count > 0 {
-//            var y: Int = 0
-//            for x in users {
-//                if x.email == nil {
-//                    contexto.delete(x)
-//                }else if y > 0 {
-//                    contexto.delete(x)
-//                }else {
-//                    y = 1
-//                }
-//            }
-//            //loadData()
-//        }else {
-            loadData()
-//            if users.count > 0 {
-//                var y: Int = 0
-//                for x in users {
-//                    if x.email == nil {
-//                        contexto.delete(x)
-//                    }else if y > 0 {
-//                        contexto.delete(x)
-//                    }else {
-//                        y = 1
-//                    }
-//                }
-//            }
-//       }
+        loadData()
     }
     
     func login (owner: LoginViewController, email: String, senha: String){
@@ -70,17 +45,61 @@ class LoginViewModel {
             
             Analytics.logEvent("login", parameters: ["nome: ": email])
             
+            self.loadDataFireBase(key: user.uid)
+            
             x = true
             
-            self.salvaUserCoreData(valida: x, usuario: email, password: senha)
+            self.salvaUserCoreData(valida: x, key: user.uid, usuario: email, password: senha)
             
             owner.navigationController?.popViewController(animated: true)
         }
     }
     
-    func salvaUserCoreData(valida: Bool, usuario: String, password: String) {
+    func loadDataFireBase(key: String){
+        self.database.child("Usuarios").child(key).observe(.value, with: { (snapshot: DataSnapshot) in
+            if let value = snapshot.value as? [String : Any] {
+                var usuarios = [Usuarios]()
+                let usuario = Usuarios()
+                
+                usuario.nome = value["Nome"] as? String
+                usuario.cpf = value["CPF"] as? String
+                usuario.dataNascimento = value["DataNascimento"] as? String
+                usuario.email = value["Email"] as? String
+                usuario.ddi = value["DDI"] as? String
+                usuario.ddd = value["DDD"] as? String
+                usuario.telefone = value["Telefone"] as? String
+                usuario.cep = value["CEP"] as? String
+                usuario.rua = value["Rua"] as? String
+                usuario.numero = value["Numero"] as? String
+                usuario.bairro = value["Bairro"] as? String
+                usuario.cidade = value["Cidade"] as? String
+                usuario.estado = value["Estado"] as? String
+                usuario.pizzaria = value["Pizzaria"] as? Bool
+                if usuario.pizzaria == true {
+                    usuario.razaoSocial = value["RazaoSocial"] as? String
+                    usuario.nomeFantasia = value["NomeFantasia"] as? String
+                    usuario.cnpj = value["CNPJ"] as? String
+                    usuario.cepPizzaria = value["CEPPizzaria"] as? String
+                    usuario.ruaPizzaria = value["RuaPizzaria"] as? String
+                    usuario.numeroPizzaria = value["NumeroPizzaria"] as? String
+                    usuario.bairroPizzaria = value["BairroPizzaria"] as? String
+                    usuario.cidadePizzaria = value["CidadePizzaria"] as? String
+                    usuario.estadoPizzaria = value["EstadoPizzaria"] as? String
+                    usuario.ddiPizzaria = value["DDIPizzaria"] as? String
+                    usuario.dddPizzaria = value["DDDPizzaria"] as? String
+                    usuario.telefonePizzaria = value["TelefonePizzaria"] as? String
+                }
+                
+                usuarios.append(usuario)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: USERINFO), object: nil, userInfo: ["usuarios": usuarios])
+            }
+        })
+    }
+    
+    func salvaUserCoreData(valida: Bool, key: String, usuario: String, password: String) {
         if valida == true {
             user = User (context: contexto)
+            user.key = key
             user.email = usuario
             user.senha = password
             if users.count > 0 {

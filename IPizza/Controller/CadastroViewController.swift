@@ -13,14 +13,26 @@ class CadastroViewController: UIViewController {
     
     var email: String = ""
     var senha: String = ""
-    var usuario: [String: Any]? = nil
+    var usuario: [String: Any]?
     
+    //Campos para Usuário
     @IBOutlet weak var txtNome: UITextField!
     @IBOutlet weak var txtCPF: UITextField!
     @IBOutlet weak var txtDataNascimento: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtSenha: UITextField!
+    @IBOutlet weak var lblErrorSenha: UILabel!
+    @IBOutlet weak var txtDDI: UITextField!
+    @IBOutlet weak var txtDDD: UITextField!
+    @IBOutlet weak var txtTelefone: UITextField!
+    @IBOutlet weak var txtCEP: UITextField!
+    @IBOutlet weak var txtRua: UITextField!
+    @IBOutlet weak var txtNumero: UITextField!
+    @IBOutlet weak var txtBairro: UITextField!
+    @IBOutlet weak var txtCidade: UITextField!
+    @IBOutlet weak var txtEstado: UITextField!
     
+    //Campos para Empresa
     @IBOutlet weak var swtEmpresa: UISwitch!
     
     @IBOutlet weak var lblRazaoSocial: UILabel!
@@ -32,28 +44,36 @@ class CadastroViewController: UIViewController {
     @IBOutlet weak var lblCNPJ: UILabel!
     @IBOutlet weak var txtCNPJ: UITextField!
     
-    @IBOutlet weak var lblCEP: UILabel!
-    @IBOutlet weak var txtCEP: UITextField!
+    @IBOutlet weak var lblCEPPizzaria: UILabel!
+    @IBOutlet weak var txtCEPPizzaria: UITextField!
     
-    @IBOutlet weak var lblRua: UILabel!
-    @IBOutlet weak var txtRua: UITextField!
+    @IBOutlet weak var lblRuaPizzaria: UILabel!
+    @IBOutlet weak var txtRuaPizzaria: UITextField!
     
-    @IBOutlet weak var lblNumero: UILabel!
-    @IBOutlet weak var txtNumero: UITextField!
+    @IBOutlet weak var lblNumeroPizzaria: UILabel!
+    @IBOutlet weak var txtNumeroPizzaria: UITextField!
     
-    @IBOutlet weak var lblBairro: UILabel!
-    @IBOutlet weak var txtBairro: UITextField!
+    @IBOutlet weak var lblBairroPizzaria: UILabel!
+    @IBOutlet weak var txtBairroPizzaria: UITextField!
     
-    @IBOutlet weak var lblCidade: UILabel!
-    @IBOutlet weak var txtCidade: UITextField!
+    @IBOutlet weak var lblCidadePizzaria: UILabel!
+    @IBOutlet weak var txtCidadePizzaria: UITextField!
     
-    @IBOutlet weak var lblEstado: UILabel!
-    @IBOutlet weak var txtEstado: UITextField!
+    @IBOutlet weak var lblEstadoPizzaria: UILabel!
+    @IBOutlet weak var txtEstadoPizzaria: UITextField!
+    
+    @IBOutlet weak var lblTelefonePizzaria: UILabel!
+    @IBOutlet weak var txtDDIPizzaria: UITextField!
+    @IBOutlet weak var txtDDDPizzaria: UITextField!
+    @IBOutlet weak var txtTelefonePizzaria: UITextField!
+    
     
     private var datePicker: UIDatePicker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        lblErrorSenha.isHidden = true
         
         swtEmpresaOnOff()
         
@@ -92,60 +112,82 @@ class CadastroViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
 
+    @IBAction func btnCadastrarOnClick(_ sender: Any) {
+        let json: [String : Any]? = montaJson()
+        if json != nil {
+            CadastroViewModel.shared.createUsuario(owner: self, usuario: json, email: txtEmail.text!, senha: txtSenha.text!)
+        }
+    }
+    
+    @IBAction func txtSenhaEditEnd(_ sender: Any) {
+        if (txtSenha.text?.count)! < 6 {
+            lblErrorSenha.isHidden = false
+        }else {
+            lblErrorSenha.isHidden = true
+        }
+    }
+    
     func swtEmpresaOnOff() {
         if swtEmpresa.isOn {
             lblRazaoSocial.isHidden = false
             lblNomeFantasia.isHidden = false
             lblCNPJ.isHidden = false
-            lblCEP.isHidden = false
-            lblRua.isHidden = false
-            lblNumero.isHidden = false
-            lblBairro.isHidden = false
-            lblCidade.isHidden = false
-            lblEstado.isHidden = false
+            lblCEPPizzaria.isHidden = false
+            lblRuaPizzaria.isHidden = false
+            lblNumeroPizzaria.isHidden = false
+            lblBairroPizzaria.isHidden = false
+            lblCidadePizzaria.isHidden = false
+            lblEstadoPizzaria.isHidden = false
             
             txtRazaoSocial.isHidden = false
             txtNomeFantasia.isHidden = false
             txtCNPJ.isHidden = false
-            txtCEP.isHidden = false
-            txtRua.isHidden = false
-            txtNumero.isHidden = false
-            txtBairro.isHidden = false
-            txtCidade.isHidden = false
-            txtEstado.isHidden = false
+            txtCEPPizzaria.isHidden = false
+            txtRuaPizzaria.isHidden = false
+            txtNumeroPizzaria.isHidden = false
+            txtBairroPizzaria.isHidden = false
+            txtCidadePizzaria.isHidden = false
+            txtEstadoPizzaria.isHidden = false
+            lblTelefonePizzaria.isHidden = false
+            txtDDIPizzaria.isHidden = false
+            txtDDDPizzaria.isHidden = false
+            txtTelefonePizzaria.isHidden = false
             
         }else{
             lblRazaoSocial.isHidden = true
             lblNomeFantasia.isHidden = true
             lblCNPJ.isHidden = true
-            lblCEP.isHidden = true
-            lblRua.isHidden = true
-            lblNumero.isHidden = true
-            lblBairro.isHidden = true
-            lblCidade.isHidden = true
-            lblEstado.isHidden = true
+            lblCEPPizzaria.isHidden = true
+            lblRuaPizzaria.isHidden = true
+            lblNumeroPizzaria.isHidden = true
+            lblBairroPizzaria.isHidden = true
+            lblCidadePizzaria.isHidden = true
+            lblEstadoPizzaria.isHidden = true
             
             txtRazaoSocial.isHidden = true
             txtNomeFantasia.isHidden = true
             txtCNPJ.isHidden = true
-            txtCEP.isHidden = true
-            txtRua.isHidden = true
-            txtNumero.isHidden = true
-            txtBairro.isHidden = true
-            txtCidade.isHidden = true
-            txtEstado.isHidden = true
-            
+            txtCEPPizzaria.isHidden = true
+            txtRuaPizzaria.isHidden = true
+            txtNumeroPizzaria.isHidden = true
+            txtBairroPizzaria.isHidden = true
+            txtCidadePizzaria.isHidden = true
+            txtEstadoPizzaria.isHidden = true
+            lblTelefonePizzaria.isHidden = true
+            txtDDIPizzaria.isHidden = true
+            txtDDDPizzaria.isHidden = true
+            txtTelefonePizzaria.isHidden = true
         }
     }
     
-    func buscaDadosUsuario() -> [String : Any]? {
+    func montaJson() -> [String : Any]? {
         
         var usuario: [String : Any] = [:]
         
         var camposObrigatorios : Bool = false
         
         if swtEmpresa.isOn {
-            if txtNome.text == "" || txtCPF.text == "" || txtDataNascimento == nil || txtEmail == nil || txtSenha == nil || txtRazaoSocial == nil || txtNomeFantasia == nil || txtCNPJ == nil || txtCEP == nil || txtRua == nil || txtNumero == nil || txtBairro == nil || txtCidade == nil || txtEstado == nil {
+            if txtNome.text == "" || txtCPF.text == "" || txtDataNascimento == nil || txtEmail.text == "" || txtSenha.text == "" || (txtSenha.text?.count)! < 6 || txtDDI.text == "" || txtDDD.text == "" || txtTelefone.text == "" || txtCEP.text == "" || txtRua.text == "" || txtNumero.text == "" || txtBairro.text == "" || txtCidade.text == "" || txtEstado.text == "" || txtRazaoSocial.text == "" || txtNomeFantasia.text == "" || txtCNPJ.text == "" || txtCEPPizzaria.text == "" || txtRuaPizzaria.text == "" || txtNumeroPizzaria.text == "" || txtBairroPizzaria.text == "" || txtCidadePizzaria.text == "" || txtEstadoPizzaria.text == "" || txtDDIPizzaria.text == "" || txtDDDPizzaria.text == "" || txtTelefonePizzaria.text == ""{
                 
                 camposObrigatorios = true
                 
@@ -160,30 +202,39 @@ class CadastroViewController: UIViewController {
                 return nil
                 
             } else if camposObrigatorios == false {
-                usuario = ["nome": txtNome.text! as String,
-                           "cpf": txtCPF.text! as String,
-                           "dataNascimento": txtDataNascimento.text! as String,
-                           "email": txtEmail.text! as String,
-                           "senha": txtSenha.text! as String,
-                           "enderecos": [""] as [String],
-                           "telefones": [""] as [String],
-                           "pizzaria": swtEmpresa.isOn,
-                           "razaoSocial": txtRazaoSocial.text! as String,
-                           "nomeFantasia": txtNomeFantasia.text! as String,
-                           "cnpj": txtCNPJ.text! as String,
-                           "cep": txtCEP.text! as String,
-                           "rua": txtRua.text! as String,
-                           "numero": txtNumero.text! as String,
-                           "bairro": txtBairro.text! as String,
-                           "cidade": txtCidade.text! as String,
-                           "estado": txtEstado.text! as String,
-                           "telefonesEmpresa": [""] as [String]
-                    ] as [String : Any]
+                usuario = [
+                    "Nome": txtNome.text! as String,
+                    "CPF": txtCPF.text! as String,
+                    "DataNascimento": txtDataNascimento.text! as String,
+                    "Email": txtEmail.text! as String,
+                    "Rua": txtRua.text! as String,
+                    "Numero": txtNumero.text! as String,
+                    "CEP": txtCEP.text! as String,
+                    "Bairro": txtBairro.text! as String,
+                    "Cidade": txtCidade.text! as String,
+                    "Estado": txtEstado.text! as String,
+                    "DDI": txtDDI.text! as String,
+                    "DDD": txtDDD.text! as String,
+                    "Telefone": txtTelefone.text! as String,
+                    "Pizzaria": swtEmpresa.isOn,
+                    "RazaoSocial": txtRazaoSocial.text! as String,
+                    "NomeFantasia": txtNomeFantasia.text! as String,
+                    "CNPJ": txtCNPJ.text! as String,
+                    "CEPPizzaria": txtCEPPizzaria.text! as String,
+                    "RuaPizzaria": txtRuaPizzaria.text! as String,
+                    "NumeroPizzaria": txtNumeroPizzaria.text! as String,
+                    "BairroPizzaria": txtBairroPizzaria.text! as String,
+                    "CidadePizzaria": txtCidadePizzaria.text! as String,
+                    "EstadoPizzaria": txtEstadoPizzaria.text! as String,
+                    "DDIPizzaria": txtDDI.text! as String,
+                    "DDDPizzaria": txtDDD.text! as String,
+                    "TelefonePizzaria": txtTelefonePizzaria.text! as String
+                ]
                 return usuario
             }
             
         }else{
-            if txtNome.text == "" || txtCPF.text == "" || txtDataNascimento == nil || txtEmail == nil || txtSenha == nil {
+            if txtNome.text == "" || txtCPF.text == "" || txtDataNascimento == nil || txtEmail.text == "" || txtSenha.text == "" || (txtSenha.text?.count)! < 6 || txtDDI.text == "" || txtDDD.text == "" || txtTelefone.text == "" || txtCEP.text == "" || txtRua.text == "" || txtNumero.text == "" || txtBairro.text == "" || txtCidade.text == "" || txtEstado.text == ""{
                 
                 camposObrigatorios = true
                 
@@ -198,20 +249,28 @@ class CadastroViewController: UIViewController {
                 return nil
                 
             }else if camposObrigatorios == false {
-                usuario = ["nome": txtNome.text! as String,
-                           "cpf": txtCPF.text! as String,
-                           "dataNascimento": txtDataNascimento.text! as String,
-                           "email": txtEmail.text! as String,
-                           "senha": txtSenha.text! as String,
-                           "enderecos": [""] as [String],
-                           "telefones": [""] as [String],
-                           "pizzaria": swtEmpresa.isOn,
-                    ] as [String : Any]
+                usuario = [
+                    "Nome": txtNome.text! as String,
+                    "CPF": txtCPF.text! as String,
+                    "DataNascimento": txtDataNascimento.text! as String,
+                    "Email": txtEmail.text! as String,
+                    "Rua": txtRua.text! as String,
+                    "Numero": txtNumero.text! as String,
+                    "CEP": txtCEP.text! as String,
+                    "Bairro": txtBairro.text! as String,
+                    "Cidade": txtCidade.text! as String,
+                    "Estado": txtEstado.text! as String,
+                    "DDI": txtDDI.text! as String,
+                    "DDD": txtDDD.text! as String,
+                    "Telefone": txtTelefone.text! as String,
+                    "Pizzaria": swtEmpresa.isOn
+                ]
                 return usuario
             }
         }
     }
     
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let next = segue.destination as! EnderecosTelefonesViewController
         next.owner = self
@@ -230,4 +289,5 @@ class CadastroViewController: UIViewController {
             next.usuario = nil
         }
     }
+     */
 }
