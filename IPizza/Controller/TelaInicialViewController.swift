@@ -17,6 +17,8 @@ class TelaInicialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        LoginViewModel.shared
+        
         viewBordaTittle.layer.cornerRadius = viewBordaTittle.frame.size.width/2
         viewBordaTittle.clipsToBounds = true
         
