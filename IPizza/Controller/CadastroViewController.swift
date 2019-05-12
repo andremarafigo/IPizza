@@ -76,7 +76,7 @@ class CadastroViewController: UIViewController {
         
         lblErrorSenha.isHidden = true
         
-        swtEmpresaOnOff()
+        validaTextFilds()
         
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
@@ -181,6 +181,85 @@ class CadastroViewController: UIViewController {
         }
     }
     
+    func validaTextFilds(){
+        if editarUsuario != nil {
+            txtNome.text = editarUsuario.nome
+            txtCPF.text = editarUsuario.cpf
+            txtDataNascimento.text = editarUsuario.dataNascimento
+            txtEmail.text = editarUsuario.email
+            txtSenha.text = LoginViewModel.shared.users[0].senha
+            txtDDI.text = editarUsuario.ddi
+            txtDDD.text = editarUsuario.ddd
+            txtTelefone.text = editarUsuario.telefone
+            txtCEP.text = editarUsuario.cep
+            txtRua.text = editarUsuario.rua
+            txtNumero.text = editarUsuario.numero
+            txtRua.text = editarUsuario.rua
+            txtBairro.text = editarUsuario.bairro
+            txtCidade.text = editarUsuario.cidade
+            txtEstado.text = editarUsuario.estado
+            swtEmpresa.setOn(editarUsuario.pizzaria!, animated: true)
+            if editarUsuario.pizzaria == true {
+                txtRazaoSocial.text = editarUsuario.razaoSocial
+                txtNomeFantasia.text = editarUsuario.nomeFantasia
+                txtCNPJ.text = editarUsuario.cnpj
+                txtCEPPizzaria.text = editarUsuario.cepPizzaria
+                txtRuaPizzaria.text = editarUsuario.ruaPizzaria
+                txtNumeroPizzaria.text = editarUsuario.numeroPizzaria
+                txtBairroPizzaria.text = editarUsuario.bairroPizzaria
+                txtCidadePizzaria.text = editarUsuario.cidadePizzaria
+                txtEstadoPizzaria.text = editarUsuario.estadoPizzaria
+                txtDDIPizzaria.text = editarUsuario.ddiPizzaria
+                txtDDDPizzaria.text = editarUsuario.dddPizzaria
+                txtTelefonePizzaria.text = editarUsuario.telefonePizzaria
+            }else{
+                txtRazaoSocial.text = ""
+                txtNomeFantasia.text = ""
+                txtCNPJ.text = ""
+                txtCEPPizzaria.text = ""
+                txtRuaPizzaria.text = ""
+                txtNumeroPizzaria.text = ""
+                txtBairroPizzaria.text = ""
+                txtCidadePizzaria.text = ""
+                txtEstadoPizzaria.text = ""
+                txtDDIPizzaria.text = ""
+                txtDDDPizzaria.text = ""
+                txtTelefonePizzaria.text = ""
+            }
+        }else {
+            txtNome.text = ""
+            txtCPF.text = ""
+            txtDataNascimento.text = ""
+            txtEmail.text = ""
+            txtSenha.text = ""
+            txtDDI.text = ""
+            txtDDD.text = ""
+            txtTelefone.text = ""
+            txtCEP.text = ""
+            txtRua.text = ""
+            txtNumero.text = ""
+            txtRua.text = ""
+            txtBairro.text = ""
+            txtCidade.text = ""
+            txtEstado.text = ""
+            swtEmpresa.setOn(false, animated: true)
+            txtRazaoSocial.text = ""
+            txtNomeFantasia.text = ""
+            txtCNPJ.text = ""
+            txtCEPPizzaria.text = ""
+            txtRuaPizzaria.text = ""
+            txtNumeroPizzaria.text = ""
+            txtBairroPizzaria.text = ""
+            txtCidadePizzaria.text = ""
+            txtEstadoPizzaria.text = ""
+            txtDDIPizzaria.text = ""
+            txtDDDPizzaria.text = ""
+            txtTelefonePizzaria.text = ""
+        }
+        
+        swtEmpresaOnOff()
+    }
+    
     func montaJson() -> [String : Any]? {
         
         var usuario: [String : Any] = [:]
@@ -188,39 +267,6 @@ class CadastroViewController: UIViewController {
         var camposObrigatorios : Bool = false
         
         if swtEmpresa.isOn {
-            
-            if editarUsuario != nil {
-                txtNome.text = editarUsuario.nome
-                txtCPF.text = editarUsuario.cpf
-                txtDataNascimento.text = editarUsuario.dataNascimento
-                txtEmail.text = editarUsuario.email
-                txtSenha.text = LoginViewModel.shared.users[0].senha
-                txtDDI.text = editarUsuario.ddi
-                txtDDD.text = editarUsuario.ddd
-                txtTelefone.text = editarUsuario.telefone
-                txtCEP.text = editarUsuario.cep
-                txtRua.text = editarUsuario.rua
-                txtNumero.text = editarUsuario.numero
-                txtRua.text = editarUsuario.rua
-                txtBairro.text = editarUsuario.bairro
-                txtCidade.text = editarUsuario.cidade
-                txtEstado.text = editarUsuario.estado
-                swtEmpresa.setOn(editarUsuario.pizzaria!, animated: true)
-                if editarUsuario.pizzaria == true {
-                    txtRazaoSocial.text = editarUsuario.razaoSocial
-                    txtNomeFantasia.text = editarUsuario.nomeFantasia
-                    txtCNPJ.text = editarUsuario.cnpj
-                    txtCEPPizzaria.text = editarUsuario.cepPizzaria
-                    txtRuaPizzaria.text = editarUsuario.ruaPizzaria
-                    txtNumeroPizzaria.text = editarUsuario.numeroPizzaria
-                    txtBairroPizzaria.text = editarUsuario.bairroPizzaria
-                    txtCidadePizzaria.text = editarUsuario.cidadePizzaria
-                    txtEstadoPizzaria.text = editarUsuario.estadoPizzaria
-                    txtDDIPizzaria.text = editarUsuario.ddiPizzaria
-                    txtDDDPizzaria.text = editarUsuario.dddPizzaria
-                    txtTelefonePizzaria.text = editarUsuario.telefonePizzaria
-                }
-            }
             
             if txtNome.text == "" || txtCPF.text == "" || txtDataNascimento == nil || txtEmail.text == "" || txtSenha.text == "" || (txtSenha.text?.count)! < 6 || txtDDI.text == "" || txtDDD.text == "" || txtTelefone.text == "" || txtCEP.text == "" || txtRua.text == "" || txtNumero.text == "" || txtBairro.text == "" || txtCidade.text == "" || txtEstado.text == "" || txtRazaoSocial.text == "" || txtNomeFantasia.text == "" || txtCNPJ.text == "" || txtCEPPizzaria.text == "" || txtRuaPizzaria.text == "" || txtNumeroPizzaria.text == "" || txtBairroPizzaria.text == "" || txtCidadePizzaria.text == "" || txtEstadoPizzaria.text == "" || txtDDIPizzaria.text == "" || txtDDDPizzaria.text == "" || txtTelefonePizzaria.text == ""{
                 
