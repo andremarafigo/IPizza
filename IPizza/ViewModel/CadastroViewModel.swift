@@ -45,7 +45,21 @@ class CadastroViewModel {
             // show the alert
             owner.present(alert, animated: true, completion: nil)
             //return
-        } 
+        }
+    }
+    
+    func alteraUsuario(owner: CadastroViewController, usuario: [String : Any]?) {
+        refUsuarios.child(LoginViewModel.shared.users[0].key!).setValue(usuario)
+            
+        let alert = UIAlertController(title: "Cadastro alterado com sucesso.", message: "Clique em OK para continuar!", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            owner.navigationController?.popViewController(animated: true)
+        }))
+        
+        // show the alert
+        owner.present(alert, animated: true, completion: nil)
+        return
     }
     
 }

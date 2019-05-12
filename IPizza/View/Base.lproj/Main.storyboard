@@ -1845,16 +1845,19 @@
                     </navigationItem>
                     <size key="freeformSize" width="414" height="2340"/>
                     <connections>
+                        <outlet property="btnCadastrar" destination="VRi-5O-CXe" id="9jr-tv-xi5"/>
                         <outlet property="lblBairroPizzaria" destination="D1Q-Rb-Pfz" id="1gp-M9-aLP"/>
                         <outlet property="lblCEPPizzaria" destination="ae7-q8-Rwm" id="PhB-fV-HY3"/>
                         <outlet property="lblCNPJ" destination="6xZ-EJ-qMI" id="BO8-Fm-VNc"/>
                         <outlet property="lblCidadePizzaria" destination="EOJ-O0-0tT" id="7rv-bh-TMs"/>
+                        <outlet property="lblEmail" destination="QAG-Ql-SJE" id="kcp-LI-gdK"/>
                         <outlet property="lblErrorSenha" destination="YP7-vy-p4m" id="eTn-LT-lTR"/>
                         <outlet property="lblEstadoPizzaria" destination="3WE-qV-08f" id="gIa-ET-3GT"/>
                         <outlet property="lblNomeFantasia" destination="9Sd-fb-fIq" id="GNZ-fi-vJO"/>
                         <outlet property="lblNumeroPizzaria" destination="JeG-za-QMk" id="QyH-RF-zUl"/>
                         <outlet property="lblRazaoSocial" destination="GsO-ww-9N4" id="Flf-Eq-NIs"/>
                         <outlet property="lblRuaPizzaria" destination="5gn-Vn-mSx" id="IbW-kI-LkS"/>
+                        <outlet property="lblSenha" destination="5Tv-aT-1GB" id="AmO-Bh-biD"/>
                         <outlet property="lblTelefonePizzaria" destination="w2O-Gz-xET" id="r30-1w-KXG"/>
                         <outlet property="swtEmpresa" destination="GO5-Ya-PJs" id="jbs-ai-eQq"/>
                         <outlet property="txtBairro" destination="SNh-pR-WS5" id="nLf-gD-6nx"/>

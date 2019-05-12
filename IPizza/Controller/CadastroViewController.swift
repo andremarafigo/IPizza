@@ -17,6 +17,9 @@ class CadastroViewController: UIViewController {
     var editarUsuario: Usuarios!
     
     //Campos para Usuário
+    @IBOutlet weak var lblEmail: UILabel!
+    @IBOutlet weak var lblSenha: UILabel!
+    
     @IBOutlet weak var txtNome: UITextField!
     @IBOutlet weak var txtCPF: UITextField!
     @IBOutlet weak var txtDataNascimento: UITextField!
@@ -68,6 +71,7 @@ class CadastroViewController: UIViewController {
     @IBOutlet weak var txtDDDPizzaria: UITextField!
     @IBOutlet weak var txtTelefonePizzaria: UITextField!
     
+    @IBOutlet weak var btnCadastrar: UIButton!
     
     private var datePicker: UIDatePicker?
     
@@ -116,7 +120,11 @@ class CadastroViewController: UIViewController {
     @IBAction func btnCadastrarOnClick(_ sender: Any) {
         let json: [String : Any]? = montaJson()
         if json != nil {
-            CadastroViewModel.shared.createUsuario(owner: self, usuario: json, email: txtEmail.text!, senha: txtSenha.text!)
+            if editarUsuario != nil {
+                CadastroViewModel.shared.alteraUsuario(owner: self, usuario: json)
+            }else{
+                CadastroViewModel.shared.createUsuario(owner: self, usuario: json, email: txtEmail.text!, senha: txtSenha.text!)
+            }
         }
     }
     
@@ -226,6 +234,11 @@ class CadastroViewController: UIViewController {
                 txtDDDPizzaria.text = ""
                 txtTelefonePizzaria.text = ""
             }
+            lblEmail.isHidden = true
+            txtEmail.isHidden = true
+            lblSenha.isHidden = true
+            txtSenha.isHidden = true
+            btnCadastrar.setTitle("Alterar", for: .normal)
         }else {
             txtNome.text = ""
             txtCPF.text = ""
@@ -255,6 +268,7 @@ class CadastroViewController: UIViewController {
             txtDDIPizzaria.text = ""
             txtDDDPizzaria.text = ""
             txtTelefonePizzaria.text = ""
+            btnCadastrar.setTitle("Cadastrar", for: .normal)
         }
         
         swtEmpresaOnOff()
