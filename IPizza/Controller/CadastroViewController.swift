@@ -239,7 +239,7 @@ class CadastroViewController: UIViewController {
             lblSenha.isHidden = true
             txtSenha.isHidden = true
             btnCadastrar.setTitle("Alterar", for: .normal)
-        }else {
+        }/*else { //Descomentar quando acabar os testes.
             txtNome.text = ""
             txtCPF.text = ""
             txtDataNascimento.text = ""
@@ -269,7 +269,7 @@ class CadastroViewController: UIViewController {
             txtDDDPizzaria.text = ""
             txtTelefonePizzaria.text = ""
             btnCadastrar.setTitle("Cadastrar", for: .normal)
-        }
+        }*/
         
         swtEmpresaOnOff()
     }

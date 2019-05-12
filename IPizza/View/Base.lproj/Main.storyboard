@@ -112,6 +112,7 @@
                                                             <constraint firstAttribute="height" constant="100" id="qYs-na-DWg"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                        <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="Alterar Conta" image="icons8-editar-propriedade-48">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -133,6 +134,7 @@
                                                             <constraint firstAttribute="width" constant="300" id="xoI-hL-2IH"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                        <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="Pedidos Em Andamento" image="icons8-entrega-48">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -154,6 +156,7 @@
                                                             <constraint firstAttribute="height" constant="100" id="Vbm-Kk-rbG"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                        <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="Pedidos Finalizados" image="icons8-verificar-48">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -172,6 +175,7 @@
                                                             <constraint firstAttribute="width" constant="300" id="xUt-mK-gp5"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                        <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="Página da Pizzaria" image="icons8-empresa-de-pequena-porte-48">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -1618,7 +1622,7 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="11111-11" borderStyle="roundedRect" placeholder="00000-00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bmh-ab-qwI" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="11111-111" borderStyle="roundedRect" placeholder="00000-000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bmh-ab-qwI" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                         <rect key="frame" x="75" y="1386" width="150" height="30"/>
                                                         <color key="backgroundColor" red="0.83830016851425171" green="0.89742767810821533" blue="0.9201093316078186" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1629,7 +1633,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="postal-code"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="00000-00"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="00000-000"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rua:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gn-Vn-mSx">
@@ -4676,7 +4680,7 @@
         <segue reference="NfG-7O-53A"/>
         <segue reference="buY-41-rUf"/>
         <segue reference="1bN-Ma-p0C"/>
-        <segue reference="uj2-4W-Tl6"/>
+        <segue reference="DQb-FI-f2o"/>
         <segue reference="DuJ-mJ-ZdG"/>
     </inferredMetricsTieBreakers>
 </document>

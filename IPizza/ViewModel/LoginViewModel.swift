@@ -28,8 +28,10 @@ class LoginViewModel {
     
     init() {
         loadData()
-        if users[0].email != nil {
-            loadDataFireBase(key: users[0].key!)
+        if users.count > 0 {
+            if users[0].email != nil {
+                loadDataFireBase(valida: false, owner: nil, key: users[0].key!, email: users[0].email!, senha: users[0].senha!)
+            }
         }
     }
     
@@ -50,7 +52,7 @@ class LoginViewModel {
                     owner.present(alert, animated: true, completion: nil)
                     return
             }
-            
+        
             print("Deu certo")
             
             Analytics.setUserProperty("sim", forName: "Entrou")
@@ -58,16 +60,13 @@ class LoginViewModel {
             Analytics.logEvent("login", parameters: ["nome: ": email])
             
             x = true
+            self.loadDataFireBase(valida: x, owner: owner, key: user.uid, email: email, senha: senha)
             
-            self.loadDataFireBase(key: user.uid)
-            
-            self.salvaUserCoreData(valida: x, key: user.uid, usuario: email, password: senha, pizzaria: self.usuario.pizzaria!)
-            
-            owner.navigationController?.popViewController(animated: true)
+            //self.salvaUserCoreData(valida: x, key: user.uid, usuario: email, password: senha)
         }
     }
     
-    func loadDataFireBase(key: String){
+    func loadDataFireBase(valida: Bool, owner: LoginViewController!, key: String, email: String, senha: String){
         
         database = Database.database().reference()
         self.database.child("Usuarios").child(key).observe(.value, with: { (snapshot: DataSnapshot) in
@@ -101,26 +100,35 @@ class LoginViewModel {
                     self.usuario.dddPizzaria = value["DDDPizzaria"] as? String
                     self.usuario.telefonePizzaria = value["TelefonePizzaria"] as? String
                 }
+                if self.users.count > 0 {
+                    if self.users[0].email != email {
+                        self.salvaUserCoreData(key: key, usuario: email, password: senha, pizzaria: self.usuario.pizzaria!)
+                    }
+                }else {
+                    self.salvaUserCoreData(key: key, usuario: email, password: senha, pizzaria: self.usuario.pizzaria!)
+                }
+                
+                if valida == true {
+                    owner.navigationController?.popViewController(animated: true)
+                }
                 
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: USERINFO), object: nil, userInfo: ["usuario": self.usuario])
             }
         })
     }
     
-    func salvaUserCoreData(valida: Bool, key: String, usuario: String, password: String, pizzaria: Bool) {
-        if valida == true {
-            user = User (context: contexto)
-            user.key = key
-            user.email = usuario
-            user.senha = password
-            user.pizzaria = pizzaria
-            if users.count > 0 {
-                users[0] = user
-            }else{
-                users.append(user)
-            }
-            saveData()
+    func salvaUserCoreData(key: String, usuario: String, password: String, pizzaria: Bool) {
+        user = User (context: contexto)
+        user.key = key
+        user.email = usuario
+        user.senha = password
+        user.pizzaria = pizzaria
+        if users.count > 0 {
+            users[0] = user
+        }else{
+            users.append(user)
         }
+        saveData()
     }
     
     func saveData() {

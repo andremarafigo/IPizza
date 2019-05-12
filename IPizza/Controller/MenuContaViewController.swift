@@ -46,7 +46,11 @@ class MenuContaViewController: UIViewController {
                 btnAlterarConta.isHidden = false
                 btnPedidosEmAndamento.isHidden = false
                 btnPedidosFinalizados.isHidden = false
-                btnPaginaDaPizzaria.isHidden = false
+                if LoginViewModel.shared.users[0].pizzaria == true {
+                    btnPaginaDaPizzaria.isHidden = false
+                }else{
+                    btnPaginaDaPizzaria.isHidden = true
+                }
                 btnSair.isHidden = false
                 btnEfetuarLogin.isHidden = true
             }else {
