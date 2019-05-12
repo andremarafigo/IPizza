@@ -122,7 +122,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <segue destination="hJd-kd-FU7" kind="show" id="DQb-FI-f2o"/>
+                                                            <segue destination="hJd-kd-FU7" kind="show" identifier="alterarUsuario" id="DQb-FI-f2o"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECR-fV-0SU">
@@ -4673,7 +4673,7 @@
         <segue reference="NfG-7O-53A"/>
         <segue reference="buY-41-rUf"/>
         <segue reference="1bN-Ma-p0C"/>
-        <segue reference="uj2-4W-Tl6"/>
+        <segue reference="DQb-FI-f2o"/>
         <segue reference="DuJ-mJ-ZdG"/>
     </inferredMetricsTieBreakers>
 </document>

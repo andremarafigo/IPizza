@@ -71,6 +71,9 @@ class MenuContaViewController: UIViewController {
         if segue.identifier == "efetuarLogin" {
             let next = segue.destination as! LoginViewController
             next.owner = self
+        }else if segue.identifier == "alterarUsuario" {
+            let next = segue.destination as! CadastroViewController
+            next.editarUsuario = LoginViewModel.shared.usuario
         }
     }
     
