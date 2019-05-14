@@ -3928,7 +3928,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="Ef9-T5-df7"/>
                     <navigationItem key="navigationItem" title="PIZZARIAS" id="eik-BA-3Fk"/>
                     <connections>
-                        <outlet property="mapa" destination="qeu-OY-mZJ" id="UNV-3L-OsO"/>
+                        <outlet property="mapaView" destination="qeu-OY-mZJ" id="3Kh-UY-Eou"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftd-Hp-X2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
