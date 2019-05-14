@@ -979,6 +979,7 @@
                     <navigationItem key="navigationItem" id="v0z-zZ-CeO"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="mapaView" destination="6io-AP-4VE" id="t9c-Zs-o9l"/>
                         <outlet property="viewBordaTittle" destination="YDa-zN-JOR" id="IVo-Pl-xpM"/>
                         <outlet property="viewTitle" destination="Q03-KD-vw1" id="L8W-m6-SjL"/>
                     </connections>
