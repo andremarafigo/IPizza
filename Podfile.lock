@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.8.2)
   - Firebase (5.20.0):
     - Firebase/Core (= 5.20.0)
   - Firebase/Auth (5.20.0):
@@ -71,16 +72,20 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - SideMenu (5.0.1)
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
+  - Alamofire
   - Firebase
   - Firebase/Auth
   - Firebase/Database
   - JMMaskTextField-Swift
   - SideMenu
+  - SwiftyJSON (~> 4.2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -95,8 +100,10 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - SideMenu
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Firebase: 5090da4bb82900179004133bb2b2178919387fd9
   FirebaseAnalytics: fd72a26bf8dac84cefba2f0864366f718555a5b0
   FirebaseAuth: dd7bbf03a5aee0eafb3a1aee4d2812bd74bac890
@@ -111,7 +118,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SideMenu: 87efd943737bb83aedf0358884d09fcf5576636d
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 59b1a85c4b4a134c33d0e523c23111e7ad31b883
+PODFILE CHECKSUM: b38b6bd920b3a7a84ce36e1b9329ce2cac6a63fc
 
 COCOAPODS: 1.6.1

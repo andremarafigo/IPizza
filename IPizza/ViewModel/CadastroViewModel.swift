@@ -9,6 +9,8 @@
 import Foundation
 import Firebase
 import FirebaseDatabase
+import Alamofire
+import SwiftyJSON
 
 class CadastroViewModel {
     
@@ -60,6 +62,38 @@ class CadastroViewModel {
         // show the alert
         owner.present(alert, animated: true, completion: nil)
         return
+    }
+    
+    //@IBAction func txtCepChanged(_ sender: Any) {
+    func buscaEnderecoPorCEP(owner : CadastroViewController, cep : String) {
+        
+        //let urlBase = "http://cep.republicavirtual.com.br/web_cep.php?cep="
+        let urlBase = "https://viacep.com.br/ws/"
+        let cep = cep.replacingOccurrences(of: "-", with: "")
+        //let final = "&formato=json"
+        let final = "json"
+        
+        if cep.count == 8 {
+            let url = "\(urlBase)/\(cep)/\(final)"
+            
+            Alamofire.request(url).responseJSON { (response) in
+                
+                if response.result.isSuccess {
+                    let json = JSON(response.result.value!)
+                    
+//                    self.cep.text = json["cep"].stringValue
+//                    self.cidade.text = json["localidade"].stringValue
+//                    self.endereco.text = json["logradouro"].stringValue
+//                    self.estado.text = json["uf"].stringValue
+                    print(json)
+                    
+                }else if (response.result.error != nil){
+                    print("Error buscar CEP -> \(response.result)")
+                }else if response.result.isFailure{
+                    print("Falha ao buscar CEP")
+                }
+            }
+        }
     }
     
 }

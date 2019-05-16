@@ -14,8 +14,8 @@ class TelaInicialViewController: UIViewController, CLLocationManagerDelegate {
     let lm = CLLocationManager()
     static let geocoder = CLGeocoder()
     
-    var x: Int!
-    var qtdEnderecos: Int!
+    var qtdEnderecos1: Int!
+    var qtdEnderecos2: Int!
     
     @IBOutlet weak var viewBordaTittle: UIView!
     @IBOutlet weak var viewTitle: UIView!
@@ -24,7 +24,7 @@ class TelaInicialViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LoginViewModel.shared
+        MapaViewModel.shared.loadDataFireBase(owner: self)
         
         viewBordaTittle.layer.cornerRadius = viewBordaTittle.frame.size.width/2
         viewBordaTittle.clipsToBounds = true
@@ -57,16 +57,14 @@ class TelaInicialViewController: UIViewController, CLLocationManagerDelegate {
         
         self.mapaView.addAnnotation(anotacao)
         
-        let enderecos: [String] = [
-            "Raymundo Nina Rodrigues, 910 - 82920-010",
-            "Luiz França, 3083 - 82920-010",
-            "Raymundo Nina Rodrigues, 841 - 82920-010",
-            "Raymundo Nina Rodrigues, 750 - 82920-010"
-        ]
-        qtdEnderecos = enderecos.count
-        x = 0
-        
-        addAnnotations(enderecos: enderecos)
+//        let enderecos: [String] = [
+//            "Raymundo Nina Rodrigues, 910 - 82920-010",
+//            "Luiz França, 3083 - 82920-010",
+//            "Raymundo Nina Rodrigues, 841 - 82920-010",
+//            "Raymundo Nina Rodrigues, 750 - 82920-010"
+//        ]
+//        qtdEnderecos1 = enderecos.count
+//        qtdEnderecos2 = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,9 +96,11 @@ class TelaInicialViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    func addAnnotations(enderecos: [String]) {
-        if x < qtdEnderecos {
-            MapaViewController.geocoder.geocodeAddressString(enderecos[self.x]) { (placemarks, error) in
+    func addAnnotations(pizzarias: [Pizzaria]) {
+        if qtdEnderecos2 < qtdEnderecos1 {
+            let endereco = ("\(String(pizzarias[self.qtdEnderecos2].rua)), \(String(pizzarias[self.qtdEnderecos2].numero)) - \(String(pizzarias[self.qtdEnderecos2].cep)) - \(String(pizzarias[self.qtdEnderecos2].bairro)), \(String(pizzarias[self.qtdEnderecos2].cidade)) - \(String(pizzarias[self.qtdEnderecos2].estado))")
+            
+            MapaViewController.geocoder.geocodeAddressString(endereco) { (placemarks, error) in
                 guard
                     let placemarks = placemarks,
                     let location = placemarks.first?.location
@@ -111,11 +111,11 @@ class TelaInicialViewController: UIViewController, CLLocationManagerDelegate {
                 
                 let anotacao = MKPointAnnotation()
                 anotacao.coordinate = location.coordinate
-                anotacao.title = "Aqui!"
+                anotacao.title = ("\(String(pizzarias[self.qtdEnderecos2].nomeFantasia))")
                 
                 self.mapaView.addAnnotation(anotacao)
-                self.x += 1
-                self.addAnnotations(enderecos: enderecos)
+                self.qtdEnderecos2 += 1
+                self.addAnnotations(pizzarias: pizzarias)
             }
         }
     }

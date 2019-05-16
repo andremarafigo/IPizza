@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1320058C228A45F50078F03C /* MapaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320058B228A45F50078F03C /* MapaViewModel.swift */; };
+		133B1FC2228CCADF00552553 /* Pizzarias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133B1FC1228CCADF00552553 /* Pizzarias.swift */; };
 		13B50D8B2283A9D40004AE0C /* TelefonesEmpresaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B50D8A2283A9D40004AE0C /* TelefonesEmpresaViewController.swift */; };
 		13D195AA227CF4D800E0B8F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195A9227CF4D800E0B8F0 /* AppDelegate.swift */; };
 		13D195AC227CF4D800E0B8F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195AB227CF4D800E0B8F0 /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		0A31AB71BCBB90CA242E0284 /* Pods-IPizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPizza.debug.xcconfig"; path = "Target Support Files/Pods-IPizza/Pods-IPizza.debug.xcconfig"; sourceTree = "<group>"; };
 		1320058B228A45F50078F03C /* MapaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewModel.swift; sourceTree = "<group>"; };
+		133B1FC1228CCADF00552553 /* Pizzarias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizzarias.swift; sourceTree = "<group>"; };
 		13B50D8A2283A9D40004AE0C /* TelefonesEmpresaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelefonesEmpresaViewController.swift; sourceTree = "<group>"; };
 		13D195A6227CF4D800E0B8F0 /* IPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D195A9227CF4D800E0B8F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				13D195E4227CF60D00E0B8F0 /* Usuarios.swift */,
+				133B1FC1228CCADF00552553 /* Pizzarias.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,10 +311,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-IPizza/Pods-IPizza-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JMMaskTextField-Swift/JMMaskTextField_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -319,10 +324,12 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JMMaskTextField_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -343,6 +350,7 @@
 				13D195B2227CF4D800E0B8F0 /* IPizza.xcdatamodeld in Sources */,
 				13D195D2227CF5EF00E0B8F0 /* CadastroViewController.swift in Sources */,
 				13D195E2227CF5F900E0B8F0 /* CadastroViewModel.swift in Sources */,
+				133B1FC2228CCADF00552553 /* Pizzarias.swift in Sources */,
 				13D195E1227CF5F900E0B8F0 /* MenuContaViewModel.swift in Sources */,
 				13D195D0227CF5EF00E0B8F0 /* MenuContaViewController.swift in Sources */,
 				13D195DD227CF5EF00E0B8F0 /* MenuPizzariasTableViewController.swift in Sources */,
