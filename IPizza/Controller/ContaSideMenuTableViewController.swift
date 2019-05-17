@@ -37,7 +37,7 @@ class ContaSideMenuTableViewController: UITableViewController {
         }))
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            BemVindoViewController.logout = true
+            MenuBemVindoViewController.logout = true
             self.dismiss(animated: false, completion: nil)
         }))
 

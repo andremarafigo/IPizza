@@ -21,6 +21,8 @@ class TelaInicialViewController: UIViewController {
         
         viewTitle.layer.cornerRadius = viewTitle.frame.size.width/2
         viewTitle.clipsToBounds = true
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

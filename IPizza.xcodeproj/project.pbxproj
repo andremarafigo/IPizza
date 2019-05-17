@@ -23,9 +23,9 @@
 		13D195D5227CF5EF00E0B8F0 /* TelefonesEmpresaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C7227CF5EE00E0B8F0 /* TelefonesEmpresaTableViewController.swift */; };
 		13D195D6227CF5EF00E0B8F0 /* TelefonesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C8227CF5EF00E0B8F0 /* TelefonesTableViewController.swift */; };
 		13D195D7227CF5EF00E0B8F0 /* TelaInicialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195C9227CF5EF00E0B8F0 /* TelaInicialViewController.swift */; };
-		13D195D8227CF5EF00E0B8F0 /* BemVindoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195CA227CF5EF00E0B8F0 /* BemVindoViewController.swift */; };
+		13D195D8227CF5EF00E0B8F0 /* MenuBemVindoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195CA227CF5EF00E0B8F0 /* MenuBemVindoViewController.swift */; };
 		13D195D9227CF5EF00E0B8F0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195CB227CF5EF00E0B8F0 /* LoginViewController.swift */; };
-		13D195DA227CF5EF00E0B8F0 /* MapaMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195CC227CF5EF00E0B8F0 /* MapaMenuViewController.swift */; };
+		13D195DA227CF5EF00E0B8F0 /* MenuMapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195CC227CF5EF00E0B8F0 /* MenuMapaViewController.swift */; };
 		13D195DB227CF5EF00E0B8F0 /* ContaSideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195CD227CF5EF00E0B8F0 /* ContaSideMenuTableViewController.swift */; };
 		13D195DC227CF5EF00E0B8F0 /* PizzariaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195CE227CF5EF00E0B8F0 /* PizzariaViewController.swift */; };
 		13D195DD227CF5EF00E0B8F0 /* MenuPizzariasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195CF227CF5EF00E0B8F0 /* MenuPizzariasTableViewController.swift */; };
@@ -63,9 +63,9 @@
 		13D195C7227CF5EE00E0B8F0 /* TelefonesEmpresaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelefonesEmpresaTableViewController.swift; sourceTree = "<group>"; };
 		13D195C8227CF5EF00E0B8F0 /* TelefonesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelefonesTableViewController.swift; sourceTree = "<group>"; };
 		13D195C9227CF5EF00E0B8F0 /* TelaInicialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelaInicialViewController.swift; sourceTree = "<group>"; };
-		13D195CA227CF5EF00E0B8F0 /* BemVindoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BemVindoViewController.swift; sourceTree = "<group>"; };
+		13D195CA227CF5EF00E0B8F0 /* MenuBemVindoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBemVindoViewController.swift; sourceTree = "<group>"; };
 		13D195CB227CF5EF00E0B8F0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		13D195CC227CF5EF00E0B8F0 /* MapaMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapaMenuViewController.swift; sourceTree = "<group>"; };
+		13D195CC227CF5EF00E0B8F0 /* MenuMapaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuMapaViewController.swift; sourceTree = "<group>"; };
 		13D195CD227CF5EF00E0B8F0 /* ContaSideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContaSideMenuTableViewController.swift; sourceTree = "<group>"; };
 		13D195CE227CF5EF00E0B8F0 /* PizzariaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzariaViewController.swift; sourceTree = "<group>"; };
 		13D195CF227CF5EF00E0B8F0 /* MenuPizzariasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPizzariasTableViewController.swift; sourceTree = "<group>"; };
@@ -144,21 +144,21 @@
 			children = (
 				13D195A9227CF4D800E0B8F0 /* AppDelegate.swift */,
 				13D195AB227CF4D800E0B8F0 /* ViewController.swift */,
-				13D195CA227CF5EF00E0B8F0 /* BemVindoViewController.swift */,
+				13D195C9227CF5EF00E0B8F0 /* TelaInicialViewController.swift */,
+				13D195CA227CF5EF00E0B8F0 /* MenuBemVindoViewController.swift */,
+				13D195CF227CF5EF00E0B8F0 /* MenuPizzariasTableViewController.swift */,
+				13D195CC227CF5EF00E0B8F0 /* MenuMapaViewController.swift */,
+				13D195C2227CF5EE00E0B8F0 /* MenuContaViewController.swift */,
+				13D195CB227CF5EF00E0B8F0 /* LoginViewController.swift */,
 				13D195C4227CF5EE00E0B8F0 /* CadastroViewController.swift */,
+				96AC923E228E394E006FF1CF /* MapaViewController.swift */,
 				13D195CD227CF5EF00E0B8F0 /* ContaSideMenuTableViewController.swift */,
+				13D195CE227CF5EF00E0B8F0 /* PizzariaViewController.swift */,
 				13D195C6227CF5EE00E0B8F0 /* EnderecosTableViewController.swift */,
 				13D195C3227CF5EE00E0B8F0 /* EnderecosTelefonesViewController.swift */,
-				13D195CB227CF5EF00E0B8F0 /* LoginViewController.swift */,
-				13D195CC227CF5EF00E0B8F0 /* MapaMenuViewController.swift */,
-				13D195C2227CF5EE00E0B8F0 /* MenuContaViewController.swift */,
-				13D195CF227CF5EF00E0B8F0 /* MenuPizzariasTableViewController.swift */,
-				13D195CE227CF5EF00E0B8F0 /* PizzariaViewController.swift */,
-				13D195C9227CF5EF00E0B8F0 /* TelaInicialViewController.swift */,
 				13D195C7227CF5EE00E0B8F0 /* TelefonesEmpresaTableViewController.swift */,
 				13D195C8227CF5EF00E0B8F0 /* TelefonesTableViewController.swift */,
 				13B50D8A2283A9D40004AE0C /* TelefonesEmpresaViewController.swift */,
-				96AC923E228E394E006FF1CF /* MapaViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -365,12 +365,12 @@
 				13D195E3227CF5F900E0B8F0 /* LoginViewModel.swift in Sources */,
 				13D195D7227CF5EF00E0B8F0 /* TelaInicialViewController.swift in Sources */,
 				13D195D4227CF5EF00E0B8F0 /* EnderecosTableViewController.swift in Sources */,
-				13D195D8227CF5EF00E0B8F0 /* BemVindoViewController.swift in Sources */,
+				13D195D8227CF5EF00E0B8F0 /* MenuBemVindoViewController.swift in Sources */,
 				13D195D6227CF5EF00E0B8F0 /* TelefonesTableViewController.swift in Sources */,
 				13D195D5227CF5EF00E0B8F0 /* TelefonesEmpresaTableViewController.swift in Sources */,
 				13D195AC227CF4D800E0B8F0 /* ViewController.swift in Sources */,
 				13D195AA227CF4D800E0B8F0 /* AppDelegate.swift in Sources */,
-				13D195DA227CF5EF00E0B8F0 /* MapaMenuViewController.swift in Sources */,
+				13D195DA227CF5EF00E0B8F0 /* MenuMapaViewController.swift in Sources */,
 				13D195D9227CF5EF00E0B8F0 /* LoginViewController.swift in Sources */,
 				13B50D8B2283A9D40004AE0C /* TelefonesEmpresaViewController.swift in Sources */,
 				13D195D1227CF5EF00E0B8F0 /* EnderecosTelefonesViewController.swift in Sources */,

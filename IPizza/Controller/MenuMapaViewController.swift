@@ -8,12 +8,12 @@
 
 import UIKit
 
-class MapaMenuViewController: UIViewController {
+class MenuMapaViewController: UIViewController, UISearchBarDelegate {
 
     var editUsuario: Usuarios!
     var validaLocais: Bool = false
+    let escondeSearchBar : Bool = true
     
-    //    let localInicial = CLLocation(latitude: -29.3666, longitude: -52.2612)
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         tabBarItem = UITabBarItem(title: "Mapa", image: UIImage(named: "icons8-mapa-48"), tag: 3)
@@ -22,13 +22,18 @@ class MapaMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(MenuMapaViewController.viewTapped(gestureRecognizer:)))
+        
+        view.addGestureRecognizer(tapGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
-    override open var shouldAutorotate: Bool {
-        return false
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
+        view.endEditing(true)
     }
+    
+    
 }

@@ -10,7 +10,9 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapaViewController: UIViewController, CLLocationManagerDelegate {
+class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
+    
+    static let shared = MapaViewController()
     
     let lm = CLLocationManager()
     static let geocoder = CLGeocoder()
@@ -18,7 +20,11 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate {
     var qtdEnderecos1: Int!
     var qtdEnderecos2: Int!
     
+    var escondeSearchBar: Bool = true
+    
     @IBOutlet weak var mapaView: MKMapView!
+    
+    @IBOutlet weak var searchPizzaria: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +60,8 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate {
         }else {
             print("Por favor ligue o GPS")
         }
+        
+        esconderMostrarSearchBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,6 +92,14 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate {
         print("\(error)")
     }
     
+    func esconderMostrarSearchBar() {
+        if escondeSearchBar == true {
+            searchPizzaria.isHidden = true
+            escondeSearchBar = false
+        }else {
+            searchPizzaria.isHidden = false
+        }
+    }
     
     func addAnnotations(pizzarias: [Pizzaria]) {
         if qtdEnderecos2 < qtdEnderecos1 {
@@ -106,6 +122,33 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate {
                 self.qtdEnderecos2 += 1
                 self.addAnnotations(pizzarias: pizzarias)
             }
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let buscarPizza = searchBar.text
+        for pizzaria in MapaViewModel.shared.pizzarias {
+            if buscarPizza == pizzaria.nomeFantasia {
+                let endereco: String = ("\(String(pizzaria.rua)), \(String(pizzaria.numero)) - \(String(pizzaria.cep)) - \(String(pizzaria.bairro)) - \(String(pizzaria.cidade)) - \(String(pizzaria.estado))")
+                buscaPorEndereco(endereco: endereco)
+            }
+        }
+    }
+    
+    func buscaPorEndereco(endereco: String){
+        MapaViewController.geocoder.geocodeAddressString(endereco) { (placemarks, error) in
+            guard
+                let placemarks = placemarks,
+                let location = placemarks.first?.location
+                else {
+                    print("Erro location!!")
+                    return
+            }
+            
+            let center = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+            let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+            let regiao = MKCoordinateRegion(center: center, span: span)
+            self.mapaView.setRegion(regiao, animated: true)
         }
     }
 

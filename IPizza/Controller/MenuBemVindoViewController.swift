@@ -9,7 +9,7 @@
 import UIKit
 import SideMenu
 
-class BemVindoViewController: UIViewController {
+class MenuBemVindoViewController: UIViewController {
     
     static var logout = false
     

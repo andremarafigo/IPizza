@@ -13,7 +13,7 @@
         <!--Item-->
         <scene sceneID="Vmb-jG-XtB">
             <objects>
-                <viewController id="KCm-Ke-RLo" customClass="BemVindoViewController" customModule="IPizza" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KCm-Ke-RLo" customClass="MenuBemVindoViewController" customModule="IPizza" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kw5-No-6xd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -355,7 +355,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0M-Aq-NTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046.376811594203" y="2471.9866071428569"/>
+            <point key="canvasLocation" x="-881" y="2426"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="xNY-iY-61J">
@@ -444,7 +444,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cc-0y-4TP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2905.072463768116" y="2471.9866071428569"/>
+            <point key="canvasLocation" x="940" y="2462"/>
         </scene>
         <!--PROMOÇÕES-->
         <scene sceneID="VkM-Y4-b3g">
@@ -879,10 +879,24 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </mapView>
+                            <searchBar contentMode="redraw" placeholder="Buscar Pizzaria" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opj-4Y-pKl">
+                                <rect key="frame" x="0.0" y="118" width="414" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="BQG-I9-myD"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="FW8-N1-4Kg"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="iSA-LI-PDj" id="EfC-uQ-ft0"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="opj-4Y-pKl" firstAttribute="trailing" secondItem="PQR-JG-1jq" secondAttribute="trailing" id="2Le-xE-7L6"/>
                             <constraint firstItem="6io-AP-4VE" firstAttribute="top" secondItem="r5o-HE-00A" secondAttribute="top" id="4Ft-9W-kaI"/>
+                            <constraint firstItem="opj-4Y-pKl" firstAttribute="top" secondItem="PQR-JG-1jq" secondAttribute="top" constant="74" id="5FF-oH-341"/>
+                            <constraint firstItem="opj-4Y-pKl" firstAttribute="leading" secondItem="PQR-JG-1jq" secondAttribute="leading" id="8JT-Bx-wZ7"/>
                             <constraint firstAttribute="bottom" secondItem="6io-AP-4VE" secondAttribute="bottom" id="Eq8-Vk-oU2"/>
                             <constraint firstItem="6io-AP-4VE" firstAttribute="trailing" secondItem="PQR-JG-1jq" secondAttribute="trailing" id="Klb-bR-nEd"/>
                             <constraint firstItem="6io-AP-4VE" firstAttribute="leading" secondItem="PQR-JG-1jq" secondAttribute="leading" id="rxa-Vi-pDW"/>
@@ -891,6 +905,7 @@
                     </view>
                     <connections>
                         <outlet property="mapaView" destination="6io-AP-4VE" id="vaS-N0-8ja"/>
+                        <outlet property="searchPizzaria" destination="opj-4Y-pKl" id="SHl-GT-PHk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SiV-kH-4Kd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3042,7 +3057,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NN7-DF-KzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3332" y="4010"/>
+            <point key="canvasLocation" x="-3733" y="2425"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="Lqb-ZZ-K2l">
@@ -3076,7 +3091,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zPP-1d-rJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3562" y="2616"/>
+            <point key="canvasLocation" x="-4544" y="913"/>
         </scene>
         <!--Pedido-->
         <scene sceneID="RUJ-jb-8Wx">
@@ -3087,7 +3102,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMR-oA-gyP">
-                                <rect key="frame" x="0.0" y="45" width="414" height="768"/>
+                                <rect key="frame" x="0.0" y="45" width="414" height="817"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Bi-XS-YNP">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="602"/>
@@ -3243,7 +3258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbD-3z-ptU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2543" y="4011"/>
+            <point key="canvasLocation" x="-2794" y="2463"/>
         </scene>
         <!--NOME DA PIZZARIA-->
         <scene sceneID="2Uj-24-oSQ">
@@ -3523,7 +3538,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kX-Ka-tGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1663" y="4075"/>
+            <point key="canvasLocation" x="-3733" y="3224"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Ufm-zc-MNP">
@@ -3620,7 +3635,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zmt-39-ZrN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-806" y="4009"/>
+            <point key="canvasLocation" x="-4544" y="3224"/>
         </scene>
         <!--PEDIDOS-->
         <scene sceneID="7Wd-UE-ASS">
@@ -3729,7 +3744,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybg-MH-qhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2089" y="3238"/>
+            <point key="canvasLocation" x="-3733" y="1726"/>
         </scene>
         <!--NOME DA PIZZARIA-->
         <scene sceneID="gzD-yE-TEv">
@@ -3870,12 +3885,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4A4-Fn-gik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2794" y="2667"/>
+            <point key="canvasLocation" x="-3733" y="911"/>
         </scene>
         <!--PIZZARIAS-->
         <scene sceneID="2nN-8u-nYX">
             <objects>
-                <viewController id="lhd-0q-FIZ" customClass="MapaMenuViewController" customModule="IPizza" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lhd-0q-FIZ" customClass="MenuMapaViewController" customModule="IPizza" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k16-Ma-wLq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3932,21 +3947,11 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <searchBar contentMode="redraw" placeholder="Buscar Pizzaria" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TR6-XY-nlg">
-                                <rect key="frame" x="0.0" y="118" width="414" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="6AV-Ik-gU4"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="a5y-PF-aNi" firstAttribute="centerX" secondItem="k16-Ma-wLq" secondAttribute="centerX" id="Li9-r5-8gI"/>
-                            <constraint firstItem="TR6-XY-nlg" firstAttribute="top" secondItem="a5y-PF-aNi" secondAttribute="bottom" constant="14" id="QgB-Fe-L4V"/>
-                            <constraint firstItem="TR6-XY-nlg" firstAttribute="leading" secondItem="k16-Ma-wLq" secondAttribute="leading" id="g33-jq-QAJ"/>
                             <constraint firstItem="a5y-PF-aNi" firstAttribute="top" secondItem="1bX-J0-kHM" secondAttribute="top" id="pJM-Ld-wr6"/>
-                            <constraint firstAttribute="trailing" secondItem="TR6-XY-nlg" secondAttribute="trailing" id="ytx-eN-gZx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1bX-J0-kHM"/>
                     </view>
@@ -3955,7 +3960,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftd-Hp-X2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-217.39130434782609" y="2809.8214285714284"/>
+            <point key="canvasLocation" x="-1852" y="2463"/>
         </scene>
         <!--SABORES-->
         <scene sceneID="VwV-Bk-GDh">
@@ -4704,7 +4709,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="bTU-nx-qDp"/>
         <segue reference="buY-41-rUf"/>
-        <segue reference="1bN-Ma-p0C"/>
+        <segue reference="8av-vu-yIc"/>
         <segue reference="DQb-FI-f2o"/>
         <segue reference="e9t-VV-xzA"/>
         <segue reference="DuJ-mJ-ZdG"/>
