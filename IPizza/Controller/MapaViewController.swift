@@ -8,16 +8,19 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapaViewController: UIViewController, CLLocationManagerDelegate {
 
-    @IBOutlet weak var mapaView: MKMapView!
     let lm = CLLocationManager()
     static let geocoder = CLGeocoder()
     var editUsuario: Usuarios!
+    var validaLocais: Bool = false
     
-    var x: Int!
-    var qtdEnderecos: Int!
+    var qtdEnderecos1: Int!
+    var qtdEnderecos2: Int!
+    
+    @IBOutlet weak var mapaView: MKMapView!
     
     //    let localInicial = CLLocation(latitude: -29.3666, longitude: -52.2612)
     required init?(coder aDecoder: NSCoder) {
@@ -28,45 +31,27 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        MapaViewModel.shared.loadDataFireBase(owner: self)
+        
         lm.delegate = self
         lm.desiredAccuracy = kCLLocationAccuracyHundredMeters
         lm.requestWhenInUseAuthorization()
         lm.startUpdatingLocation()
         
         mapaView.mapType = .standard
-
-        let lat = -25.4456301
-        let long = -49.2126449
         
-        //Usa localização atual
-//        let lat = Double((lm.location?.coordinate.latitude)!)
-//        let long = Double((lm.location?.coordinate.longitude)!)
+        mapaView.showsUserLocation = true
         
-        let center = CLLocationCoordinate2DMake(lat, long)
-        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
-        let regiao = MKCoordinateRegion(center: center, span: span)
-        self.mapaView.setRegion(regiao, animated: true)
-
-        let anotacao = MKPointAnnotation()
-        anotacao.coordinate = center
-        anotacao.title = "Você está Aqui!"
-
-        self.mapaView.addAnnotation(anotacao)
-        
-        let enderecos: [String] = [
-            "Raymundo Nina Rodrigues, 910 - 82920-010",
-            "Luiz França, 3083 - 82920-010",
-            "Raymundo Nina Rodrigues, 841 - 82920-010",
-            "Raymundo Nina Rodrigues, 750 - 82920-010"
-        ]
-        qtdEnderecos = enderecos.count
-        x = 0
-
-        addAnnotations(enderecos: enderecos)
+        buscaLocalizacaoAtual()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //MapaViewModel.shared.loadDataFireBase(owner: self)
+    }
+    
+    override open var shouldAutorotate: Bool {
+        return false
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -88,10 +73,39 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate {
         print("\(error)")
     }
     
+    func buscaLocalizacaoAtual() {
+        if CLLocationManager.locationServicesEnabled() == true {
+            if CLLocationManager.authorizationStatus() == .restricted || CLLocationManager.authorizationStatus() == .denied ||
+                CLLocationManager.authorizationStatus() == .notDetermined {
+                lm.requestWhenInUseAuthorization()
+            }
+            
+            lm.delegate = self
+            lm.desiredAccuracy = kCLLocationAccuracyHundredMeters
+            lm.startUpdatingLocation()
+            
+            //let lat = -25.4456301
+            //let long = -49.2126449
+            
+            //Usa localização atual
+            let lat = Double((lm.location?.coordinate.latitude)!)
+            let long = Double((lm.location?.coordinate.longitude)!)
+            
+            let center = CLLocationCoordinate2DMake(lat, long)
+            let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+            let regiao = MKCoordinateRegion(center: center, span: span)
+            self.mapaView.setRegion(regiao, animated: true)
+            
+        }else {
+            print("Por favor ligue o GPS")
+        }
+    }
     
-    func addAnnotations(enderecos: [String]) {
-        if x < qtdEnderecos {
-            MapaViewController.geocoder.geocodeAddressString(enderecos[self.x]) { (placemarks, error) in
+    func addAnnotations(pizzarias: [Pizzaria]) {
+        if qtdEnderecos2 < qtdEnderecos1 {
+            let endereco = ("\(String(pizzarias[self.qtdEnderecos2].rua)), \(String(pizzarias[self.qtdEnderecos2].numero)) - \(String(pizzarias[self.qtdEnderecos2].cep)) - \(String(pizzarias[self.qtdEnderecos2].bairro)), \(String(pizzarias[self.qtdEnderecos2].cidade)) - \(String(pizzarias[self.qtdEnderecos2].estado))")
+            
+            MapaViewController.geocoder.geocodeAddressString(endereco) { (placemarks, error) in
                 guard
                     let placemarks = placemarks,
                     let location = placemarks.first?.location
@@ -100,13 +114,15 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate {
                         return
                 }
                 
+                self.validaLocais = true
+                
                 let anotacao = MKPointAnnotation()
                 anotacao.coordinate = location.coordinate
-                anotacao.title = "Aqui!"
+                anotacao.title = ("\(String(pizzarias[self.qtdEnderecos2].nomeFantasia))")
                 
                 self.mapaView.addAnnotation(anotacao)
-                self.x += 1
-                self.addAnnotations(enderecos: enderecos)
+                self.qtdEnderecos2 += 1
+                self.addAnnotations(pizzarias: pizzarias)
             }
         }
     }

@@ -1,8 +1,8 @@
 //
-//  MapaViewModel.swift
+//  TelaInicialViewModel.swift
 //  IPizza
 //
-//  Created by PUCPR on 13/05/19.
+//  Created by André Marafigo on 16/05/19.
 //  Copyright © 2019 PUCPR. All rights reserved.
 //
 
@@ -11,9 +11,9 @@ import Firebase
 import FirebaseDatabase
 import CoreData
 
-class MapaViewModel {
+class TelaInicialViewModel {
     
-    static let shared = MapaViewModel()
+    static let shared = TelaInicialViewModel()
     
     var database : DatabaseReference!
     
@@ -21,13 +21,13 @@ class MapaViewModel {
     var pizzaria : Pizzaria = Pizzaria()
     
     init() {
-
+        
     }
     
-    func loadDataFireBase(owner: MapaViewController){
+    func loadDataFireBase(owner: TelaInicialViewController){
         database = Database.database().reference()
         self.database.child("Usuarios").observe(.value, with: { (snapshot: DataSnapshot) in
-
+            
             for child in snapshot.children {
                 let usuarios = child as! DataSnapshot
                 let resultado = usuarios.value as! [String : Any]

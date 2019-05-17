@@ -39,6 +39,7 @@
 		13D195EE227CF63600E0B8F0 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D195EA227CF63600E0B8F0 /* user.png */; };
 		13D195F0227CF6E100E0B8F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13D195EF227CF6E100E0B8F0 /* GoogleService-Info.plist */; };
 		4D84037289319A1F78F23A49 /* Pods_IPizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CFF786D0BE5E814579B1EA /* Pods_IPizza.framework */; };
+		96AC923D228E1BA2006FF1CF /* TelaInicialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC923C228E1BA2006FF1CF /* TelaInicialViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		13D195EA227CF63600E0B8F0 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		13D195EF227CF6E100E0B8F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5DAEDADB0DB02431F9C8D2C9 /* Pods-IPizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPizza.release.xcconfig"; path = "Target Support Files/Pods-IPizza/Pods-IPizza.release.xcconfig"; sourceTree = "<group>"; };
+		96AC923C228E1BA2006FF1CF /* TelaInicialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaInicialViewModel.swift; sourceTree = "<group>"; };
 		F6CFF786D0BE5E814579B1EA /* Pods_IPizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IPizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -165,6 +167,7 @@
 				13D195E0227CF5F900E0B8F0 /* LoginViewModel.swift */,
 				13D195DE227CF5F900E0B8F0 /* MenuContaViewModel.swift */,
 				1320058B228A45F50078F03C /* MapaViewModel.swift */,
+				96AC923C228E1BA2006FF1CF /* TelaInicialViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				133B1FC2228CCADF00552553 /* Pizzarias.swift in Sources */,
 				13D195E1227CF5F900E0B8F0 /* MenuContaViewModel.swift in Sources */,
 				13D195D0227CF5EF00E0B8F0 /* MenuContaViewController.swift in Sources */,
+				96AC923D228E1BA2006FF1CF /* TelaInicialViewModel.swift in Sources */,
 				13D195DD227CF5EF00E0B8F0 /* MenuPizzariasTableViewController.swift in Sources */,
 				13D195E3227CF5F900E0B8F0 /* LoginViewModel.swift in Sources */,
 				13D195D7227CF5EF00E0B8F0 /* TelaInicialViewController.swift in Sources */,

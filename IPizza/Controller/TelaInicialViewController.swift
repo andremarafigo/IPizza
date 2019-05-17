@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class TelaInicialViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -24,47 +25,43 @@ class TelaInicialViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        MapaViewModel.shared.loadDataFireBase(owner: self)
+        TelaInicialViewModel.shared.loadDataFireBase(owner: self)
         
         viewBordaTittle.layer.cornerRadius = viewBordaTittle.frame.size.width/2
         viewBordaTittle.clipsToBounds = true
         
         viewTitle.layer.cornerRadius = viewTitle.frame.size.width/2
         viewTitle.clipsToBounds = true
-        
-        lm.delegate = self
-        lm.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        lm.requestWhenInUseAuthorization()
-        lm.startUpdatingLocation()
-        
+
         mapaView.mapType = .standard
         
-        let lat = -25.4456301
-        let long = -49.2126449
+        mapaView.showsUserLocation = true
         
-        //Usa localização atual
-        //        let lat = Double((lm.location?.coordinate.latitude)!)
-        //        let long = Double((lm.location?.coordinate.longitude)!)
-        
-        let center = CLLocationCoordinate2DMake(lat, long)
-        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
-        let regiao = MKCoordinateRegion(center: center, span: span)
-        self.mapaView.setRegion(regiao, animated: true)
-        
-        let anotacao = MKPointAnnotation()
-        anotacao.coordinate = center
-        anotacao.title = "Você está Aqui!"
-        
-        self.mapaView.addAnnotation(anotacao)
-        
-//        let enderecos: [String] = [
-//            "Raymundo Nina Rodrigues, 910 - 82920-010",
-//            "Luiz França, 3083 - 82920-010",
-//            "Raymundo Nina Rodrigues, 841 - 82920-010",
-//            "Raymundo Nina Rodrigues, 750 - 82920-010"
-//        ]
-//        qtdEnderecos1 = enderecos.count
-//        qtdEnderecos2 = 0
+//        if CLLocationManager.locationServicesEnabled() == true {
+//            if CLLocationManager.authorizationStatus() == .restricted || CLLocationManager.authorizationStatus() == .denied ||
+//                CLLocationManager.authorizationStatus() == .notDetermined {
+//                lm.requestWhenInUseAuthorization()
+//            }
+//            
+//            lm.delegate = self
+//            lm.desiredAccuracy = kCLLocationAccuracyHundredMeters
+//            lm.startUpdatingLocation()
+//            
+//            //let lat = -25.4456301
+//            //let long = -49.2126449
+//            
+//            //Usa localização atual
+//            let lat = Double((lm.location?.coordinate.latitude)!)
+//            let long = Double((lm.location?.coordinate.longitude)!)
+//            
+//            let center = CLLocationCoordinate2DMake(lat, long)
+//            let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+//            let regiao = MKCoordinateRegion(center: center, span: span)
+//            self.mapaView.setRegion(regiao, animated: true)
+//
+//        }else {
+//            print("Por favor ligue o GPS")
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,7 +80,7 @@ class TelaInicialViewController: UIViewController, CLLocationManagerDelegate {
         if local.horizontalAccuracy > 0.0 {
             lm.stopUpdatingLocation()
             print("\(local.coordinate.latitude), \(local.coordinate.longitude)")
-            MapaViewController.geocoder.reverseGeocodeLocation(local) { (placemarks, _) in
+            TelaInicialViewController.geocoder.reverseGeocodeLocation(local) { (placemarks, _) in
                 if let marca = placemarks?.first {
                     print(marca)
                 }
@@ -100,7 +97,7 @@ class TelaInicialViewController: UIViewController, CLLocationManagerDelegate {
         if qtdEnderecos2 < qtdEnderecos1 {
             let endereco = ("\(String(pizzarias[self.qtdEnderecos2].rua)), \(String(pizzarias[self.qtdEnderecos2].numero)) - \(String(pizzarias[self.qtdEnderecos2].cep)) - \(String(pizzarias[self.qtdEnderecos2].bairro)), \(String(pizzarias[self.qtdEnderecos2].cidade)) - \(String(pizzarias[self.qtdEnderecos2].estado))")
             
-            MapaViewController.geocoder.geocodeAddressString(endereco) { (placemarks, error) in
+            TelaInicialViewController.geocoder.geocodeAddressString(endereco) { (placemarks, error) in
                 guard
                     let placemarks = placemarks,
                     let location = placemarks.first?.location
