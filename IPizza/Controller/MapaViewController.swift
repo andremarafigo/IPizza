@@ -12,15 +12,11 @@ import CoreLocation
 
 class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
     
-    static let shared = MapaViewController()
-    
     let lm = CLLocationManager()
     static let geocoder = CLGeocoder()
     
     var qtdEnderecos1: Int!
     var qtdEnderecos2: Int!
-    
-    var escondeSearchBar: Bool = true
     
     @IBOutlet weak var mapaView: MKMapView!
     
@@ -61,11 +57,12 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
             print("Por favor ligue o GPS")
         }
         
-        esconderMostrarSearchBar()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        esconderMostrarSearchBar()
         
     }
     
@@ -93,10 +90,9 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
     }
     
     func esconderMostrarSearchBar() {
-        if escondeSearchBar == true {
+        if self.parent is TelaInicialViewController {
             searchPizzaria.isHidden = true
-            escondeSearchBar = false
-        }else {
+        } else {
             searchPizzaria.isHidden = false
         }
     }

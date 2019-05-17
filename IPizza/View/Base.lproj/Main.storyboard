@@ -3102,7 +3102,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMR-oA-gyP">
-                                <rect key="frame" x="0.0" y="45" width="414" height="817"/>
+                                <rect key="frame" x="0.0" y="45" width="414" height="768"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Bi-XS-YNP">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="602"/>
@@ -3269,7 +3269,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVA-Zr-V86">
-                                <rect key="frame" x="0.0" y="44" width="375" height="732"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="683"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjy-7m-AGC">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
@@ -4708,7 +4708,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bTU-nx-qDp"/>
-        <segue reference="buY-41-rUf"/>
+        <segue reference="nyU-76-vVw"/>
         <segue reference="8av-vu-yIc"/>
         <segue reference="DQb-FI-f2o"/>
         <segue reference="e9t-VV-xzA"/>

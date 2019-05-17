@@ -17,21 +17,21 @@ class MapaViewModel {
     
     var database : DatabaseReference!
     
-    var pizzarias : [Pizzaria] = []
-    var pizzaria : Pizzaria = Pizzaria()
+    var pizzarias : [Pizzaria]!
+    var pizzaria : Pizzaria!
     
     init() {
-
+        self.pizzarias = []
     }
     
     func loadDataFireBase(owner: MapaViewController){
         database = Database.database().reference()
         self.database.child("Usuarios").observe(.value, with: { (snapshot: DataSnapshot) in
-
             for child in snapshot.children {
                 let usuarios = child as! DataSnapshot
                 let resultado = usuarios.value as! [String : Any]
                 if resultado["Pizzaria"] as? Bool == true {
+                    self.pizzaria = Pizzaria()
                     self.pizzaria.nomeFantasia = resultado["NomeFantasia"] as? String
                     self.pizzaria.cep = resultado["CEPPizzaria"] as? String
                     self.pizzaria.rua = resultado["RuaPizzaria"] as? String
