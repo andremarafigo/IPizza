@@ -862,20 +862,40 @@
             </objects>
             <point key="canvasLocation" x="-879" y="-734"/>
         </scene>
-        <!--View Controller-->
+        <!--Mapa View Controller-->
         <scene sceneID="UKT-Xl-4gD">
             <objects>
-                <viewController id="iSA-LI-PDj" sceneMemberID="viewController">
+                <viewController id="iSA-LI-PDj" customClass="MapaViewController" customModule="IPizza" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r5o-HE-00A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6io-AP-4VE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6io-AP-4VE" firstAttribute="top" secondItem="r5o-HE-00A" secondAttribute="top" id="4Ft-9W-kaI"/>
+                            <constraint firstAttribute="bottom" secondItem="6io-AP-4VE" secondAttribute="bottom" id="Eq8-Vk-oU2"/>
+                            <constraint firstItem="6io-AP-4VE" firstAttribute="trailing" secondItem="PQR-JG-1jq" secondAttribute="trailing" id="Klb-bR-nEd"/>
+                            <constraint firstItem="6io-AP-4VE" firstAttribute="leading" secondItem="PQR-JG-1jq" secondAttribute="leading" id="rxa-Vi-pDW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PQR-JG-1jq"/>
                     </view>
+                    <connections>
+                        <outlet property="mapaView" destination="6io-AP-4VE" id="vaS-N0-8ja"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SiV-kH-4Kd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1718" y="261"/>
+            <point key="canvasLocation" x="-1686" y="133"/>
         </scene>
         <!--Item-->
         <scene sceneID="S85-MB-kZQ">
@@ -885,18 +905,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hAl-uZ-3Er">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RX1-Pw-ydJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6io-AP-4VE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </mapView>
+                                <connections>
+                                    <segue destination="iSA-LI-PDj" kind="embed" id="yrd-nv-RcH"/>
+                                </connections>
+                            </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bf3-Rh-4vK">
                                 <rect key="frame" x="147.5" y="553" width="80" height="80"/>
                                 <constraints>
@@ -975,18 +989,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="RX1-Pw-ydJ" secondAttribute="bottom" id="0aK-Nf-ra8"/>
                             <constraint firstItem="Bf3-Rh-4vK" firstAttribute="centerX" secondItem="UaW-mU-hq6" secondAttribute="centerX" id="1FN-Ky-cQY"/>
-                            <constraint firstAttribute="trailing" secondItem="6io-AP-4VE" secondAttribute="trailing" id="2Ka-2x-8GX"/>
                             <constraint firstItem="YDa-zN-JOR" firstAttribute="centerX" secondItem="bUa-JB-CQc" secondAttribute="centerX" id="2Lm-1g-8by"/>
-                            <constraint firstItem="bUa-JB-CQc" firstAttribute="trailing" secondItem="hAl-uZ-3Er" secondAttribute="trailing" id="ICW-N5-SHu"/>
-                            <constraint firstItem="6io-AP-4VE" firstAttribute="top" secondItem="UaW-mU-hq6" secondAttribute="top" id="K3m-fO-F1x"/>
+                            <constraint firstItem="RX1-Pw-ydJ" firstAttribute="trailing" secondItem="bUa-JB-CQc" secondAttribute="trailing" id="DG2-oC-Xuh"/>
                             <constraint firstItem="YDa-zN-JOR" firstAttribute="top" secondItem="bUa-JB-CQc" secondAttribute="top" id="OAx-Gq-W6Y"/>
                             <constraint firstItem="bUa-JB-CQc" firstAttribute="bottom" secondItem="Bf3-Rh-4vK" secondAttribute="bottom" id="Rby-Bu-Thp"/>
-                            <constraint firstItem="hAl-uZ-3Er" firstAttribute="leading" secondItem="bUa-JB-CQc" secondAttribute="leading" id="ZnA-hY-YZY"/>
-                            <constraint firstAttribute="bottom" secondItem="hAl-uZ-3Er" secondAttribute="bottom" id="bbo-FI-Ybu"/>
-                            <constraint firstItem="6io-AP-4VE" firstAttribute="bottom" secondItem="UaW-mU-hq6" secondAttribute="bottom" id="eST-hp-93P"/>
-                            <constraint firstItem="6io-AP-4VE" firstAttribute="leading" secondItem="UaW-mU-hq6" secondAttribute="leading" id="gni-TP-x4R"/>
-                            <constraint firstItem="hAl-uZ-3Er" firstAttribute="top" secondItem="UaW-mU-hq6" secondAttribute="top" id="z4s-77-n6f"/>
+                            <constraint firstItem="RX1-Pw-ydJ" firstAttribute="leading" secondItem="bUa-JB-CQc" secondAttribute="leading" id="u5C-hj-ZtY"/>
+                            <constraint firstItem="RX1-Pw-ydJ" firstAttribute="top" secondItem="UaW-mU-hq6" secondAttribute="top" id="zVy-n0-dhO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bUa-JB-CQc"/>
                     </view>
@@ -994,14 +1004,13 @@
                     <navigationItem key="navigationItem" id="v0z-zZ-CeO"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="mapaView" destination="6io-AP-4VE" id="t9c-Zs-o9l"/>
                         <outlet property="viewBordaTittle" destination="YDa-zN-JOR" id="IVo-Pl-xpM"/>
                         <outlet property="viewTitle" destination="Q03-KD-vw1" id="L8W-m6-SjL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qeE-t0-tFp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-879" y="134"/>
+            <point key="canvasLocation" x="-880.43478260869574" y="133.59375"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Q9A-Ia-JFW">
@@ -3866,14 +3875,18 @@
         <!--PIZZARIAS-->
         <scene sceneID="2nN-8u-nYX">
             <objects>
-                <viewController id="lhd-0q-FIZ" customClass="MapaViewController" customModule="IPizza" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lhd-0q-FIZ" customClass="MapaMenuViewController" customModule="IPizza" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k16-Ma-wLq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qeu-OY-mZJ">
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ux5-UB-V7U">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </mapView>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="iSA-LI-PDj" kind="embed" id="e9t-VV-xzA"/>
+                                </connections>
+                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5y-PF-aNi">
                                 <rect key="frame" x="57" y="44" width="300" height="60"/>
                                 <subviews>
@@ -3929,27 +3942,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="qeu-OY-mZJ" firstAttribute="leading" secondItem="1bX-J0-kHM" secondAttribute="leading" id="3LV-N5-bFY"/>
-                            <constraint firstItem="qeu-OY-mZJ" firstAttribute="top" secondItem="k16-Ma-wLq" secondAttribute="top" id="CQK-pl-BJN"/>
-                            <constraint firstAttribute="bottom" secondItem="qeu-OY-mZJ" secondAttribute="bottom" id="Cdq-Pk-apr"/>
                             <constraint firstItem="a5y-PF-aNi" firstAttribute="centerX" secondItem="k16-Ma-wLq" secondAttribute="centerX" id="Li9-r5-8gI"/>
                             <constraint firstItem="TR6-XY-nlg" firstAttribute="top" secondItem="a5y-PF-aNi" secondAttribute="bottom" constant="14" id="QgB-Fe-L4V"/>
                             <constraint firstItem="TR6-XY-nlg" firstAttribute="leading" secondItem="k16-Ma-wLq" secondAttribute="leading" id="g33-jq-QAJ"/>
                             <constraint firstItem="a5y-PF-aNi" firstAttribute="top" secondItem="1bX-J0-kHM" secondAttribute="top" id="pJM-Ld-wr6"/>
-                            <constraint firstItem="qeu-OY-mZJ" firstAttribute="trailing" secondItem="1bX-J0-kHM" secondAttribute="trailing" id="tbq-oW-lVh"/>
                             <constraint firstAttribute="trailing" secondItem="TR6-XY-nlg" secondAttribute="trailing" id="ytx-eN-gZx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1bX-J0-kHM"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Ef9-T5-df7"/>
                     <navigationItem key="navigationItem" title="PIZZARIAS" id="eik-BA-3Fk"/>
-                    <connections>
-                        <outlet property="mapaView" destination="qeu-OY-mZJ" id="3Kh-UY-Eou"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftd-Hp-X2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-217" y="2810"/>
+            <point key="canvasLocation" x="-217.39130434782609" y="2809.8214285714284"/>
         </scene>
         <!--SABORES-->
         <scene sceneID="VwV-Bk-GDh">
@@ -4700,6 +4706,7 @@
         <segue reference="buY-41-rUf"/>
         <segue reference="1bN-Ma-p0C"/>
         <segue reference="DQb-FI-f2o"/>
+        <segue reference="e9t-VV-xzA"/>
         <segue reference="DuJ-mJ-ZdG"/>
     </inferredMetricsTieBreakers>
 </document>
