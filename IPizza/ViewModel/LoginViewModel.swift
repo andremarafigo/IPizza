@@ -66,6 +66,16 @@ class LoginViewModel {
         }
     }
     
+    func logout () {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error logout: %@", signOutError)
+        }
+        //self.performSegue(withIdentifier: "logout", sender: nil)
+    }
+    
     func loadDataFireBase(valida: Bool, owner: LoginViewController!, key: String, email: String, senha: String){
         
         database = Database.database().reference()
@@ -144,6 +154,7 @@ class LoginViewModel {
         contexto.delete(users[0])
         saveData()
         //loadData()
+        logout()
     }
     
     func loadData() {

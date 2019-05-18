@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MenuContaViewController: UIViewController {
     
@@ -42,6 +43,11 @@ class MenuContaViewController: UIViewController {
     }
     
     func criaBotoes() {
+        
+        if Auth.auth().currentUser != nil {
+            print("Deu Certo")
+        }
+        
         if LoginViewModel.shared.users.count == 1 {
             if LoginViewModel.shared.users[0].email != nil {
                 btnAlterarConta.isHidden = false

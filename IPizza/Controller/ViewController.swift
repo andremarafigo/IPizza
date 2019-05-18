@@ -15,6 +15,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    //desabilita navigationBar
+    //self.navigationController?.setNavigationBarHidden(true, animated: true)
+    
+    //habilita navigationBar
+    //self.navigationController?.setNavigationBarHidden(false, animated: true)
 }
 
