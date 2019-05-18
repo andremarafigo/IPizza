@@ -41,6 +41,7 @@
 		13D195EE227CF63600E0B8F0 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D195EA227CF63600E0B8F0 /* user.png */; };
 		13D195F0227CF6E100E0B8F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13D195EF227CF6E100E0B8F0 /* GoogleService-Info.plist */; };
 		4D84037289319A1F78F23A49 /* Pods_IPizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CFF786D0BE5E814579B1EA /* Pods_IPizza.framework */; };
+		966BEAFB22903FAC00FE56AE /* Sabor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BEAFA22903FAC00FE56AE /* Sabor.swift */; };
 		96AC923D228E1BA2006FF1CF /* TelaInicialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC923C228E1BA2006FF1CF /* TelaInicialViewModel.swift */; };
 		96AC923F228E394E006FF1CF /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC923E228E394E006FF1CF /* MapaViewController.swift */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		13D195EA227CF63600E0B8F0 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		13D195EF227CF6E100E0B8F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5DAEDADB0DB02431F9C8D2C9 /* Pods-IPizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPizza.release.xcconfig"; path = "Target Support Files/Pods-IPizza/Pods-IPizza.release.xcconfig"; sourceTree = "<group>"; };
+		966BEAFA22903FAC00FE56AE /* Sabor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sabor.swift; sourceTree = "<group>"; };
 		96AC923C228E1BA2006FF1CF /* TelaInicialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaInicialViewModel.swift; sourceTree = "<group>"; };
 		96AC923E228E394E006FF1CF /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
 		F6CFF786D0BE5E814579B1EA /* Pods_IPizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IPizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +188,7 @@
 			children = (
 				13D195E4227CF60D00E0B8F0 /* Usuarios.swift */,
 				133B1FC1228CCADF00552553 /* Pizzarias.swift */,
+				966BEAFA22903FAC00FE56AE /* Sabor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				96AC923D228E1BA2006FF1CF /* TelaInicialViewModel.swift in Sources */,
 				13D195DD227CF5EF00E0B8F0 /* MenuPizzariasTableViewController.swift in Sources */,
 				13D195E3227CF5F900E0B8F0 /* LoginViewModel.swift in Sources */,
+				966BEAFB22903FAC00FE56AE /* Sabor.swift in Sources */,
 				13D195D7227CF5EF00E0B8F0 /* TelaInicialViewController.swift in Sources */,
 				137BC012228F877C00A7DD0D /* MenuCadastrarSaborViewController.swift in Sources */,
 				13D195D4227CF5EF00E0B8F0 /* EnderecosTableViewController.swift in Sources */,

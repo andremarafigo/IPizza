@@ -21,10 +21,12 @@ class MapaViewModel {
     var pizzaria : Pizzaria!
     
     init() {
-        self.pizzarias = []
+        
     }
     
     func loadDataFireBase(owner: MapaViewController){
+        owner.chamarLoadDataFireBase = false
+        self.pizzarias = []
         database = Database.database().reference()
         self.database.child("Usuarios").observe(.value, with: { (snapshot: DataSnapshot) in
             for child in snapshot.children {

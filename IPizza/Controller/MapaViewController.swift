@@ -18,6 +18,8 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
     var qtdEnderecos1: Int!
     var qtdEnderecos2: Int!
     
+    var chamarLoadDataFireBase: Bool!
+    
     @IBOutlet weak var mapaView: MKMapView!
     
     @IBOutlet weak var searchPizzaria: UISearchBar!
@@ -25,6 +27,8 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        esconderMostrarSearchBar()
+        chamarLoadDataFireBase = true
         MapaViewModel.shared.loadDataFireBase(owner: self)
         
         mapaView.mapType = .standard
@@ -63,7 +67,9 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         esconderMostrarSearchBar()
-        
+        if chamarLoadDataFireBase == true {
+            MapaViewModel.shared.loadDataFireBase(owner: self)
+        }
     }
     
     override open var shouldAutorotate: Bool {
@@ -117,6 +123,7 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
                 self.mapaView.addAnnotation(anotacao)
                 self.qtdEnderecos2 += 1
                 self.addAnnotations(pizzarias: pizzarias)
+                self.chamarLoadDataFireBase = true
             }
         }
     }

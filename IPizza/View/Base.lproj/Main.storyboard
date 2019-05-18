@@ -4652,13 +4652,14 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="8Xf-z0-rEg" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="I3g-Zr-LXS">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="ldS-xO-qRM" kind="relationship" relationship="viewControllers" id="mhr-dP-1ha"/>
                         <segue destination="7t5-0x-rCk" kind="relationship" relationship="viewControllers" id="qM8-G9-abD"/>
-                        <segue destination="gsN-J5-LQm" kind="relationship" relationship="viewControllers" id="c9Q-f3-07h"/>
+                        <segue destination="2At-ek-qod" kind="relationship" relationship="viewControllers" id="U2a-lO-MlY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Osa-dQ-Xf7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4726,7 +4727,7 @@
         <!--Title-->
         <scene sceneID="fEW-oB-qcg">
             <objects>
-                <viewController id="gsN-J5-LQm" customClass="MenuCadastrarSaborViewController" customModule="IPizza" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gsN-J5-LQm" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XJK-8c-lb6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4744,6 +4745,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do Sabor" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uaj-bi-shg">
                                                 <rect key="frame" x="87" y="0.0" width="264" height="30"/>
+                                                <color key="backgroundColor" red="0.8383001685" green="0.89742767810000001" blue="0.92010933159999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="264" id="HVn-Jc-rO1"/>
                                                     <constraint firstAttribute="height" constant="30" id="z8e-DV-7h6"/>
@@ -4771,6 +4773,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="P, M, G, GG" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PJg-Yt-SGW" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                         <rect key="frame" x="87.5" y="0.0" width="100" height="30"/>
+                                                        <color key="backgroundColor" red="0.8383001685" green="0.89742767810000001" blue="0.92010933159999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="6tJ-NU-Fcy"/>
                                                             <constraint firstAttribute="height" constant="30" id="KHl-cq-v1c"/>
@@ -4798,6 +4801,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Quu-Fh-c6D" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                         <rect key="frame" x="56" y="0.0" width="100" height="30"/>
+                                                        <color key="backgroundColor" red="0.8383001685" green="0.89742767810000001" blue="0.92010933159999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="EqO-IS-lX7"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="gBT-uf-XJv"/>
@@ -4836,9 +4840,6 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                         <state key="normal" title="LIMPAR"/>
-                                                        <connections>
-                                                            <action selector="btnLimparOnCLick:" destination="gsN-J5-LQm" eventType="touchUpInside" id="3U6-cT-RwF"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4903,7 +4904,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6C-uh-sGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1995.6521739130437" y="2537.9464285714284"/>
+            <point key="canvasLocation" x="3516" y="2807"/>
         </scene>
         <!--Sabores Table View Controller-->
         <scene sceneID="dHb-iB-Be2">
@@ -4913,8 +4914,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="374" height="529"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ybm-QJ-Y4M">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="todosSabores" id="Ybm-QJ-Y4M">
                                 <rect key="frame" x="0.0" y="28" width="374" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ybm-QJ-Y4M" id="37x-k2-iDR">
@@ -4931,7 +4933,219 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXA-14-Hv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2751" y="2607"/>
+            <point key="canvasLocation" x="4351" y="2808"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="Nvf-o7-fog">
+            <objects>
+                <viewController id="2At-ek-qod" customClass="MenuCadastrarSaborViewController" customModule="IPizza" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xYz-JP-LRd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EJ2-ZV-Rou">
+                                <rect key="frame" x="31" y="122" width="352" height="154.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="sLQ-wd-DRh">
+                                        <rect key="frame" x="0.5" y="0.0" width="351" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sabor:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1b2-u4-E1E">
+                                                <rect key="frame" x="0.0" y="0.0" width="54" height="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do Sabor" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H0p-Uz-Psq">
+                                                <rect key="frame" x="87" y="0.0" width="264" height="30"/>
+                                                <color key="backgroundColor" red="0.8383001685" green="0.89742767810000001" blue="0.92010933159999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="RX3-Qf-jBh"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="264" id="wvg-0h-02A"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KgF-VM-AHg">
+                                        <rect key="frame" x="0.5" y="38" width="351.5" height="30"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="qN6-dh-rel">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tamanho:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHn-sE-eYQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80.5" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="cVB-rS-pij"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="pgB-em-Uve"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="P, M, G, GG" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U7d-ML-zPj" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
+                                                        <rect key="frame" x="87.5" y="0.0" width="100" height="30"/>
+                                                        <color key="backgroundColor" red="0.8383001685" green="0.89742767810000001" blue="0.92010933159999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="0YA-1M-gJ0"/>
+                                                            <constraint firstAttribute="height" constant="30" id="sB1-Im-x8b"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="000000"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VMR-H8-ZNX">
+                                                <rect key="frame" x="195.5" y="0.0" width="156" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Iz-D6-QK1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="46r-hV-nuS"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="F7e-ZZ-jR4"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P6a-6f-ewN" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
+                                                        <rect key="frame" x="56" y="0.0" width="100" height="30"/>
+                                                        <color key="backgroundColor" red="0.8383001685" green="0.89742767810000001" blue="0.92010933159999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="fIM-gR-jzH"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="t9x-JK-FOd"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="postal-code"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="000.00"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ke6-DL-Mpb">
+                                        <rect key="frame" x="0.0" y="76" width="352" height="50"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZM-y1-cUZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="352" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1Y-Em-4Oz">
+                                                        <rect key="frame" x="252" y="10" width="100" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="JS6-vo-DyM"/>
+                                                            <constraint firstAttribute="width" constant="100" id="uiT-0A-14I"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                        <state key="normal" title="ADICIONAR"/>
+                                                        <connections>
+                                                            <action selector="btnAdicionarOnClick:" destination="2At-ek-qod" eventType="touchUpInside" id="itI-wB-ds2"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSs-uh-Qya">
+                                                        <rect key="frame" x="144" y="10" width="100" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="K0z-3A-sZw"/>
+                                                            <constraint firstAttribute="width" constant="100" id="wQ7-OW-2Wc"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                        <state key="normal" title="LIMPAR"/>
+                                                        <connections>
+                                                            <action selector="btnLimparOnCLick:" destination="2At-ek-qod" eventType="touchUpInside" id="qx8-le-ey7"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="a1Y-Em-4Oz" firstAttribute="leading" secondItem="WSs-uh-Qya" secondAttribute="trailing" constant="8" id="1a9-Ud-kU6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="a1Y-Em-4Oz" secondAttribute="trailing" id="7KX-Mv-hfp"/>
+                                                    <constraint firstAttribute="bottom" secondItem="a1Y-Em-4Oz" secondAttribute="bottom" constant="10" id="Qfi-La-FEq"/>
+                                                    <constraint firstItem="a1Y-Em-4Oz" firstAttribute="top" secondItem="TZM-y1-cUZ" secondAttribute="top" constant="10" id="ahK-aL-ErN"/>
+                                                    <constraint firstAttribute="bottom" secondItem="WSs-uh-Qya" secondAttribute="bottom" constant="10" id="kWn-t6-R0D"/>
+                                                    <constraint firstItem="WSs-uh-Qya" firstAttribute="top" secondItem="TZM-y1-cUZ" secondAttribute="top" constant="10" id="oQC-gx-Edg"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lista de Sabores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHQ-b9-O0k">
+                                        <rect key="frame" x="108.5" y="134" width="135.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="154.5" id="aP4-MU-CLR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ke6-DL-Mpb" secondAttribute="trailing" id="eGR-Yx-jFg"/>
+                                    <constraint firstAttribute="width" constant="352" id="n8o-L2-6OO"/>
+                                </constraints>
+                            </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Zkp-N5-28E">
+                                <rect key="frame" x="132.5" y="64" width="149" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="YgU-Es-wkY"/>
+                                    <constraint firstAttribute="width" constant="149" id="vTo-ES-ckH"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="SALGADA"/>
+                                    <segment title="DOCE"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlOnClick:" destination="2At-ek-qod" eventType="valueChanged" id="BVF-9Q-ewP"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pnb-sA-noP">
+                                <rect key="frame" x="31" y="285" width="352" height="528"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="352" id="RLq-Lr-6YM"/>
+                                </constraints>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellSabor" id="ljw-Am-qMo">
+                                        <rect key="frame" x="0.0" y="28" width="352" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ljw-Am-qMo" id="7dS-D6-31A">
+                                            <rect key="frame" x="0.0" y="0.0" width="352" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2At-ek-qod" id="GEs-Cj-bHU"/>
+                                    <outlet property="delegate" destination="2At-ek-qod" id="sgc-tg-GAT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EJ2-ZV-Rou" firstAttribute="centerX" secondItem="xYz-JP-LRd" secondAttribute="centerX" id="2K3-L3-Qfi"/>
+                            <constraint firstItem="EJ2-ZV-Rou" firstAttribute="top" secondItem="Zkp-N5-28E" secondAttribute="bottom" constant="30" id="6wg-p4-Dmo"/>
+                            <constraint firstItem="pnb-sA-noP" firstAttribute="centerX" secondItem="xYz-JP-LRd" secondAttribute="centerX" id="GDu-xb-O9L"/>
+                            <constraint firstItem="pnb-sA-noP" firstAttribute="top" secondItem="EJ2-ZV-Rou" secondAttribute="bottom" constant="8.5" id="IzA-np-aiQ"/>
+                            <constraint firstItem="Zkp-N5-28E" firstAttribute="top" secondItem="I5V-Zc-YuE" secondAttribute="top" constant="20" id="QrX-Fk-4ht"/>
+                            <constraint firstItem="pnb-sA-noP" firstAttribute="bottom" secondItem="I5V-Zc-YuE" secondAttribute="bottom" id="f7H-Xq-45V"/>
+                            <constraint firstItem="Zkp-N5-28E" firstAttribute="centerX" secondItem="xYz-JP-LRd" secondAttribute="centerX" id="ywG-xN-1CT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I5V-Zc-YuE"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Ec1-KU-jv5"/>
+                    <navigationItem key="navigationItem" title="Title" id="fpD-jR-WAJ"/>
+                    <connections>
+                        <outlet property="lblListaSabores" destination="BHQ-b9-O0k" id="4eC-RU-lOn"/>
+                        <outlet property="segmentedControl" destination="Zkp-N5-28E" id="z7L-z0-sjP"/>
+                        <outlet property="tableView" destination="pnb-sA-noP" id="mQB-Qa-Afs"/>
+                        <outlet property="txtSabor" destination="H0p-Uz-Psq" id="8S2-qj-x6I"/>
+                        <outlet property="txtTamanho" destination="U7d-ML-zPj" id="kWx-hG-ZqV"/>
+                        <outlet property="txtValor" destination="P6a-6f-ewN" id="UMe-fM-h9X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yUf-RS-7At" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1995.6521739130437" y="2537.9464285714284"/>
         </scene>
     </scenes>
     <resources>
