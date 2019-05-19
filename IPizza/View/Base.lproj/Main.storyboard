@@ -1461,6 +1461,9 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="00000-000"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="txtCEPEditingDidEnd:" destination="hJd-kd-FU7" eventType="editingDidEnd" id="glJ-xS-Tdr"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rua:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITy-TN-DSB">
                                                         <rect key="frame" x="131.5" y="630" width="37" height="30"/>
@@ -1630,6 +1633,9 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="00000-000"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="txtCEPPizzariaEditingDidEnd:" destination="hJd-kd-FU7" eventType="editingDidEnd" id="OsK-LU-0DL"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rua:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gn-Vn-mSx">
                                                         <rect key="frame" x="131.5" y="1428" width="37" height="30"/>

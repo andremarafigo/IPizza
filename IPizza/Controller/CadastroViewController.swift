@@ -109,6 +109,14 @@ class CadastroViewController: UIViewController {
         
     }
     
+    @IBAction func txtCEPEditingDidEnd(_ sender: Any) {
+        CadastroViewModel.shared.buscaEnderecoPorCEP(owner: self, cep: txtCEP.text!, pizzaria: false)
+    }
+    
+    @IBAction func txtCEPPizzariaEditingDidEnd(_ sender: Any) {
+        CadastroViewModel.shared.buscaEnderecoPorCEP(owner: self, cep: txtCEPPizzaria.text!, pizzaria: true)
+    }
+    
     @IBAction func swtEmpresaClick(_ sender: Any) {
         swtEmpresaOnOff()
     }

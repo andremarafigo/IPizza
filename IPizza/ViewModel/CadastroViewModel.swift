@@ -65,7 +65,7 @@ class CadastroViewModel {
     }
     
     //@IBAction func txtCepChanged(_ sender: Any) {
-    func buscaEnderecoPorCEP(owner : CadastroViewController, cep : String) {
+    func buscaEnderecoPorCEP(owner : CadastroViewController, cep : String, pizzaria: Bool) {
         
         //let urlBase = "http://cep.republicavirtual.com.br/web_cep.php?cep="
         let urlBase = "https://viacep.com.br/ws/"
@@ -81,11 +81,25 @@ class CadastroViewModel {
                 if response.result.isSuccess {
                     let json = JSON(response.result.value!)
                     
-//                    self.cep.text = json["cep"].stringValue
-//                    self.cidade.text = json["localidade"].stringValue
-//                    self.endereco.text = json["logradouro"].stringValue
-//                    self.estado.text = json["uf"].stringValue
-                    print(json)
+                    if pizzaria == false {
+                        owner.txtRua.text = json["logradouro"].stringValue
+                        owner.txtBairro.text = json["bairro"].stringValue
+                        owner.txtCidade.text = json["localidade"].stringValue
+                        owner.txtEstado.text = self.trocaUFporNomeEstado(uf: json["uf"].stringValue)
+                        print(json)
+                        
+                        owner.txtNumero.text = ""
+                        owner.txtNumero.selectAll(owner)
+                    }else {
+                        owner.txtRuaPizzaria.text = json["logradouro"].stringValue
+                        owner.txtBairroPizzaria.text = json["bairro"].stringValue
+                        owner.txtCidadePizzaria.text = json["localidade"].stringValue
+                        owner.txtEstadoPizzaria.text = self.trocaUFporNomeEstado(uf: json["uf"].stringValue)
+                        print(json)
+                        
+                        owner.txtNumeroPizzaria.text = ""
+                        owner.txtNumeroPizzaria.selectAll(owner)
+                    }
                     
                 }else if (response.result.error != nil){
                     print("Error buscar CEP -> \(response.result)")
@@ -94,6 +108,47 @@ class CadastroViewModel {
                 }
             }
         }
+    }
+    
+    func trocaUFporNomeEstado(uf: String) -> String{
+        var nome : String = ""
+        let nomes : [String: String] = [
+            "AC": "Acre",
+            "AL": "Alagoas",
+            "AP": "Amapá",
+            "AM": "Amazonas",
+            "BA": "Bahia",
+            "CE": "Ceará",
+            "DF": "Distrito Federal",
+            "ES": "Espírito Santo",
+            "GO": "Goiás",
+            "MA": "Maranhão",
+            "MT": "Mato Grosso",
+            "MS": "Mato Grosso do Sul",
+            "MG": "Minas Gerais",
+            "PA": "Pará",
+            "PB": "Paraíba",
+            "PR": "Paraná",
+            "PE": "Pernambuco",
+            "PI": "Piauí",
+            "RJ": "Rio de Janeiro",
+            "RN": "Rio Grande do Norte",
+            "RS": "Rio Grande do Sul",
+            "RO": "Rondônia",
+            "RR": "Roraima",
+            "SC": "Santa Catarina",
+            "SP": "São Paulo",
+            "SE": "Sergipe",
+            "TO": "Tocantins"
+        ]
+        
+        for (sigla, nomeCompleto) in nomes {
+            if uf == sigla {
+                nome = nomeCompleto
+            }
+        }
+        
+        return nome
     }
     
 }
