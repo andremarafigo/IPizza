@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 import CoreData
+import SwiftyJSON
 
 class MapaViewModel {
     
@@ -45,21 +46,25 @@ class MapaViewModel {
                     self.pizzaria.cidade = resultado["CidadePizzaria"] as? String
                     self.pizzaria.estado = resultado["EstadoPizzaria"] as? String
                     self.pizzaria.telefone = resultado["TelefonePizzaria"] as? String
-                    let pizzas = resultado["Pizzas"] as! DataSnapshot
-                    for pizza in pizzas.children {
-                        self.sabor = Sabor()
-                        self.detalhes = DetalhesSabor()
-                        let json = pizza as! DataSnapshot
-                        let resultado = json.value as! [String : Any]
-                        self.sabor.key = resultado["Key"] as? String
-                        self.sabor.nomeSabor = resultado["NomeSabor"] as? String
-                        self.detalhes.tamanho = resultado["Tamanho"] as? String
-                        self.detalhes.valor = Double(resultado["Valor"] as! String)
-                        self.detalhes.salgada = resultado["Salgada"] as? Bool
-                        self.detalhes.tipo = resultado["Tipo"] as? String
-                        self.sabor.detalhes = self.detalhes
-                        self.pizzaria.pizzas.append(self.sabor)
+                    
+                    if (resultado["Pizzas"] != nil) {
+                        for childPizzas in resultado["Pizzas"] as! [String : Any] {             
+                            //let pizza = childPizzas.value["NomeSabor"] as? String
+//                            for pizza in childPizzas as! [String : Any] {
+//                                self.sabor = Sabor()
+//                                self.detalhes = DetalhesSabor()
+//                                self.sabor.key = pizza.value as? String
+//                                self.sabor.nomeSabor = pizza["NomeSabor"] as? String
+//                                self.detalhes.tamanho = pizza["Tamanho"] as? String
+//                                self.detalhes.valor = Double(pizza["Valor"] as! String)
+//                                self.detalhes.salgada = pizza["Salgada"] as? Bool
+//                                self.detalhes.tipo = pizza["Tipo"] as? String
+//                                self.sabor.detalhes = self.detalhes
+//                                self.pizzaria.pizzas.append(self.sabor)
+//                             }
+                        }
                     }
+                    
                     self.pizzarias.append(self.pizzaria)
                 }
             }
