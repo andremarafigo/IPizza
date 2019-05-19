@@ -19,6 +19,8 @@ class MapaViewModel {
     
     var pizzarias : [Pizzaria]!
     var pizzaria : Pizzaria!
+    var sabor : Sabor = Sabor()
+    var detalhes : DetalhesSabor = DetalhesSabor()
     
     init() {
         
@@ -34,6 +36,7 @@ class MapaViewModel {
                 let resultado = usuarios.value as! [String : Any]
                 if resultado["Pizzaria"] as? Bool == true {
                     self.pizzaria = Pizzaria()
+                    self.pizzaria.razaoSocial = resultado["RazaoSocial"] as? String
                     self.pizzaria.nomeFantasia = resultado["NomeFantasia"] as? String
                     self.pizzaria.cep = resultado["CEPPizzaria"] as? String
                     self.pizzaria.rua = resultado["RuaPizzaria"] as? String
@@ -41,6 +44,22 @@ class MapaViewModel {
                     self.pizzaria.bairro = resultado["BairroPizzaria"] as? String
                     self.pizzaria.cidade = resultado["CidadePizzaria"] as? String
                     self.pizzaria.estado = resultado["EstadoPizzaria"] as? String
+                    self.pizzaria.telefone = resultado["TelefonePizzaria"] as? String
+                    let pizzas = resultado["Pizzas"] as! DataSnapshot
+                    for pizza in pizzas.children {
+                        self.sabor = Sabor()
+                        self.detalhes = DetalhesSabor()
+                        let json = pizza as! DataSnapshot
+                        let resultado = json.value as! [String : Any]
+                        self.sabor.key = resultado["Key"] as? String
+                        self.sabor.nomeSabor = resultado["NomeSabor"] as? String
+                        self.detalhes.tamanho = resultado["Tamanho"] as? String
+                        self.detalhes.valor = Double(resultado["Valor"] as! String)
+                        self.detalhes.salgada = resultado["Salgada"] as? Bool
+                        self.detalhes.tipo = resultado["Tipo"] as? String
+                        self.sabor.detalhes = self.detalhes
+                        self.pizzaria.pizzas.append(self.sabor)
+                    }
                     self.pizzarias.append(self.pizzaria)
                 }
             }

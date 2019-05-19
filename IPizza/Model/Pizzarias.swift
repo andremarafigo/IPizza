@@ -9,6 +9,7 @@
 import Foundation
 
 class Pizzaria {
+    var razaoSocial : String!
     var nomeFantasia : String!
     var cep : String!
     var rua : String!
@@ -16,4 +17,6 @@ class Pizzaria {
     var bairro : String!
     var cidade : String!
     var estado : String!
+    var telefone : String!
+    var pizzas : [Sabor]!
 }
