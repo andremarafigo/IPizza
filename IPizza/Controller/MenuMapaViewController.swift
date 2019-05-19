@@ -16,7 +16,7 @@ class MenuMapaViewController: UIViewController, UISearchBarDelegate {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        tabBarItem = UITabBarItem(title: "Mapa", image: UIImage(named: "icons8-mapa-48"), tag: 3)
+        tabBarItem = UITabBarItem(title: "Mapa", image: UIImage(named: "icons8-mapa-30"), tag: 3)
     }
     
     override func viewDidLoad() {

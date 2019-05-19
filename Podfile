@@ -9,9 +9,10 @@ target 'IPizza' do
   pod "Firebase"
   pod "Firebase/Auth"
   pod "Firebase/Database"
+  pod 'Firebase/Storage'
   pod "JMMaskTextField-Swift"
   pod "SideMenu"
   pod 'SwiftyJSON', '~> 4.2.0'
   pod 'Alamofire'
-
+  
 end

@@ -15,7 +15,7 @@ class MenuBemVindoViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        tabBarItem = UITabBarItem(title: "Bem Vindo", image: UIImage(named: "icons8-casa-48"), tag: 1)
+        tabBarItem = UITabBarItem(title: "Bem Vindo", image: UIImage(named: "icons8-casa-32"), tag: 1)
     }
     
     override func viewDidLoad() {

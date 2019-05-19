@@ -44,6 +44,9 @@
 		966BEAFB22903FAC00FE56AE /* Sabor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BEAFA22903FAC00FE56AE /* Sabor.swift */; };
 		966BEAFD22905D3000FE56AE /* MenuSaboresPizzasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BEAFC22905D3000FE56AE /* MenuSaboresPizzasViewModel.swift */; };
 		966BEB01229086DA00FE56AE /* DetalhesSabor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BEB00229086DA00FE56AE /* DetalhesSabor.swift */; };
+		966BEB052291AE8700FE56AE /* MenuPromocoesPizzariaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BEB042291AE8700FE56AE /* MenuPromocoesPizzariaViewController.swift */; };
+		966BEB072291B45800FE56AE /* MenuPedidosPizzariaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BEB062291B45800FE56AE /* MenuPedidosPizzariaTableViewController.swift */; };
+		966BEB0B2291B57B00FE56AE /* MenuSairPizzariaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BEB0A2291B57B00FE56AE /* MenuSairPizzariaViewController.swift */; };
 		96AC923D228E1BA2006FF1CF /* TelaInicialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC923C228E1BA2006FF1CF /* TelaInicialViewModel.swift */; };
 		96AC923F228E394E006FF1CF /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC923E228E394E006FF1CF /* MapaViewController.swift */; };
 /* End PBXBuildFile section */
@@ -89,6 +92,9 @@
 		966BEAFA22903FAC00FE56AE /* Sabor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sabor.swift; sourceTree = "<group>"; };
 		966BEAFC22905D3000FE56AE /* MenuSaboresPizzasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSaboresPizzasViewModel.swift; sourceTree = "<group>"; };
 		966BEB00229086DA00FE56AE /* DetalhesSabor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhesSabor.swift; sourceTree = "<group>"; };
+		966BEB042291AE8700FE56AE /* MenuPromocoesPizzariaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPromocoesPizzariaViewController.swift; sourceTree = "<group>"; };
+		966BEB062291B45800FE56AE /* MenuPedidosPizzariaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPedidosPizzariaTableViewController.swift; sourceTree = "<group>"; };
+		966BEB0A2291B57B00FE56AE /* MenuSairPizzariaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSairPizzariaViewController.swift; sourceTree = "<group>"; };
 		96AC923C228E1BA2006FF1CF /* TelaInicialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaInicialViewModel.swift; sourceTree = "<group>"; };
 		96AC923E228E394E006FF1CF /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
 		F6CFF786D0BE5E814579B1EA /* Pods_IPizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IPizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,8 +168,10 @@
 				13D195CB227CF5EF00E0B8F0 /* LoginViewController.swift */,
 				13D195C4227CF5EE00E0B8F0 /* CadastroViewController.swift */,
 				96AC923E228E394E006FF1CF /* MapaViewController.swift */,
+				966BEB062291B45800FE56AE /* MenuPedidosPizzariaTableViewController.swift */,
+				966BEB042291AE8700FE56AE /* MenuPromocoesPizzariaViewController.swift */,
 				137BC011228F877C00A7DD0D /* MenuSaboresPizzasViewController.swift */,
-				137BC013228F87C500A7DD0D /* SaboresTableViewController.swift */,
+				966BEB0A2291B57B00FE56AE /* MenuSairPizzariaViewController.swift */,
 				13D195CD227CF5EF00E0B8F0 /* ContaSideMenuTableViewController.swift */,
 				13D195CE227CF5EF00E0B8F0 /* PizzariaViewController.swift */,
 				13D195C6227CF5EE00E0B8F0 /* EnderecosTableViewController.swift */,
@@ -171,6 +179,7 @@
 				13D195C7227CF5EE00E0B8F0 /* TelefonesEmpresaTableViewController.swift */,
 				13D195C8227CF5EF00E0B8F0 /* TelefonesTableViewController.swift */,
 				13B50D8A2283A9D40004AE0C /* TelefonesEmpresaViewController.swift */,
+				137BC013228F87C500A7DD0D /* SaboresTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -376,6 +385,7 @@
 				13D195E2227CF5F900E0B8F0 /* CadastroViewModel.swift in Sources */,
 				133B1FC2228CCADF00552553 /* Pizzarias.swift in Sources */,
 				13D195E1227CF5F900E0B8F0 /* MenuContaViewModel.swift in Sources */,
+				966BEB0B2291B57B00FE56AE /* MenuSairPizzariaViewController.swift in Sources */,
 				13D195D0227CF5EF00E0B8F0 /* MenuContaViewController.swift in Sources */,
 				96AC923D228E1BA2006FF1CF /* TelaInicialViewModel.swift in Sources */,
 				13D195DD227CF5EF00E0B8F0 /* MenuPizzariasTableViewController.swift in Sources */,
@@ -387,9 +397,11 @@
 				13D195D8227CF5EF00E0B8F0 /* MenuBemVindoViewController.swift in Sources */,
 				13D195D6227CF5EF00E0B8F0 /* TelefonesTableViewController.swift in Sources */,
 				13D195D5227CF5EF00E0B8F0 /* TelefonesEmpresaTableViewController.swift in Sources */,
+				966BEB072291B45800FE56AE /* MenuPedidosPizzariaTableViewController.swift in Sources */,
 				13D195AC227CF4D800E0B8F0 /* ViewController.swift in Sources */,
 				966BEAFD22905D3000FE56AE /* MenuSaboresPizzasViewModel.swift in Sources */,
 				13D195AA227CF4D800E0B8F0 /* AppDelegate.swift in Sources */,
+				966BEB052291AE8700FE56AE /* MenuPromocoesPizzariaViewController.swift in Sources */,
 				13D195DA227CF5EF00E0B8F0 /* MenuMapaViewController.swift in Sources */,
 				13D195D9227CF5EF00E0B8F0 /* LoginViewController.swift in Sources */,
 				13B50D8B2283A9D40004AE0C /* TelefonesEmpresaViewController.swift in Sources */,

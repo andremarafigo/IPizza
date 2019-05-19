@@ -1,32 +1,40 @@
 //
-//  MenuPizzariasTableViewController.swift
+//  MenuPedidosPizzariaTableViewController.swift
 //  IPizza
 //
-//  Created by André Marafigo on 27/04/19.
+//  Created by André Marafigo on 19/05/19.
 //  Copyright © 2019 PUCPR. All rights reserved.
 //
 
 import UIKit
 
-class MenuPizzariasTableViewController: UITableViewController {
+class MenuPedidosPizzariaTableViewController: UITableViewController {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        tabBarItem = UITabBarItem(title: "Pizzarias", image: UIImage(named: "icons8-pizza-32"), tag: 2)
+        tabBarItem = UITabBarItem(title: "Pedidos", image: UIImage(named: "icons8-lista-de-tarefas-30"), tag: 2)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tabBarController!.selectedIndex = 1;
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    // MARK: - Table view data source
+
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        // #warning Incomplete implementation, return the number of rows
+        return 0
     }
 
     /*
@@ -49,7 +57,7 @@ class MenuPizzariasTableViewController: UITableViewController {
 
     /*
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)

@@ -4658,8 +4658,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="ldS-xO-qRM" kind="relationship" relationship="viewControllers" id="mhr-dP-1ha"/>
-                        <segue destination="7t5-0x-rCk" kind="relationship" relationship="viewControllers" id="qM8-G9-abD"/>
-                        <segue destination="2At-ek-qod" kind="relationship" relationship="viewControllers" id="U2a-lO-MlY"/>
+                        <segue destination="Wqx-x2-rlN" kind="relationship" relationship="viewControllers" id="VJJ-OR-VTi"/>
+                        <segue destination="2At-ek-qod" kind="relationship" relationship="viewControllers" id="90c-Zi-FwQ"/>
+                        <segue destination="dxp-jb-m32" kind="relationship" relationship="viewControllers" id="jXS-lF-dQS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Osa-dQ-Xf7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4669,7 +4670,7 @@
         <!--Item-->
         <scene sceneID="DOF-Lt-BDY">
             <objects>
-                <tableViewController id="ldS-xO-qRM" sceneMemberID="viewController">
+                <tableViewController id="ldS-xO-qRM" customClass="MenuPedidosPizzariaTableViewController" customModule="IPizza" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="02F-nn-hGt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4696,33 +4697,36 @@
             <point key="canvasLocation" x="3925" y="1223"/>
         </scene>
         <!--Item-->
-        <scene sceneID="Zjo-8q-yuJ">
+        <scene sceneID="XoN-xI-sdt">
             <objects>
-                <tableViewController id="7t5-0x-rCk" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ajp-5b-aJ3">
+                <viewController id="dxp-jb-m32" customClass="MenuSairPizzariaViewController" customModule="IPizza" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vg8-rY-iPP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Lcy-eg-8sd">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lcy-eg-8sd" id="9lF-eO-WKb">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="7t5-0x-rCk" id="pNl-ez-MW1"/>
-                            <outlet property="delegate" destination="7t5-0x-rCk" id="Ywf-Hd-T3j"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="gS3-zu-GdK"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kVL-8d-DbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <viewLayoutGuide key="safeArea" id="mz2-CL-3Vr"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="mLU-Iy-Hnd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xU9-yV-BpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3925" y="2092"/>
+            <point key="canvasLocation" x="2952" y="2538"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="sfa-k9-OTd">
+            <objects>
+                <viewController id="Wqx-x2-rlN" customClass="MenuPromocoesPizzariaViewController" customModule="IPizza" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mxu-ha-qo7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="R2w-4P-tLH"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="RDm-SK-pQD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eCw-gs-Jol" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3925" y="1941"/>
         </scene>
         <!--Title-->
         <scene sceneID="fEW-oB-qcg">
@@ -4904,7 +4908,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6C-uh-sGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3516" y="2807"/>
+            <point key="canvasLocation" x="3925" y="2806"/>
         </scene>
         <!--Sabores Table View Controller-->
         <scene sceneID="dHb-iB-Be2">
@@ -4933,7 +4937,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXA-14-Hv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4351" y="2808"/>
+            <point key="canvasLocation" x="5103" y="2807"/>
         </scene>
         <!--Title-->
         <scene sceneID="Nvf-o7-fog">
