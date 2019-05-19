@@ -84,7 +84,7 @@ class LoginViewModel {
                 
                 self.usuario.nome = value["Nome"] as? String
                 self.usuario.cpf = value["CPF"] as? String
-                self.usuario.dataNascimento = value["DataNascimento"] as? String
+                self.usuario.dataNascimento = value["DataNascimento"] as? Date
                 self.usuario.email = value["Email"] as? String
                 self.usuario.ddi = value["DDI"] as? String
                 self.usuario.ddd = value["DDD"] as? String

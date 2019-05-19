@@ -1,5 +1,5 @@
 //
-//  Sabor.swift
+//  Valor.swift
 //  IPizza
 //
 //  Created by André Marafigo on 18/05/19.
@@ -8,8 +8,9 @@
 
 import Foundation
 
-class Sabor {
-    var key : String!
-    var nomeSabor : String!
-    var detalhes : DetalhesSabor!
+class DetalhesSabor {
+    var tamanho : String!
+    var tipo : String!
+    var salgada : Bool!
+    var valor : Double!
 }

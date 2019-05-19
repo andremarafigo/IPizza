@@ -191,9 +191,12 @@ class CadastroViewController: UIViewController {
     
     func validaTextFilds(){
         if editarUsuario != nil {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            
             txtNome.text = editarUsuario.nome
             txtCPF.text = editarUsuario.cpf
-            txtDataNascimento.text = editarUsuario.dataNascimento
+            txtDataNascimento.text = dateFormatter.string(from: editarUsuario.dataNascimento!)
             txtEmail.text = editarUsuario.email
             txtSenha.text = LoginViewModel.shared.users[0].senha
             txtDDI.text = editarUsuario.ddi

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuCadastrarSaborViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MenuSaboresPizzasViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var txtSabor: UITextField!
     @IBOutlet weak var txtTamanho: UITextField!

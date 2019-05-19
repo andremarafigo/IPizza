@@ -11,7 +11,7 @@ import Foundation
 class Usuarios {
     var nome : String?
     var cpf : String?
-    var dataNascimento : String?
+    var dataNascimento : Date?
     var email : String?
     var ddi : String?
     var ddd : String?
