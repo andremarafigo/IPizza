@@ -47,21 +47,24 @@ class MapaViewModel {
                     self.pizzaria.estado = resultado["EstadoPizzaria"] as? String
                     self.pizzaria.telefone = resultado["TelefonePizzaria"] as? String
                     
+                    
                     if (resultado["Pizzas"] != nil) {
-                        for childPizzas in resultado["Pizzas"] as! [String : Any] {             
-                            //let pizza = childPizzas.value["NomeSabor"] as? String
-//                            for pizza in childPizzas as! [String : Any] {
-//                                self.sabor = Sabor()
-//                                self.detalhes = DetalhesSabor()
-//                                self.sabor.key = pizza.value as? String
-//                                self.sabor.nomeSabor = pizza["NomeSabor"] as? String
-//                                self.detalhes.tamanho = pizza["Tamanho"] as? String
-//                                self.detalhes.valor = Double(pizza["Valor"] as! String)
-//                                self.detalhes.salgada = pizza["Salgada"] as? Bool
-//                                self.detalhes.tipo = pizza["Tipo"] as? String
-//                                self.sabor.detalhes = self.detalhes
-//                                self.pizzaria.pizzas.append(self.sabor)
-//                             }
+                        for childPizzas in resultado["Pizzas"] as! [String : Any] {
+                            print(childPizzas)
+                            
+                            let value = childPizzas.value as? NSDictionary
+                            
+                            self.sabor = Sabor()
+                            self.detalhes = DetalhesSabor()
+                            
+                            self.sabor.key = value?["Key"] as? String ?? ""
+                            self.sabor.nomeSabor = value?["NomeSabor"] as? String ?? ""
+                            self.detalhes.tamanho = value?["Tamanho"] as? String ?? ""
+                            self.detalhes.valor = Double(value?["Valor"] as? String ?? "")
+                            self.detalhes.salgada = Bool(value?["Salgada"] as? String ?? "")
+                            self.detalhes.tipo = value?["Tipo"] as? String ?? ""
+                            self.sabor.detalhes = self.detalhes
+                            self.pizzaria.pizzas.append(self.sabor)
                         }
                     }
                     

@@ -18,5 +18,5 @@ class Pizzaria {
     var cidade : String!
     var estado : String!
     var telefone : String!
-    var pizzas : [Sabor]!
+    var pizzas : [Sabor] = []
 }
