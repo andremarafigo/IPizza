@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import JMMaskTextField_Swift
 
+// Não está sendo utilizada
 class EnderecosTelefonesViewController: UIViewController {
     
     var owner : CadastroViewController?

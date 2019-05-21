@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Não está sendo utilizada
 class TelefonesEmpresaViewController: UIViewController {
 
     var owner : EnderecosTelefonesViewController?

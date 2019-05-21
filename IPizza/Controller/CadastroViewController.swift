@@ -204,7 +204,7 @@ class CadastroViewController: UIViewController {
             
             txtNome.text = editarUsuario.nome
             txtCPF.text = editarUsuario.cpf
-            txtDataNascimento.text = dateFormatter.string(from: editarUsuario.dataNascimento!)
+            txtDataNascimento.text = editarUsuario.dataNascimento
             txtEmail.text = editarUsuario.email
             txtSenha.text = LoginViewModel.shared.users[0].senha
             txtDDI.text = editarUsuario.ddi

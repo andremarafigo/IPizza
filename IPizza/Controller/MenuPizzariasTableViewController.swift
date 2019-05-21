@@ -10,6 +10,7 @@ import UIKit
 
 class MenuPizzariasTableViewController: UITableViewController {
 
+    var x : Bool = false
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         tabBarItem = UITabBarItem(title: "Pizzarias", image: UIImage(named: "icons8-pizza-32"), tag: 2)
@@ -26,18 +27,38 @@ class MenuPizzariasTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        //if tableView.headerView(forSection: section)?.textLabel?.text == "Lista de Pizzarias" {
+        if section == 2 {
+            return MapaViewModel.shared.pizzarias.count
+        }
+        
         return 1
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        var cell : UITableViewCell!
+        
 
-        // Configure the cell...
-
-        return cell
+        //if tableView.headerView(forSection: indexPath.section)?.textLabel?.text == "Logo" {
+        if indexPath.section == 0 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "cellBuscar", for: indexPath)
+        }
+        
+        //if tableView.headerView(forSection: indexPath.section)?.textLabel?.text == "Buscar" {
+        if indexPath.section == 1 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "cellLogo", for: indexPath)
+        }
+        
+       // if tableView.headerView(forSection: indexPath.section)?.textLabel?.text == "Lista de Pizzarias" {
+        if indexPath.section == 2 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "cellPizzaria", for: indexPath)
+            cell.textLabel?.text = MapaViewModel.shared.pizzarias[indexPath.row].nomeFantasia
+        }
+        
+        return cell!
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

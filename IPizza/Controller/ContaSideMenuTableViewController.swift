@@ -9,7 +9,7 @@
 import UIKit
 import SideMenu
 
-
+// Não está sendo utilizada
 class ContaSideMenuTableViewController: UITableViewController {
 
     @IBOutlet weak var cellSair: UITableViewCell!

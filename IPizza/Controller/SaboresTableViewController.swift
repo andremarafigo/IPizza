@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Não está sendo utilizada
 class SaboresTableViewController: UITableViewController {
 
     var sabores : [String] = ["Quatro Queijo", "Calabresa", "Da Casa"]

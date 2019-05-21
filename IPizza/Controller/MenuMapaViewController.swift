@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+// Não está sendo utilizada
 class MenuMapaViewController: UIViewController, UISearchBarDelegate {
 
     var editUsuario: Usuarios!

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Não está sendo utilizada
 class EnderecosTableViewController: UITableViewController {
 
     var enderecos : [String] = []

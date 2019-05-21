@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Não está sendo utilizada
 class PizzariaViewController: UIViewController {
 
     override func viewDidLoad() {
