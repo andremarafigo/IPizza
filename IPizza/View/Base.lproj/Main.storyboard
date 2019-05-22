@@ -65,13 +65,20 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <searchBar contentMode="redraw" placeholder="Nome da Pizzaria" translatesAutoresizingMaskIntoConstraints="NO" id="0xO-Xo-RF9">
+                            <searchBar contentMode="redraw" placeholder="Nome da Pizzaria" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0xO-Xo-RF9">
                                 <rect key="frame" x="0.0" y="124" width="414" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Lgn-qk-Urp"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="lgu-Dq-WEc"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="vSD-0J-2e9" id="jdy-Os-4Iy"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mDs-NI-KU9">
                                 <rect key="frame" x="0.0" y="184" width="414" height="629"/>
@@ -83,6 +90,16 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oo1-W1-VJD" id="AMu-Nv-05i">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVw-eQ-yJq">
+                                                    <rect key="frame" x="353" y="3" width="36" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="icons8-perímetro-virtual-48"/>
+                                                    <connections>
+                                                        <segue destination="iSA-LI-PDj" kind="show" identifier="mapaView" id="Qug-w2-lvV"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                     </tableViewCell>
@@ -108,10 +125,13 @@
                         <viewLayoutGuide key="safeArea" id="cM0-0F-AZ2"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="koV-Ka-XEo"/>
+                    <connections>
+                        <outlet property="tableView" destination="mDs-NI-KU9" id="VFn-zT-nCS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Hd-lT-Cee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1852.1739130434785" y="1725.6696428571429"/>
+            <point key="canvasLocation" x="-2923" y="1752"/>
         </scene>
         <!--Item-->
         <scene sceneID="Vmb-jG-XtB">
@@ -944,18 +964,71 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="FW8-N1-4Kg"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                                 <connections>
                                     <outlet property="delegate" destination="iSA-LI-PDj" id="EfC-uQ-ft0"/>
                                 </connections>
                             </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scC-Ut-oJ5">
+                                <rect key="frame" x="57" y="44" width="300" height="60"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ulr-cl-fYG">
+                                        <rect key="frame" x="5" y="5" width="290" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IPizza" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QST-lj-28y">
+                                                <rect key="frame" x="0.0" y="0.0" width="290" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="QST-lj-28y" firstAttribute="leading" secondItem="Ulr-cl-fYG" secondAttribute="leading" id="RIy-6L-dLI"/>
+                                            <constraint firstItem="QST-lj-28y" firstAttribute="top" secondItem="Ulr-cl-fYG" secondAttribute="top" id="n82-Ih-ZbO"/>
+                                            <constraint firstAttribute="trailing" secondItem="QST-lj-28y" secondAttribute="trailing" id="nOl-1t-6VF"/>
+                                            <constraint firstAttribute="bottom" secondItem="QST-lj-28y" secondAttribute="bottom" id="ofT-fn-bYR"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.79208683970000004" green="0.79220169780000005" blue="0.79206162690000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Ulr-cl-fYG" secondAttribute="bottom" constant="5" id="67O-ND-lpe"/>
+                                    <constraint firstItem="Ulr-cl-fYG" firstAttribute="top" secondItem="scC-Ut-oJ5" secondAttribute="top" constant="5" id="6WC-8H-xdu"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="8XU-R8-bqG"/>
+                                    <constraint firstItem="Ulr-cl-fYG" firstAttribute="leading" secondItem="scC-Ut-oJ5" secondAttribute="leading" constant="5" id="QMw-6Q-3Js"/>
+                                    <constraint firstAttribute="width" constant="300" id="cGe-cS-mxR"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="dD2-cU-12D"/>
+                                    <constraint firstAttribute="height" constant="60" id="h7g-SW-iHO"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ulr-cl-fYG" secondAttribute="trailing" constant="5" id="lLH-jT-MrR"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="scC-Ut-oJ5" firstAttribute="top" secondItem="PQR-JG-1jq" secondAttribute="top" id="2CK-uG-9Uj"/>
                             <constraint firstItem="opj-4Y-pKl" firstAttribute="trailing" secondItem="PQR-JG-1jq" secondAttribute="trailing" id="2Le-xE-7L6"/>
                             <constraint firstItem="6io-AP-4VE" firstAttribute="top" secondItem="r5o-HE-00A" secondAttribute="top" id="4Ft-9W-kaI"/>
                             <constraint firstItem="opj-4Y-pKl" firstAttribute="top" secondItem="PQR-JG-1jq" secondAttribute="top" constant="74" id="5FF-oH-341"/>
                             <constraint firstItem="opj-4Y-pKl" firstAttribute="leading" secondItem="PQR-JG-1jq" secondAttribute="leading" id="8JT-Bx-wZ7"/>
                             <constraint firstAttribute="bottom" secondItem="6io-AP-4VE" secondAttribute="bottom" id="Eq8-Vk-oU2"/>
+                            <constraint firstItem="scC-Ut-oJ5" firstAttribute="centerX" secondItem="r5o-HE-00A" secondAttribute="centerX" id="KZE-g1-h3s"/>
                             <constraint firstItem="6io-AP-4VE" firstAttribute="trailing" secondItem="PQR-JG-1jq" secondAttribute="trailing" id="Klb-bR-nEd"/>
                             <constraint firstItem="6io-AP-4VE" firstAttribute="leading" secondItem="PQR-JG-1jq" secondAttribute="leading" id="rxa-Vi-pDW"/>
                         </constraints>
@@ -964,6 +1037,7 @@
                     <connections>
                         <outlet property="mapaView" destination="6io-AP-4VE" id="vaS-N0-8ja"/>
                         <outlet property="searchPizzaria" destination="opj-4Y-pKl" id="SHl-GT-PHk"/>
+                        <outlet property="viewLogo" destination="scC-Ut-oJ5" id="hOy-8h-amZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SiV-kH-4Kd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2885,6 +2959,7 @@
         <!--Item-->
         <scene sceneID="SDA-XF-xl1">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lt9-nc-sqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="LHc-km-nrh" customClass="MenuPizzariasTableViewController" customModule="IPizza" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ge0-Ts-n6f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -3019,9 +3094,8 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" tag="2" title="Item" id="LUe-72-t5U"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lt9-nc-sqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2794" y="990"/>
+            <point key="canvasLocation" x="-5088" y="92"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="IuZ-cX-bCc">
@@ -3118,7 +3192,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NN7-DF-KzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3733" y="2425"/>
+            <point key="canvasLocation" x="-6867" y="2423"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="Lqb-ZZ-K2l">
@@ -3152,7 +3226,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zPP-1d-rJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4544" y="913"/>
+            <point key="canvasLocation" x="-5920" y="911"/>
         </scene>
         <!--Pedido-->
         <scene sceneID="RUJ-jb-8Wx">
@@ -3163,7 +3237,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMR-oA-gyP">
-                                <rect key="frame" x="0.0" y="45" width="414" height="768"/>
+                                <rect key="frame" x="0.0" y="45" width="414" height="817"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Bi-XS-YNP">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="602"/>
@@ -3319,7 +3393,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbD-3z-ptU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2794" y="2463"/>
+            <point key="canvasLocation" x="-5928" y="2462"/>
         </scene>
         <!--NOME DA PIZZARIA-->
         <scene sceneID="2Uj-24-oSQ">
@@ -3330,7 +3404,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVA-Zr-V86">
-                                <rect key="frame" x="0.0" y="44" width="375" height="683"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="732"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjy-7m-AGC">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
@@ -3589,17 +3663,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="NOME DA PIZZARIA" id="dJf-eq-OFW">
                         <barButtonItem key="backBarButtonItem" title="VOLTAR" id="AOJ-UL-h5i"/>
-                        <barButtonItem key="rightBarButtonItem" title="ENTREGA" id="GIN-Rm-Lgh">
-                            <connections>
-                                <segue destination="lhd-0q-FIZ" kind="show" id="bTU-nx-qDp"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="ENTREGA" id="GIN-Rm-Lgh"/>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="810"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kX-Ka-tGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3733" y="3224"/>
+            <point key="canvasLocation" x="-5491" y="3224"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Ufm-zc-MNP">
@@ -3696,7 +3766,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zmt-39-ZrN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4544" y="3224"/>
+            <point key="canvasLocation" x="-6301" y="3224"/>
         </scene>
         <!--PEDIDOS-->
         <scene sceneID="7Wd-UE-ASS">
@@ -3805,7 +3875,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybg-MH-qhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3733" y="1726"/>
+            <point key="canvasLocation" x="-6867" y="1724"/>
         </scene>
         <!--NOME DA PIZZARIA-->
         <scene sceneID="gzD-yE-TEv">
@@ -3946,7 +4016,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4A4-Fn-gik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3733" y="911"/>
+            <point key="canvasLocation" x="-5088" y="911"/>
         </scene>
         <!--PIZZARIAS-->
         <scene sceneID="2nN-8u-nYX">
@@ -4021,7 +4091,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftd-Hp-X2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1852" y="2463"/>
+            <point key="canvasLocation" x="-1861" y="1752"/>
         </scene>
         <!--SABORES-->
         <scene sceneID="VwV-Bk-GDh">
@@ -4732,7 +4802,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5tt-i7-BvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2794" y="1726"/>
+            <point key="canvasLocation" x="-5928" y="1724"/>
         </scene>
         <!--Item-->
         <scene sceneID="2Vs-rB-nUp">
@@ -5310,17 +5380,17 @@
         <image name="icons8-entrega-48" width="36" height="36"/>
         <image name="icons8-facebook" width="48" height="48"/>
         <image name="icons8-home" width="72" height="72"/>
+        <image name="icons8-perímetro-virtual-48" width="36" height="36"/>
         <image name="icons8-sair-48" width="36" height="36"/>
         <image name="icons8-usuário-de-gênero-neutro-48" width="36" height="36"/>
         <image name="icons8-verificar-48" width="36" height="36"/>
         <image name="user.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mZm-Pu-3xH"/>
-        <segue reference="nyU-76-vVw"/>
-        <segue reference="1bN-Ma-p0C"/>
+        <segue reference="buY-41-rUf"/>
+        <segue reference="cIu-vn-8CB"/>
         <segue reference="DQb-FI-f2o"/>
-        <segue reference="e9t-VV-xzA"/>
+        <segue reference="Qug-w2-lvV"/>
         <segue reference="6Q8-La-2Bz"/>
     </inferredMetricsTieBreakers>
 </document>

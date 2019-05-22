@@ -10,6 +10,18 @@ import UIKit
 import MapKit
 import CoreLocation
 
+class customPin: NSObject, MKAnnotation {
+    var coordinate: CLLocationCoordinate2D
+    var title: String?
+    var subtitle: String?
+    
+    init(pinTitle:String, pinSubTitle:String, location:CLLocationCoordinate2D) {
+        self.title = pinTitle
+        self.subtitle = pinSubTitle
+        self.coordinate = location
+    }
+}
+
 class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
     
     let lm = CLLocationManager()
@@ -23,6 +35,8 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
     @IBOutlet weak var mapaView: MKMapView!
     
     @IBOutlet weak var searchPizzaria: UISearchBar!
+    
+    @IBOutlet weak var viewLogo: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,18 +59,6 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
             lm.desiredAccuracy = kCLLocationAccuracyHundredMeters
             lm.startUpdatingLocation()
             
-            //let lat = -25.4456301
-            //let long = -49.2126449
-            
-            //Usa localização atual
-            let lat = Double((lm.location?.coordinate.latitude)!)
-            let long = Double((lm.location?.coordinate.longitude)!)
-            
-            let center = CLLocationCoordinate2DMake(lat, long)
-            let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
-            let regiao = MKCoordinateRegion(center: center, span: span)
-            self.mapaView.setRegion(regiao, animated: true)
-            
         }else {
             print("Por favor ligue o GPS")
         }
@@ -78,6 +80,18 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
+        //let lat = -25.4456301
+        //let long = -49.2126449
+        
+        //Usa localização atual
+        let lat = Double((lm.location?.coordinate.latitude)!)
+        let long = Double((lm.location?.coordinate.longitude)!)
+        
+        let center = CLLocationCoordinate2DMake(lat, long)
+        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+        let regiao = MKCoordinateRegion(center: center, span: span)
+        self.mapaView.setRegion(regiao, animated: true)
+        
         let local = locations[locations.count-1]
         
         if local.horizontalAccuracy > 0.0 {
@@ -98,8 +112,12 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
     func esconderMostrarSearchBar() {
         if self.parent is TelaInicialViewController {
             searchPizzaria.isHidden = true
-        } else {
+            viewLogo.isHidden = true
+        } else if self.parent is MenuMapaViewController{
             searchPizzaria.isHidden = false
+        } else if self.parent is MenuPizzariasViewController {
+            searchPizzaria.isHidden = false
+            viewLogo.isHidden = false
         }
     }
     
@@ -154,5 +172,74 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
             self.mapaView.setRegion(regiao, animated: true)
         }
     }
-
+    
+    
+    func criaRota(pizzaria: Pizzaria){
+        //origem
+        //Usa localização atual
+        let lat = Double((lm.location?.coordinate.latitude)!)
+        let long = Double((lm.location?.coordinate.longitude)!)
+        let sourceLocation = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        let sourcePin = customPin(pinTitle: "Você está aqui!", pinSubTitle: "", location: sourceLocation)
+        
+        let destino = ("\(String(pizzaria.rua)), \(String(pizzaria.numero)) - \(String(pizzaria.cep)) - \(String(pizzaria.bairro)), \(String(pizzaria.cidade)) - \(String(pizzaria.estado))")
+        //let destino = String("\(self.usuario.logradouro!),\(self.usuario.numero!),\(self.usuario.cep!)")
+        
+        MapaViewController.geocoder.geocodeAddressString(destino) { (placemarks, error) in
+            guard
+                let placemarks = placemarks,
+                let location = placemarks.first?.location
+                else {
+                    print("Erro location!!!")
+                    return
+            }
+            let destinationLocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            let destinationPin = customPin(pinTitle: pizzaria.nomeFantasia , pinSubTitle: "", location: destinationLocation)
+            
+            self.mapaView.addAnnotation(sourcePin)
+            self.mapaView.addAnnotation(destinationPin)
+            
+            let sourcePlaceMark = MKPlacemark(coordinate: sourceLocation)
+            let destinationPlaceMark = MKPlacemark(coordinate: destinationLocation)
+            
+            let directionRequest = MKDirections.Request()
+            directionRequest.source = MKMapItem(placemark: sourcePlaceMark)
+            directionRequest.destination = MKMapItem(placemark: destinationPlaceMark)
+            directionRequest.transportType = .automobile
+            
+            let directions = MKDirections(request: directionRequest)
+            directions.calculate { (response, error) in
+                guard let directionResonse = response else {
+                    if let error = error {
+                        print("we have error getting directions==\(error.localizedDescription)")
+                    }
+                    return
+                }
+                
+                let route = directionResonse.routes[0]
+                self.mapaView.addOverlay(route.polyline, level: .aboveRoads)
+                
+                let rect = route.polyline.boundingMapRect
+                self.mapaView.setRegion(MKCoordinateRegion(rect), animated: true)
+            }
+            
+            //self.mapaView.delegate = self
+        }
+        
+        
+    }
+    
+    //MARK:- MapKit delegates
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = UIColor.blue
+        renderer.lineWidth = 4.0
+        return renderer
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 }
