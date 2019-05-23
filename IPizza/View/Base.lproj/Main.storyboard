@@ -65,7 +65,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <searchBar contentMode="redraw" placeholder="Nome da Pizzaria" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0xO-Xo-RF9">
+                            <searchBar contentMode="redraw" placeholder="Nome da Pizzaria" translatesAutoresizingMaskIntoConstraints="NO" id="0xO-Xo-RF9">
                                 <rect key="frame" x="0.0" y="124" width="414" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Lgn-qk-Urp"/>
@@ -956,6 +956,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="iSA-LI-PDj" id="hdK-Mj-983"/>
+                                </connections>
                             </mapView>
                             <searchBar contentMode="redraw" placeholder="Buscar Pizzaria" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opj-4Y-pKl">
                                 <rect key="frame" x="0.0" y="118" width="414" height="60"/>
@@ -1019,6 +1022,17 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWR-B5-X2Z">
+                                <rect key="frame" x="175" y="798" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="6E9-uB-JrQ"/>
+                                    <constraint firstAttribute="height" constant="64" id="c5E-b6-Rgy"/>
+                                </constraints>
+                                <state key="normal" image="icons8-voltar-64"/>
+                                <connections>
+                                    <action selector="btnVoltarOnClick:" destination="iSA-LI-PDj" eventType="touchUpInside" id="xEG-XZ-WUy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1030,11 +1044,14 @@
                             <constraint firstAttribute="bottom" secondItem="6io-AP-4VE" secondAttribute="bottom" id="Eq8-Vk-oU2"/>
                             <constraint firstItem="scC-Ut-oJ5" firstAttribute="centerX" secondItem="r5o-HE-00A" secondAttribute="centerX" id="KZE-g1-h3s"/>
                             <constraint firstItem="6io-AP-4VE" firstAttribute="trailing" secondItem="PQR-JG-1jq" secondAttribute="trailing" id="Klb-bR-nEd"/>
+                            <constraint firstItem="cWR-B5-X2Z" firstAttribute="centerX" secondItem="r5o-HE-00A" secondAttribute="centerX" id="Orz-4M-g5d"/>
+                            <constraint firstItem="cWR-B5-X2Z" firstAttribute="bottom" secondItem="PQR-JG-1jq" secondAttribute="bottom" id="Zoo-9N-BZq"/>
                             <constraint firstItem="6io-AP-4VE" firstAttribute="leading" secondItem="PQR-JG-1jq" secondAttribute="leading" id="rxa-Vi-pDW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQR-JG-1jq"/>
                     </view>
                     <connections>
+                        <outlet property="btnVoltar" destination="cWR-B5-X2Z" id="Jdt-Qf-Fot"/>
                         <outlet property="mapaView" destination="6io-AP-4VE" id="vaS-N0-8ja"/>
                         <outlet property="searchPizzaria" destination="opj-4Y-pKl" id="SHl-GT-PHk"/>
                         <outlet property="viewLogo" destination="scC-Ut-oJ5" id="hOy-8h-amZ"/>
@@ -1582,7 +1599,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="N6S-Hg-F70">
                                                         <rect key="frame" x="45" y="504" width="210.5" height="30"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+55" borderStyle="roundedRect" placeholder="+00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zrd-tD-EH1">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+55" borderStyle="roundedRect" placeholder="+00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zrd-tD-EH1" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                                 <rect key="frame" x="0.0" y="0.0" width="47.5" height="30"/>
                                                                 <color key="backgroundColor" red="0.83830016851425171" green="0.89742767810821533" blue="0.9201093316078186" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
@@ -1592,8 +1609,11 @@
                                                                 <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="+00"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="41" borderStyle="roundedRect" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="469-Ed-cWG">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="41" borderStyle="roundedRect" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="469-Ed-cWG" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                                 <rect key="frame" x="52.5" y="0.0" width="40" height="30"/>
                                                                 <color key="backgroundColor" red="0.83830016851425171" green="0.89742767810821533" blue="0.9201093316078186" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
@@ -1603,6 +1623,9 @@
                                                                 <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="00"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9-9999-9999" borderStyle="roundedRect" placeholder="0-0000-0000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bx4-Dg-qgy" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                                 <rect key="frame" x="97.5" y="0.0" width="113" height="30"/>
@@ -1905,7 +1928,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iKL-Mt-PWL">
                                                         <rect key="frame" x="51.5" y="1890" width="197.5" height="30"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+55" borderStyle="roundedRect" placeholder="+00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Sr-da-I5g">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+55" borderStyle="roundedRect" placeholder="+00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Sr-da-I5g" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                                 <rect key="frame" x="0.0" y="0.0" width="47.5" height="30"/>
                                                                 <color key="backgroundColor" red="0.83830016851425171" green="0.89742767810821533" blue="0.9201093316078186" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
@@ -1915,8 +1938,11 @@
                                                                 <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="+00"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="41" borderStyle="roundedRect" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQL-oF-EMd">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="41" borderStyle="roundedRect" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQL-oF-EMd" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                                 <rect key="frame" x="52.5" y="0.0" width="40" height="30"/>
                                                                 <color key="backgroundColor" red="0.83830016851425171" green="0.89742767810821533" blue="0.9201093316078186" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
@@ -1926,6 +1952,9 @@
                                                                 <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="00"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3333-3333" borderStyle="roundedRect" placeholder="000000000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gki-bT-pXb" customClass="JMMaskTextField" customModule="JMMaskTextField_Swift">
                                                                 <rect key="frame" x="97.5" y="0.0" width="100" height="30"/>
@@ -2959,7 +2988,6 @@
         <!--Item-->
         <scene sceneID="SDA-XF-xl1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lt9-nc-sqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="LHc-km-nrh" customClass="MenuPizzariasTableViewController" customModule="IPizza" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ge0-Ts-n6f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -3094,6 +3122,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" tag="2" title="Item" id="LUe-72-t5U"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lt9-nc-sqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-5088" y="92"/>
         </scene>
@@ -5384,12 +5413,13 @@
         <image name="icons8-sair-48" width="36" height="36"/>
         <image name="icons8-usuário-de-gênero-neutro-48" width="36" height="36"/>
         <image name="icons8-verificar-48" width="36" height="36"/>
+        <image name="icons8-voltar-64" width="48" height="48"/>
         <image name="user.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="buY-41-rUf"/>
         <segue reference="cIu-vn-8CB"/>
-        <segue reference="DQb-FI-f2o"/>
+        <segue reference="uj2-4W-Tl6"/>
         <segue reference="Qug-w2-lvV"/>
         <segue reference="6Q8-La-2Bz"/>
     </inferredMetricsTieBreakers>

@@ -30,9 +30,17 @@ class CadastroViewModel {
             guard (result?.user) != nil
                 else {
                     print(error!)
+                    let alert = UIAlertController(title: "E-mail já utilizado", message: "Favor informar um e-mail válido!", preferredStyle: UIAlertController.Style.alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        owner.txtEmail.selectAll(owner)
+                    }))
+                    
+                    // show the alert
+                    owner.present(alert, animated: true, completion: nil)
                     return
             }
-            print("Deu certo")
+            print(MapaViewModel.shared.pizzarias.count)
             
             key = (result?.user.uid)!
             
@@ -42,12 +50,14 @@ class CadastroViewModel {
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                 owner.navigationController?.popViewController(animated: true)
+                print(MapaViewModel.shared.pizzarias.count)
             }))
             
             // show the alert
             owner.present(alert, animated: true, completion: nil)
             //return
         }
+        print(MapaViewModel.shared.pizzarias.count)
     }
     
     func alteraUsuario(owner: CadastroViewController, usuario: [String : Any]?) {

@@ -24,7 +24,7 @@ class LoginViewModel {
     var users : [User] = []
     var user : User!
     
-    let usuario = Usuarios()
+    var usuario = Usuarios()
     
     init() {
         loadData()
@@ -52,7 +52,7 @@ class LoginViewModel {
                     owner.present(alert, animated: true, completion: nil)
                     return
             }
-        
+            print(MapaViewModel.shared.pizzarias.count)
             print("Deu certo")
             
             Analytics.setUserProperty("sim", forName: "Entrou")
@@ -64,6 +64,7 @@ class LoginViewModel {
             
             //self.salvaUserCoreData(valida: x, key: user.uid, usuario: email, password: senha)
         }
+        print(MapaViewModel.shared.pizzarias.count)
     }
     
     func logout () {
@@ -81,7 +82,7 @@ class LoginViewModel {
         database = Database.database().reference()
         self.database.child("Usuarios").child(key).observe(.value, with: { (snapshot: DataSnapshot) in
             if let value = snapshot.value as? [String : Any] {
-                
+                self.usuario = Usuarios()
                 self.usuario.nome = value["Nome"] as? String
                 self.usuario.cpf = value["CPF"] as? String
                 self.usuario.dataNascimento = value["DataNascimento"] as? String

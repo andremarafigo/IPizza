@@ -105,11 +105,8 @@ class MenuPizzariasViewController: UIViewController, UITableViewDataSource, UITa
             
             let indexPath = tableView.indexPath(for: cell)
             
-            let local : String = "\(rua[indexPath!.row]), N. \(numero[indexPath!.row]) - CEP: \(cep[indexPath!.row])"
-            let nomeCliente : String = self.nomeCliente
-            
-            nextEditar.endereco = local
-            nextEditar.nomeCliente = nomeCliente
+            nextEditar.escondeSearch = true
+            nextEditar.criaRota(pizzaria: MapaViewModel.shared.pizzarias[(indexPath?.row)!])
         }
     }
 }

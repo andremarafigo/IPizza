@@ -134,6 +134,7 @@ class CadastroViewController: UIViewController {
                 CadastroViewModel.shared.createUsuario(owner: self, usuario: json, email: txtEmail.text!, senha: txtSenha.text!)
             }
         }
+        print(MapaViewModel.shared.pizzarias.count)
     }
     
     @IBAction func txtSenhaEditEnd(_ sender: Any) {
@@ -250,7 +251,7 @@ class CadastroViewController: UIViewController {
             lblSenha.isHidden = true
             txtSenha.isHidden = true
             btnCadastrar.setTitle("Alterar", for: .normal)
-        }/*else { //Descomentar quando acabar os testes.
+        }else { //Descomentar quando acabar os testes.
             txtNome.text = ""
             txtCPF.text = ""
             txtDataNascimento.text = ""
@@ -280,7 +281,7 @@ class CadastroViewController: UIViewController {
             txtDDDPizzaria.text = ""
             txtTelefonePizzaria.text = ""
             btnCadastrar.setTitle("Cadastrar", for: .normal)
-        }*/
+        }
         
         swtEmpresaOnOff()
     }

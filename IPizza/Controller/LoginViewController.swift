@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //print(MapaViewModel.shared.pizzarias.count)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.viewTapped(gestureRecognizer:)))
         
         view.addGestureRecognizer(tapGesture)
@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signin(_ sender: Any) {
+        print(MapaViewModel.shared.pizzarias.count)
         let email: String = txtEmail.text!
         let senha: String = txtSenha.text!
 

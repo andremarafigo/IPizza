@@ -22,7 +22,7 @@ class customPin: NSObject, MKAnnotation {
     }
 }
 
-class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
+class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate, MKMapViewDelegate {
     
     let lm = CLLocationManager()
     static let geocoder = CLGeocoder()
@@ -32,11 +32,15 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
     
     var chamarLoadDataFireBase: Bool!
     
+    var escondeSearch : Bool = false
+    
     @IBOutlet weak var mapaView: MKMapView!
     
     @IBOutlet weak var searchPizzaria: UISearchBar!
     
     @IBOutlet weak var viewLogo: UIView!
+    
+    @IBOutlet weak var btnVoltar: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +76,10 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
         if chamarLoadDataFireBase == true {
             MapaViewModel.shared.loadDataFireBase(owner: self)
         }
+    }
+    
+    @IBAction func btnVoltarOnClick(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     override open var shouldAutorotate: Bool {
@@ -113,11 +121,14 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
         if self.parent is TelaInicialViewController {
             searchPizzaria.isHidden = true
             viewLogo.isHidden = true
+            btnVoltar.isHidden = true
         } else if self.parent is MenuMapaViewController{
             searchPizzaria.isHidden = false
-        } else if self.parent is MenuPizzariasViewController {
-            searchPizzaria.isHidden = false
+            btnVoltar.isHidden = true
+        } else if escondeSearch == true {
+            searchPizzaria.isHidden = true
             viewLogo.isHidden = false
+            btnVoltar.isHidden = false
         }
     }
     
@@ -174,7 +185,7 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
     }
     
     
-    func criaRota(pizzaria: Pizzaria){
+    func criaRota(pizzaria : Pizzaria){
         //origem
         //Usa localização atual
         let lat = Double((lm.location?.coordinate.latitude)!)
@@ -219,11 +230,23 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
                 let route = directionResonse.routes[0]
                 self.mapaView.addOverlay(route.polyline, level: .aboveRoads)
                 
-                let rect = route.polyline.boundingMapRect
+                var rect = route.polyline.boundingMapRect
+                
+                let wPadding = rect.size.width * 0.5
+                let hPadding = rect.size.height * 0.5
+                
+                //Add padding to the region
+                rect.size.width += wPadding
+                rect.size.height += hPadding
+                
+                //Center the region on the line
+                rect.origin.x -= wPadding / 2
+                rect.origin.y -= hPadding / 2
+                
                 self.mapaView.setRegion(MKCoordinateRegion(rect), animated: true)
             }
             
-            //self.mapaView.delegate = self
+            self.mapaView.delegate = self
         }
         
         
