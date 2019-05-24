@@ -9,6 +9,7 @@
 import Foundation
 
 class Pizzaria {
+    var key : String!
     var razaoSocial : String!
     var nomeFantasia : String!
     var cep : String!

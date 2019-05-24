@@ -44,11 +44,16 @@ class CadastroViewModel {
             
             key = (result?.user.uid)!
             
-            self.refUsuarios.child(key).setValue(usuario)
+            var usuarioComKey = usuario
+            
+            usuarioComKey?.updateValue(key, forKey: "Key")
+            
+            self.refUsuarios.child(key).setValue(usuarioComKey)
             
             let alert = UIAlertController(title: "Cadastro realizado com sucesso.", message: "Clique em OK para continuar!", preferredStyle: UIAlertController.Style.alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                MapaViewModel.shared.carregaPizzarias()
                 owner.navigationController?.popViewController(animated: true)
                 print(MapaViewModel.shared.pizzarias.count)
             }))

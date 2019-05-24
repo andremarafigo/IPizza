@@ -9,6 +9,7 @@
 import Foundation
 
 class Usuarios {
+    var key : String?
     var nome : String?
     var cpf : String?
     var dataNascimento : String?

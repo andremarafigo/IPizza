@@ -83,6 +83,7 @@ class LoginViewModel {
         self.database.child("Usuarios").child(key).observe(.value, with: { (snapshot: DataSnapshot) in
             if let value = snapshot.value as? [String : Any] {
                 self.usuario = Usuarios()
+                self.usuario.key = value["Key"] as? String
                 self.usuario.nome = value["Nome"] as? String
                 self.usuario.cpf = value["CPF"] as? String
                 self.usuario.dataNascimento = value["DataNascimento"] as? String

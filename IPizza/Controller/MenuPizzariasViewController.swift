@@ -100,13 +100,17 @@ class MenuPizzariasViewController: UIViewController, UITableViewDataSource, UITa
             let botao = sender as! UIButton
             let content = botao.superview
             let cell = content!.superview as! UITableViewCell
-            
+            //let indexPath = tableView.indexPath(for: cell)
+            var pizzaria = Pizzaria()
             let nextEditar = segue.destination as! MapaViewController
             
-            let indexPath = tableView.indexPath(for: cell)
-            
-            nextEditar.escondeSearch = true
-            nextEditar.criaRota(pizzaria: MapaViewModel.shared.pizzarias[(indexPath?.row)!])
+            for p in MapaViewModel.shared.pizzarias {
+                if p.nomeFantasia == cell.textLabel?.text {
+                    pizzaria = p
+                    nextEditar.escondeSearch = true
+                    nextEditar.criaRota(pizzaria: pizzaria)
+                }
+            }
         }
     }
 }

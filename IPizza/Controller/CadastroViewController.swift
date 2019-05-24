@@ -337,6 +337,7 @@ class CadastroViewController: UIViewController {
                     "DDDPizzaria": txtDDD.text! as String,
                     "TelefonePizzaria": txtTelefonePizzaria.text! as String
                 ]
+                print(usuario)
                 return usuario
             }
             
@@ -372,6 +373,7 @@ class CadastroViewController: UIViewController {
                     "Telefone": txtTelefone.text! as String,
                     "Pizzaria": swtEmpresa.isOn
                 ]
+                print(usuario)
                 return usuario
             }
         }
