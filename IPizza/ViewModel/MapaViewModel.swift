@@ -48,7 +48,6 @@ class MapaViewModel {
                     self.pizzaria.estado = resultado["EstadoPizzaria"] as? String
                     self.pizzaria.telefone = resultado["TelefonePizzaria"] as? String
                     
-                    
                     if (resultado["Pizzas"] != nil) {
                         for childPizzas in resultado["Pizzas"] as! [String : Any] {
                             print(childPizzas)
@@ -58,12 +57,12 @@ class MapaViewModel {
                             self.sabor = Sabor()
                             self.detalhes = DetalhesSabor()
                             
-                            self.sabor.key = value?["Key"] as? String ?? ""
-                            self.sabor.nomeSabor = value?["NomeSabor"] as? String ?? ""
-                            self.detalhes.tamanho = value?["Tamanho"] as? String ?? ""
-                            self.detalhes.valor = Double(value?["Valor"] as? String ?? "")
-                            self.detalhes.salgada = Bool(value?["Salgada"] as? String ?? "")
-                            self.detalhes.tipo = value?["Tipo"] as? String ?? ""
+                            self.sabor.key = value!["Key"] as? String
+                            self.sabor.nomeSabor = value!["NomeSabor"] as? String
+                            self.detalhes.tamanho = value!["Tamanho"] as? String
+                            self.detalhes.valor = value!["Valor"] as? Double
+                            self.detalhes.salgada = value!["Salgada"] as? Bool
+                            self.detalhes.tipo = value!["Tipo"] as? String
                             self.sabor.detalhes = self.detalhes
                             self.pizzaria.pizzas.append(self.sabor)
                         }

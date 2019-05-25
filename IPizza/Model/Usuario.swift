@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Usuarios {
+class Usuario {
     var key : String?
     var nome : String?
     var cpf : String?

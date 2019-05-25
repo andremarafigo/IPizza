@@ -3223,11 +3223,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4IX-JU-CJa">
                                                 <rect key="frame" x="0.0" y="688" width="414" height="80"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detalhes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tI0-Is-YfU">
-                                                        <rect key="frame" x="8" y="15" width="100" height="50"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tI0-Is-YfU">
+                                                        <rect key="frame" x="8" y="15" width="85" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="Ba7-qB-s9B"/>
-                                                            <constraint firstAttribute="width" constant="100" id="Dt4-ae-l8G"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -3243,6 +3242,9 @@
                                                         <state key="normal" title="ADICIONAR">
                                                             <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnAdicionarOnClick:" destination="J6o-8L-fq7" eventType="touchUpInside" id="YtW-W6-ziJ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3298,7 +3300,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="segmentedControl" destination="Kgw-WG-wMM" id="3bE-A9-4oO"/>
+                        <outlet property="lblDetalhes" destination="tI0-Is-YfU" id="udU-GS-va3"/>
+                        <outlet property="scPartes" destination="28q-Ce-rdD" id="lzj-H1-Hxs"/>
+                        <outlet property="scSalgadaDoce" destination="Kgw-WG-wMM" id="3bE-A9-4oO"/>
+                        <outlet property="scTamanho" destination="g0e-Gx-5hT" id="nc8-mX-rpz"/>
                         <outlet property="tableView" destination="ZwC-Pq-VYb" id="rEQ-is-NqX"/>
                     </connections>
                 </viewController>

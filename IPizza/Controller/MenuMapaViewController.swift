@@ -12,7 +12,7 @@ import UIKit
 // Não está sendo utilizada
 class MenuMapaViewController: UIViewController, UISearchBarDelegate {
 
-    var editUsuario: Usuarios!
+    var editUsuario: Usuario!
     var validaLocais: Bool = false
     let escondeSearchBar : Bool = true
     

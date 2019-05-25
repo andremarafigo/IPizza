@@ -14,7 +14,7 @@ class CadastroViewController: UIViewController {
     var email: String = ""
     var senha: String = ""
     var usuario: [String: Any]?
-    var editarUsuario: Usuarios!
+    var editarUsuario: Usuario!
     
     //Campos para Usuário
     @IBOutlet weak var lblEmail: UILabel!

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1320058C228A45F50078F03C /* MapaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320058B228A45F50078F03C /* MapaViewModel.swift */; };
-		133B1FC2228CCADF00552553 /* Pizzarias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133B1FC1228CCADF00552553 /* Pizzarias.swift */; };
+		133B1FC2228CCADF00552553 /* Pizzaria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133B1FC1228CCADF00552553 /* Pizzaria.swift */; };
 		13500703229382F10052B85D /* MenuPizzariasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13500702229382F10052B85D /* MenuPizzariasViewController.swift */; };
 		137BC012228F877C00A7DD0D /* MenuSaboresPizzasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137BC011228F877C00A7DD0D /* MenuSaboresPizzasViewController.swift */; };
 		137BC014228F87C500A7DD0D /* SaboresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137BC013228F87C500A7DD0D /* SaboresTableViewController.swift */; };
@@ -35,7 +35,7 @@
 		13D195E1227CF5F900E0B8F0 /* MenuContaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195DE227CF5F900E0B8F0 /* MenuContaViewModel.swift */; };
 		13D195E2227CF5F900E0B8F0 /* CadastroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195DF227CF5F900E0B8F0 /* CadastroViewModel.swift */; };
 		13D195E3227CF5F900E0B8F0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195E0227CF5F900E0B8F0 /* LoginViewModel.swift */; };
-		13D195E5227CF60D00E0B8F0 /* Usuarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195E4227CF60D00E0B8F0 /* Usuarios.swift */; };
+		13D195E5227CF60D00E0B8F0 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D195E4227CF60D00E0B8F0 /* Usuario.swift */; };
 		13D195EB227CF63600E0B8F0 /* IPizza.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D195E7227CF63500E0B8F0 /* IPizza.png */; };
 		13D195EC227CF63600E0B8F0 /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 13D195E8227CF63600E0B8F0 /* 1024.png */; };
 		13D195ED227CF63600E0B8F0 /* SetaDropDown.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13D195E9227CF63600E0B8F0 /* SetaDropDown.jpg */; };
@@ -44,6 +44,7 @@
 		4D84037289319A1F78F23A49 /* Pods_IPizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CFF786D0BE5E814579B1EA /* Pods_IPizza.framework */; };
 		96382A8922996BB6004EF8D3 /* PizzariaMontaPedidoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96382A8822996BB6004EF8D3 /* PizzariaMontaPedidoViewController.swift */; };
 		96382A8B22996E26004EF8D3 /* PizzariaMontaPedidoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96382A8A22996E26004EF8D3 /* PizzariaMontaPedidoViewModel.swift */; };
+		96382A8F2299ADC0004EF8D3 /* Pedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96382A8E2299ADC0004EF8D3 /* Pedido.swift */; };
 		966BEAFB22903FAC00FE56AE /* Sabor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BEAFA22903FAC00FE56AE /* Sabor.swift */; };
 		966BEAFD22905D3000FE56AE /* MenuSaboresPizzasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BEAFC22905D3000FE56AE /* MenuSaboresPizzasViewModel.swift */; };
 		966BEB01229086DA00FE56AE /* DetalhesSabor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BEB00229086DA00FE56AE /* DetalhesSabor.swift */; };
@@ -58,7 +59,7 @@
 /* Begin PBXFileReference section */
 		0A31AB71BCBB90CA242E0284 /* Pods-IPizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPizza.debug.xcconfig"; path = "Target Support Files/Pods-IPizza/Pods-IPizza.debug.xcconfig"; sourceTree = "<group>"; };
 		1320058B228A45F50078F03C /* MapaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewModel.swift; sourceTree = "<group>"; };
-		133B1FC1228CCADF00552553 /* Pizzarias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizzarias.swift; sourceTree = "<group>"; };
+		133B1FC1228CCADF00552553 /* Pizzaria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizzaria.swift; sourceTree = "<group>"; };
 		13500702229382F10052B85D /* MenuPizzariasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPizzariasViewController.swift; sourceTree = "<group>"; };
 		137BC011228F877C00A7DD0D /* MenuSaboresPizzasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSaboresPizzasViewController.swift; sourceTree = "<group>"; };
 		137BC013228F87C500A7DD0D /* SaboresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaboresTableViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +88,7 @@
 		13D195DE227CF5F900E0B8F0 /* MenuContaViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContaViewModel.swift; sourceTree = "<group>"; };
 		13D195DF227CF5F900E0B8F0 /* CadastroViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewModel.swift; sourceTree = "<group>"; };
 		13D195E0227CF5F900E0B8F0 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		13D195E4227CF60D00E0B8F0 /* Usuarios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuarios.swift; sourceTree = "<group>"; };
+		13D195E4227CF60D00E0B8F0 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		13D195E7227CF63500E0B8F0 /* IPizza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IPizza.png; sourceTree = "<group>"; };
 		13D195E8227CF63600E0B8F0 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024.png; sourceTree = "<group>"; };
 		13D195E9227CF63600E0B8F0 /* SetaDropDown.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SetaDropDown.jpg; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 		5DAEDADB0DB02431F9C8D2C9 /* Pods-IPizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPizza.release.xcconfig"; path = "Target Support Files/Pods-IPizza/Pods-IPizza.release.xcconfig"; sourceTree = "<group>"; };
 		96382A8822996BB6004EF8D3 /* PizzariaMontaPedidoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzariaMontaPedidoViewController.swift; sourceTree = "<group>"; };
 		96382A8A22996E26004EF8D3 /* PizzariaMontaPedidoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzariaMontaPedidoViewModel.swift; sourceTree = "<group>"; };
+		96382A8E2299ADC0004EF8D3 /* Pedido.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedido.swift; sourceTree = "<group>"; };
 		966BEAFA22903FAC00FE56AE /* Sabor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sabor.swift; sourceTree = "<group>"; };
 		966BEAFC22905D3000FE56AE /* MenuSaboresPizzasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSaboresPizzasViewModel.swift; sourceTree = "<group>"; };
 		966BEB00229086DA00FE56AE /* DetalhesSabor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhesSabor.swift; sourceTree = "<group>"; };
@@ -212,10 +214,11 @@
 		13D195C1227CF5A400E0B8F0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				13D195E4227CF60D00E0B8F0 /* Usuarios.swift */,
-				133B1FC1228CCADF00552553 /* Pizzarias.swift */,
+				13D195E4227CF60D00E0B8F0 /* Usuario.swift */,
+				133B1FC1228CCADF00552553 /* Pizzaria.swift */,
 				966BEAFA22903FAC00FE56AE /* Sabor.swift */,
 				966BEB00229086DA00FE56AE /* DetalhesSabor.swift */,
+				96382A8E2299ADC0004EF8D3 /* Pedido.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -388,7 +391,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13D195DC227CF5EF00E0B8F0 /* PizzariaPromocoesViewController.swift in Sources */,
-				13D195E5227CF60D00E0B8F0 /* Usuarios.swift in Sources */,
+				13D195E5227CF60D00E0B8F0 /* Usuario.swift in Sources */,
+				96382A8F2299ADC0004EF8D3 /* Pedido.swift in Sources */,
 				96AC923F228E394E006FF1CF /* MapaViewController.swift in Sources */,
 				96382A8922996BB6004EF8D3 /* PizzariaMontaPedidoViewController.swift in Sources */,
 				13D195B2227CF4D800E0B8F0 /* IPizza.xcdatamodeld in Sources */,
@@ -397,7 +401,7 @@
 				137BC014228F87C500A7DD0D /* SaboresTableViewController.swift in Sources */,
 				966BEB01229086DA00FE56AE /* DetalhesSabor.swift in Sources */,
 				13D195E2227CF5F900E0B8F0 /* CadastroViewModel.swift in Sources */,
-				133B1FC2228CCADF00552553 /* Pizzarias.swift in Sources */,
+				133B1FC2228CCADF00552553 /* Pizzaria.swift in Sources */,
 				13D195E1227CF5F900E0B8F0 /* MenuContaViewModel.swift in Sources */,
 				966BEB0B2291B57B00FE56AE /* MenuSairViewController.swift in Sources */,
 				13D195D0227CF5EF00E0B8F0 /* MenuContaViewController.swift in Sources */,
