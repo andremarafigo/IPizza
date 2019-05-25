@@ -185,11 +185,11 @@ class MenuSaboresPizzasViewController: UIViewController, UITableViewDataSource, 
     func separaSabores() {
         saboresSalgados = []
         saboresDoces = []
-        for x in MenuSaboresPizzasViewModel.shared.sabores {
-            if x.detalhes.salgada == true {
-                saboresSalgados.append(x)
+        for sab in MenuSaboresPizzasViewModel.shared.sabores {
+            if sab.detalhes.salgada == true {
+                saboresSalgados.append(sab)
             }else {
-                saboresDoces.append(x)
+                saboresDoces.append(sab)
             }
         }
     }

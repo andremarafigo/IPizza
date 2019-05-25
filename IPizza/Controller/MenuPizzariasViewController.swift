@@ -32,45 +32,6 @@ class MenuPizzariasViewController: UIViewController, UITableViewDataSource, UITa
         tableView.reloadData()
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searching {
-            return searchedCountry.count
-        } else {
-            return MapaViewModel.shared.pizzarias.count
-        }
-        
-//        var num : Int = 0
-//        if pizzariaEncontrada == true {
-//            num = pizzarias.count
-//        }else {
-//            num = MapaViewModel.shared.pizzarias.count
-//        }
-//        return num
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellPizzaria", for: indexPath)
-        
-        if searching {
-            cell.textLabel?.text = searchedCountry[indexPath.row].nomeFantasia
-        } else {
-            cell.textLabel?.text = MapaViewModel.shared.pizzarias[indexPath.row].nomeFantasia
-        }
-        
-//        if pizzariaEncontrada == true {
-//            cell.textLabel?.text = pizzarias[indexPath.row].nomeFantasia
-//        }else {
-//            cell.textLabel?.text = MapaViewModel.shared.pizzarias[indexPath.row].nomeFantasia
-//        }
-        
-        return cell
-    }
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchedCountry = MapaViewModel.shared.pizzarias.filter({$0.nomeFantasia.lowercased().prefix(searchText.count) == searchText.lowercased()})
         searching = true
@@ -95,20 +56,75 @@ class MenuPizzariasViewController: UIViewController, UITableViewDataSource, UITa
 //        }
 //    }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searching {
+            return searchedCountry.count
+        } else {
+            return MapaViewModel.shared.pizzarias.count
+        }
+        
+        //        var num : Int = 0
+        //        if pizzariaEncontrada == true {
+        //            num = pizzarias.count
+        //        }else {
+        //            num = MapaViewModel.shared.pizzarias.count
+        //        }
+        //        return num
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellPizzaria", for: indexPath)
+        
+        if searching {
+            cell.textLabel?.text = searchedCountry[indexPath.row].nomeFantasia
+        } else {
+            cell.textLabel?.text = MapaViewModel.shared.pizzarias[indexPath.row].nomeFantasia
+        }
+        
+        //        if pizzariaEncontrada == true {
+        //            cell.textLabel?.text = pizzarias[indexPath.row].nomeFantasia
+        //        }else {
+        //            cell.textLabel?.text = MapaViewModel.shared.pizzarias[indexPath.row].nomeFantasia
+        //        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //var pizzaria = Pizzaria()
+        
         if segue.identifier == "mapaView" {
+            let nextMapa = segue.destination as! MapaViewController
+            
             let botao = sender as! UIButton
             let content = botao.superview
             let cell = content!.superview as! UITableViewCell
             //let indexPath = tableView.indexPath(for: cell)
-            var pizzaria = Pizzaria()
-            let nextEditar = segue.destination as! MapaViewController
             
-            for p in MapaViewModel.shared.pizzarias {
-                if p.nomeFantasia == cell.textLabel?.text {
-                    pizzaria = p
-                    nextEditar.escondeSearch = true
-                    nextEditar.criaRota(pizzaria: pizzaria)
+            for pizzaria in MapaViewModel.shared.pizzarias {
+                if pizzaria.nomeFantasia == cell.textLabel?.text {
+                    //pizzaria = p
+                    nextMapa.escondeSearch = true
+                    nextMapa.criaRota(pizzaria: pizzaria)
+                }
+            }
+        }else if segue.identifier == "pizzaria" {
+            let cell = sender as! UITableViewCell
+            
+            for pizzaria in MapaViewModel.shared.pizzarias {
+                if pizzaria.nomeFantasia == cell.textLabel?.text {
+                    //pizzaria = p
+                    
+                    PizzariaMontaPedidoViewModel.shared.pizzaria = pizzaria
                 }
             }
         }

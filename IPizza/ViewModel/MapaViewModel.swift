@@ -75,6 +75,7 @@ class MapaViewModel {
             owner.qtdEnderecos1 = self.pizzarias.count
             owner.qtdEnderecos2 = 0
             owner.addAnnotations(pizzarias: self.pizzarias)
+            owner.lm.startUpdatingLocation()
         })
     }
     

@@ -47,7 +47,6 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
         
         esconderMostrarSearchBar()
         chamarLoadDataFireBase = true
-        MapaViewModel.shared.loadDataFireBase(owner: self)
         
         mapaView.mapType = .standard
         
@@ -61,13 +60,11 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
             
             lm.delegate = self
             lm.desiredAccuracy = kCLLocationAccuracyHundredMeters
-            lm.startUpdatingLocation()
+            MapaViewModel.shared.loadDataFireBase(owner: self)
             
         }else {
             print("Por favor ligue o GPS")
         }
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,6 +77,10 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
     
     @IBAction func btnVoltarOnClick(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func btnCentralizar(_ sender: Any) {
+        MapaViewModel.shared.loadDataFireBase(owner: self)
     }
     
     override open var shouldAutorotate: Bool {
@@ -160,7 +161,7 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let buscarPizza = searchBar.text
         for pizzaria in MapaViewModel.shared.pizzarias {
-            if buscarPizza == pizzaria.nomeFantasia {
+            if buscarPizza?.lowercased() == pizzaria.nomeFantasia.lowercased() {
                 let endereco: String = ("\(String(pizzaria.rua)), \(String(pizzaria.numero)) - \(String(pizzaria.cep)) - \(String(pizzaria.bairro)) - \(String(pizzaria.cidade)) - \(String(pizzaria.estado))")
                 buscaPorEndereco(endereco: endereco)
             }
@@ -183,7 +184,6 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
             self.mapaView.setRegion(regiao, animated: true)
         }
     }
-    
     
     func criaRota(pizzaria : Pizzaria){
         //origem
@@ -264,5 +264,19 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, UISearchB
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //Função de exemplo para implementar no mapa opções de criar rota ao selecionar uma pizzaria no mapa
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+        
+        if control is UIButton{
+            let alert = UIAlertController(title: "E-mail já utilizadoBom Restaurante", message: "Bem-vindo", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "Obrigado", style: .default, handler: { (action) in
+                
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
