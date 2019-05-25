@@ -9,7 +9,7 @@
 import UIKit
 
 // Não está sendo utilizada
-class PizzariaViewController: UIViewController {
+class PizzariaPromocoesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

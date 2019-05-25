@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuSairPizzariaViewController: UIViewController {
+class MenuSairViewController: UIViewController {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
