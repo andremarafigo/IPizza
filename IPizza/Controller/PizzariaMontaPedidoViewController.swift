@@ -17,7 +17,8 @@ class PizzariaMontaPedidoViewController: UIViewController, UITableViewDataSource
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var lblDetalhes: UILabel!
+    @IBOutlet weak var lblPizzas: UILabel!
+    @IBOutlet weak var lblValorTotal: UILabel!
     
     var pizzaria : Pizzaria!
     
@@ -64,7 +65,8 @@ class PizzariaMontaPedidoViewController: UIViewController, UITableViewDataSource
         for valor in pedido.pizza {
             pedido.valorTotal += valor.detalhes.valor
         }
-        lblDetalhes.text = "Valor Total: \(String(pedido.valorTotal))"
+        lblPizzas.text = "Pizzas: \(String(pedido.pizza.count))"
+        lblValorTotal.text = "Valor Total: \(String(pedido.valorTotal))"
         //pedido.formaDePagamento =
         //pedido.formaDeRetirada =
         novaPizza = true
