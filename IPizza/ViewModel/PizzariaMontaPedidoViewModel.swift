@@ -32,9 +32,11 @@ class PizzariaMontaPedidoViewModel {
     var pedido : Pedido!
     
     var refUsuarios: DatabaseReference!
+    var refPedidos: DatabaseReference!
     
     init() {
         refUsuarios = Database.database().reference().child("Usuarios")
+        refPedidos = Database.database().reference().child("Pedidos")
     }
     
     func loadDataFireBase(owner: PizzariaMontaPedidoViewController){
@@ -103,18 +105,84 @@ class PizzariaMontaPedidoViewModel {
         })
     }
     
-    func criaSabor() {
-        refUsuarios.child(LoginViewModel.shared.users[0].key!).child("Pizzas").child(key).setValue(json)
+    func criaPedido(owner: FinalizarPedidoViewController, pedido: Pedido) {
+        database = Database.database().reference()
+        let key = self.refPedidos.childByAutoId().key
+        var validaAddPedido : Bool = false
+        var validaAddPizza : Bool = false
         
-        let alert = UIAlertController(title: "Cadastro realizado com sucesso.", message: "Clique em OK para continuar!", preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            owner.navigationController?.popViewController(animated: true)
-        }))
-        
-        // show the alert
-        owner.present(alert, animated: true, completion: nil)
-        owner.limpaCampos()
-        return
+        self.database.child("Pedidos").observe(.value, with: { (snapshot: DataSnapshot) in
+            let qtd = snapshot.childrenCount
+            
+            var nPedido : Int = 0
+            
+            if Int(qtd) > 0 {
+                nPedido = Int(qtd)+1
+            }else {
+                nPedido = 1
+            }
+            
+            owner.lblNumPedido.text = "Pedido nº \(String(qtd))"
+            
+            if validaAddPedido == false {
+                let json = self.montaJson(pedido: pedido, nPedido: nPedido)
+
+                self.refPedidos.child(key!).setValue(json)
+                
+                validaAddPedido = true
+            }
+
+            if validaAddPizza == false {
+                for pizza in pedido.pizza {
+                    let jsonPizzas = self.montaJsonPizzas(pizza: pizza)
+                    self.refPedidos.child(key!).child("Pizzas").child(pizza.key).setValue(jsonPizzas)
+                }
+                
+                validaAddPizza = true
+            }
+            
+            let alert = UIAlertController(title: "Pedido enviado com sucesso.", message: "Clique em OK para continuar!", preferredStyle: UIAlertController.Style.alert)
+
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                owner.owner.pedido = Pedido()
+                owner.navigationController?.popViewController(animated: true)
+            }))
+
+            // show the alert
+            owner.present(alert, animated: true, completion: nil)
+        })
+    }
+    
+    func adicionaPizzasDoPedido(owner: FinalizarPedidoViewController, key: String, pedido: Pedido) {
+
+        for pizza in pedido.pizza {
+            let jsonPizzas = self.montaJsonPizzas(pizza: pizza)
+            self.refPedidos.child(key).child("Pizzas").child(pizza.key).setValue(jsonPizzas)
+        }
+    }
+    
+    func montaJson(pedido: Pedido, nPedido: Int) -> [String:Any] {
+        let json : [String:Any] = [
+            "N_Pedido": nPedido,
+            "Key_Usuario": pedido.key_usuario,
+            "Key_Pizzaria": pedido.key_pizzaria,
+            "ValorTotal": pedido.valorTotal,
+            "FormaDePagamento": pedido.formaDePagamento,
+            "FormaDeRetirada": pedido.formaDeRetirada,
+            "Status": pedido.status,
+        ]
+        return json
+    }
+    
+    func montaJsonPizzas(pizza: Sabor) -> [String:Any] {
+        let json : [String:Any] = [
+            "Key": pizza.key,
+            "NomeSabor": pizza.nomeSabor,
+            "Tamanho": pizza.detalhes.tamanho,
+            "Tipo": pizza.detalhes.tipo,
+            "Salgada": pizza.detalhes.salgada,
+            "Valor": pizza.detalhes.valor
+            ]
+        return json
     }
 }

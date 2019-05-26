@@ -21,6 +21,8 @@ class PizzariaMontaPedidoViewController: UIViewController, UITableViewDataSource
     @IBOutlet weak var lblValorTotal: UILabel!
     @IBOutlet weak var lblPartes: UILabel!
     
+    @IBOutlet weak var btnPedido: UIButton!
+    
     var pizzaria : Pizzaria!
     
     var saboresSalgados : [Sabor]!
@@ -42,6 +44,9 @@ class PizzariaMontaPedidoViewController: UIViewController, UITableViewDataSource
         super.viewDidLoad()
         lblPartes.isHidden = true
         scPartes.isHidden = true
+        
+        btnPedido.isHidden = true
+        
         pizzaria = PizzariaMontaPedidoViewModel.shared.pizzaria
         PizzariaMontaPedidoViewModel.shared.loadDataFireBase(owner: self)
         
@@ -52,12 +57,17 @@ class PizzariaMontaPedidoViewController: UIViewController, UITableViewDataSource
         lblPartes.isHidden = true
         scPartes.isHidden = true
         tableView.reloadData()
+        
+        if pedido.pizza.count > 0 {
+            btnPedido.isHidden = false
+        }
+        
         pedido.valorTotal = 0
         for valor in pedido.pizza {
             pedido.valorTotal += valor.detalhes.valor
         }
         lblPizzas.text = "Pizzas: \(String(pedido.pizza.count))"
-        lblValorTotal.text = "Valor Total: \(String(pedido.valorTotal))"
+        lblValorTotal.text = "Valor Total: R$\(String(pedido.valorTotal))"
     }
     
     @IBAction func scSalgadoDoceOnClick(_ sender: Any) {
@@ -78,10 +88,19 @@ class PizzariaMontaPedidoViewController: UIViewController, UITableViewDataSource
         }
         pedido.status = "Em Construção"
         lblPizzas.text = "Pizzas: \(String(pedido.pizza.count))"
-        lblValorTotal.text = "Valor Total: \(String(pedido.valorTotal))"
+        lblValorTotal.text = "Valor Total: R$\(String(pedido.valorTotal))"
         //pedido.formaDePagamento =
         //pedido.formaDeRetirada =
         novaPizza = true
+        btnPedido.isHidden = false
+        
+        let alert = UIAlertController(title: "Pizza adicionada com sucesso.", message: "Clique em OK para continuar!", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+        }))
+        
+        // show the alert
+        present(alert, animated: true, completion: nil)
     }
     
     func separaSabores() {
@@ -164,7 +183,7 @@ class PizzariaMontaPedidoViewController: UIViewController, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellSabor", for: indexPath)
         
         cell.textLabel?.text = saborTableView[indexPath.row].nomeSabor
-        cell.detailTextLabel?.text = String(saborTableView[indexPath.row].detalhes.valor)
+        cell.detailTextLabel?.text = "R$\(String(saborTableView[indexPath.row].detalhes.valor))"
         
         return cell
     }
@@ -183,6 +202,7 @@ class PizzariaMontaPedidoViewController: UIViewController, UITableViewDataSource
         let next = segue.destination as! FinalizarPedidoViewController
         
         if segue.identifier == "finalizarPedido" {
+            next.owner = self
             next.pedido = pedido
         }
     }
