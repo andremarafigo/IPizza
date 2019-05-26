@@ -20,23 +20,69 @@ class FinalizarPedidoViewController: UIViewController, UITableViewDataSource, UI
     @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var lblValorTotal: UILabel!
     
+    @IBOutlet weak var btnFinalizarPedido: UIButton!
+    @IBOutlet weak var btnAddPizza: UIButton!
+    @IBOutlet weak var btnCancelarPedido: UIButton!
+    @IBOutlet weak var btnSobre: UIButton!
+    
     var owner : PizzariaMontaPedidoViewController!
     var pedido = Pedido()
+    
+    
+    var verPedido : Pedido?
+    var ownerPedidos : PizzariaPedidosTableViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         lblValorTotal.text = String("R$\(pedido.valorTotal)")
+        btnCancelarPedido.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        tableView.reloadData()
         
-        lblStatus.text = pedido.status
+        navigationController?.setNavigationBarHidden(true, animated: true)
         
-        pedido.valorTotal = 0
-        for valor in pedido.pizza {
-            pedido.valorTotal += valor.detalhes.valor
+        if verPedido != nil {
+            lblNumPedido.text = "Pedido nº \(String(verPedido!.n_pedido))"
+            lblStatus.text = verPedido?.status
+            lblValorTotal.text = "\(String(verPedido!.valorTotal))"
+            if verPedido?.formaDePagamento == "Dinheiro" {
+                scFormaDePagamento.isSelected = true
+                scFormaDePagamento.selectedSegmentIndex = 0
+            }else {
+                scFormaDePagamento.isSelected = true
+                scFormaDePagamento.selectedSegmentIndex = 1
+            }
+            
+            if verPedido?.formaDeRetirada == "Entrega" {
+                scFormaDeRetirada.isSelected = true
+                scFormaDeRetirada.selectedSegmentIndex = 0
+            }else {
+                scFormaDeRetirada.isSelected = true
+                scFormaDeRetirada.selectedSegmentIndex = 1
+            }
+            
+            btnFinalizarPedido.isHidden = true
+            btnAddPizza.setTitle("Voltar", for: .normal)
+            
+            if verPedido?.status == "Enviado" {
+                scFormaDePagamento.isEnabled = false
+                scFormaDeRetirada.isEnabled = false
+                btnSobre.isHidden = true
+                btnCancelarPedido.isHidden = false
+            }
+            
+            tableView.reloadData()
+        }else {
+            tableView.reloadData()
+            
+            lblStatus.text = pedido.status
+            
+            pedido.valorTotal = 0
+            for valor in pedido.pizza {
+                pedido.valorTotal += valor.detalhes.valor
+            }
         }
     }
     
@@ -95,19 +141,41 @@ class FinalizarPedidoViewController: UIViewController, UITableViewDataSource, UI
         PizzariaMontaPedidoViewModel.shared.criaPedido(owner: self, pedido: pedido)
     }
     
+    @IBAction func btnCancelarPedidoOnClick(_ sender: Any) {
+        let alert = UIAlertController(title: "Cancelar Pedido", message: "Deseja realmente cancelar esse pedido?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "NÃO", style: .default, handler: { (action) in
+        }))
+        alert.addAction(UIAlertAction(title: "SIM", style: .default, handler: { (action) in
+            self.verPedido?.status = "Cancelado"
+            PizzariaMontaPedidoViewModel.shared.cancelarPedido(owner: self, pedido: self.verPedido!)
+        }))
+        
+        // show the alert
+        present(alert, animated: true, completion: nil)
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pedido.pizza.count
+        if verPedido != nil {
+            return verPedido!.pizza.count
+        }else {
+            return pedido.pizza.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellPizza", for: indexPath)
         
-        cell.textLabel?.text = pedido.pizza[indexPath.row].nomeSabor
-        cell.detailTextLabel?.text = "R$\(String(pedido.pizza[indexPath.row].detalhes.valor))"
+        if verPedido != nil {
+            cell.textLabel?.text = verPedido!.pizza[indexPath.row].nomeSabor
+            cell.detailTextLabel?.text = "R$\(String(verPedido!.pizza[indexPath.row].detalhes.valor))"
+        }else {
+            cell.textLabel?.text = pedido.pizza[indexPath.row].nomeSabor
+            cell.detailTextLabel?.text = "R$\(String(pedido.pizza[indexPath.row].detalhes.valor))"
+        }
         
         return cell
     }
@@ -117,7 +185,17 @@ class FinalizarPedidoViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+        
+        if verPedido != nil {
+            let alert = UIAlertController(title: "Pedido já enviado não pode ser alterado, apenas cancelado.", message: "Clique em OK para continuar!", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            }))
+            
+            // show the alert
+            present(alert, animated: true, completion: nil)
+            return
+        }else if editingStyle == .delete {
             pedido.pizza.remove(at: indexPath.row)
             pedido.valorTotal = 0.0
             for valor in pedido.pizza {

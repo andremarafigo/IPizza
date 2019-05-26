@@ -21,15 +21,23 @@ class PizzariaMontaPedidoViewModel {
     var detalhes : DetalhesSabor = DetalhesSabor()
     var key : String = ""
     
+    var pizzaria : Pizzaria!
+    
     //Pedidos
     var pizzasPedido : [Sabor] = []
     var pizzaPedido : Sabor = Sabor()
     var detalhesPedido : DetalhesSabor = DetalhesSabor()
     
-    var pizzaria : Pizzaria!
-    
     var pedidos : [Pedido]!
     var pedido : Pedido!
+    
+    //Pedidos Usuário
+    var pizzasPedidoUsuario : [Sabor] = []
+    var pizzaPedidoUsuario : Sabor = Sabor()
+    var detalhesPedidoUsuario : DetalhesSabor = DetalhesSabor()
+    
+    var pedidosUsuario : [Pedido]!
+    var pedidoUsuario : Pedido!
     
     var refUsuarios: DatabaseReference!
     var refPedidos: DatabaseReference!
@@ -41,10 +49,10 @@ class PizzariaMontaPedidoViewModel {
     
     func loadDataFireBase(owner: PizzariaMontaPedidoViewController){
         database = Database.database().reference()
-        //Pizzaria
+        //Pizzaria / Sabores
         self.database.child("Usuarios").child(pizzaria.key).child("Pizzas").observe(.value, with: { (snapshot: DataSnapshot) in
             self.pizzas = []
-            let x = snapshot.childrenCount
+            
             for child in snapshot.children {
                 self.pizza = Sabor()
                 self.detalhes = DetalhesSabor()
@@ -67,16 +75,20 @@ class PizzariaMontaPedidoViewModel {
         //Pedidos
         self.database.child("Pedidos").observe(.value, with: { (snapshot: DataSnapshot) in
             self.pedidos = []
-            self.pizzasPedido = []
             
-            let x = snapshot.childrenCount
+            self.pedidosUsuario = []
+            
             for child in snapshot.children {
+                self.pizzasPedido = []
                 self.pedido = Pedido()
-                self.pizzaPedido = Sabor()
-                self.detalhesPedido = DetalhesSabor()
+                
+                self.pizzasPedidoUsuario = []
+                self.pedidoUsuario = Pedido()
+                
                 let json = child as! DataSnapshot
                 let resultado2 = json.value as! [String : Any]
                 
+                self.pedido.key = resultado2["Key"] as? String
                 self.pedido.n_pedido = (resultado2["N_Pedido"] as? Int)!
                 self.pedido.key_usuario = resultado2["Key_Usuario"] as? String
                 self.pedido.key_pizzaria = resultado2["Key_Pizzaria"] as? String
@@ -84,9 +96,12 @@ class PizzariaMontaPedidoViewModel {
                 self.pedido.formaDePagamento = resultado2["FormaDePagamento"] as? String
                 self.pedido.formaDeRetirada = resultado2["FormaDeRetirada"] as? String
                 self.pedido.status = resultado2["Status"] as? String
+                self.pedido.dataHora = resultado2["DataHora"] as? String
                 
                 if (resultado2["Pizzas"] != nil) {
                     for childPizzas in resultado2["Pizzas"] as! [String : Any] {
+                        self.pizzaPedido = Sabor()
+                        self.detalhesPedido = DetalhesSabor()
                         print(childPizzas)
                         
                         let value = childPizzas.value as? NSDictionary
@@ -97,11 +112,46 @@ class PizzariaMontaPedidoViewModel {
                         self.detalhesPedido.salgada = value!["Salgada"] as? Bool
                         self.detalhesPedido.tipo = value!["Tipo"] as? String
                         self.pizzaPedido.detalhes = self.detalhesPedido
-                        self.pizzas.append(self.pizzaPedido)
+                        self.pizzasPedido.append(self.pizzaPedido)
                     }
                 }
                 self.pedido.pizza = self.pizzasPedido
+                self.pedidos.append(self.pedido)
+                
+                //Pedidos do Usuário
+                if (resultado2["Key_Usuaurio"] as? String) == Auth.auth().currentUser?.uid {
+                    self.pedidoUsuario.key = resultado2["Key"] as? String
+                    self.pedidoUsuario.n_pedido = (resultado2["N_Pedido"] as? Int)!
+                    self.pedidoUsuario.key_usuario = resultado2["Key_Usuario"] as? String
+                    self.pedidoUsuario.key_pizzaria = resultado2["Key_Pizzaria"] as? String
+                    self.pedidoUsuario.valorTotal = (resultado2["ValorTotal"] as? Double)!
+                    self.pedidoUsuario.formaDePagamento = resultado2["FormaDePagamento"] as? String
+                    self.pedidoUsuario.formaDeRetirada = resultado2["FormaDeRetirada"] as? String
+                    self.pedidoUsuario.status = resultado2["Status"] as? String
+                    self.pedidoUsuario.dataHora = resultado2["DataHora"] as? String
+                    
+                    if (resultado2["Pizzas"] != nil) {
+                        for childPizzas in resultado2["Pizzas"] as! [String : Any] {
+                            self.pizzaPedidoUsuario = Sabor()
+                            self.detalhesPedidoUsuario = DetalhesSabor()
+                            print(childPizzas)
+                            
+                            let value = childPizzas.value as? NSDictionary
+                            self.pizzaPedidoUsuario.key = value!["Key"] as? String
+                            self.pizzaPedidoUsuario.nomeSabor = value!["NomeSabor"] as? String
+                            self.detalhesPedidoUsuario.tamanho = value!["Tamanho"] as? String
+                            self.detalhesPedidoUsuario.valor = value!["Valor"] as? Double
+                            self.detalhesPedidoUsuario.salgada = value!["Salgada"] as? Bool
+                            self.detalhesPedidoUsuario.tipo = value!["Tipo"] as? String
+                            self.pizzaPedidoUsuario.detalhes = self.detalhesPedidoUsuario
+                            self.pizzasPedidoUsuario.append(self.pizzaPedidoUsuario)
+                        }
+                    }
+                    self.pedidoUsuario.pizza = self.pizzasPedidoUsuario
+                    self.pedidosUsuario.append(self.pedidoUsuario)
+                }
             }
+            
         })
     }
     
@@ -125,7 +175,7 @@ class PizzariaMontaPedidoViewModel {
             owner.lblNumPedido.text = "Pedido nº \(String(qtd))"
             
             if validaAddPedido == false {
-                let json = self.montaJson(pedido: pedido, nPedido: nPedido)
+                let json = self.montaJson(pedido: pedido, key: key!, nPedido: nPedido)
 
                 self.refPedidos.child(key!).setValue(json)
                 
@@ -161,8 +211,13 @@ class PizzariaMontaPedidoViewModel {
         }
     }
     
-    func montaJson(pedido: Pedido, nPedido: Int) -> [String:Any] {
+    func montaJson(pedido: Pedido, key: String, nPedido: Int) -> [String:Any] {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+        let agora = Date()
+        
         let json : [String:Any] = [
+            "Key": key,
             "N_Pedido": nPedido,
             "Key_Usuario": pedido.key_usuario,
             "Key_Pizzaria": pedido.key_pizzaria,
@@ -170,6 +225,7 @@ class PizzariaMontaPedidoViewModel {
             "FormaDePagamento": pedido.formaDePagamento,
             "FormaDeRetirada": pedido.formaDeRetirada,
             "Status": pedido.status,
+            "DataHora": dateFormatter.string(from: agora)
         ]
         return json
     }
@@ -184,5 +240,19 @@ class PizzariaMontaPedidoViewModel {
             "Valor": pizza.detalhes.valor
             ]
         return json
+    }
+    
+    func cancelarPedido(owner: FinalizarPedidoViewController, pedido: Pedido) {
+        self.refPedidos.child(pedido.key).child("Status").setValue(pedido.status)
+        
+        let alert = UIAlertController(title: "Pedido cancelado com sucesso.", message: "Clique em OK para continuar!", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            owner.navigationController?.popViewController(animated: true)
+        }))
+        
+        // show the alert
+        owner.present(alert, animated: true, completion: nil)
+        return
     }
 }

@@ -31,13 +31,15 @@ class PizzariaMontaPedidoViewController: UIViewController, UITableViewDataSource
     var pizza : Sabor!
     var editarSabor: Sabor!
     var key : String!
+    
     var pedido = Pedido()
+    
     var qtdPizza : Int = 0
     var novaPizza : Bool = true
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        tabBarItem = UITabBarItem(title: "Pedido", image: UIImage(named: "icons8-pizza-32"), tag: 2)
+        tabBarItem = UITabBarItem(title: "Pedir", image: UIImage(named: "icons8-pizza-32"), tag: 2)
     }
     
     override func viewDidLoad() {
@@ -79,28 +81,38 @@ class PizzariaMontaPedidoViewController: UIViewController, UITableViewDataSource
     }
     
     @IBAction func btnAdicionarOnClick(_ sender: Any) {
-        pedido.key_usuario = Auth.auth().currentUser?.uid
-        pedido.key_usuario = LoginViewModel.shared.users[0].key!
-        pedido.key_pizzaria = pizzaria.key
-        pedido.valorTotal = 0
-        for valor in pedido.pizza {
-            pedido.valorTotal += valor.detalhes.valor
+        if pedido.pizza.count > 0 {
+            pedido.key_usuario = Auth.auth().currentUser?.uid
+            pedido.key_usuario = LoginViewModel.shared.users[0].key!
+            pedido.key_pizzaria = pizzaria.key
+            pedido.valorTotal = 0
+            for valor in pedido.pizza {
+                pedido.valorTotal += valor.detalhes.valor
+            }
+            pedido.status = "Em Construção"
+            lblPizzas.text = "Pizzas: \(String(pedido.pizza.count))"
+            lblValorTotal.text = "Valor Total: R$\(String(pedido.valorTotal))"
+            //pedido.formaDePagamento =
+            //pedido.formaDeRetirada =
+            novaPizza = true
+            btnPedido.isHidden = false
+            
+            let alert = UIAlertController(title: "Pizza adicionada com sucesso.", message: "Clique em OK para continuar!", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            }))
+            
+            // show the alert
+            present(alert, animated: true, completion: nil)
+        }else {
+            let alert = UIAlertController(title: "Selecione um sabor para adicionar ao pedido", message: "Clique em OK para continuar!", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            }))
+            
+            // show the alert
+            present(alert, animated: true, completion: nil)
         }
-        pedido.status = "Em Construção"
-        lblPizzas.text = "Pizzas: \(String(pedido.pizza.count))"
-        lblValorTotal.text = "Valor Total: R$\(String(pedido.valorTotal))"
-        //pedido.formaDePagamento =
-        //pedido.formaDeRetirada =
-        novaPizza = true
-        btnPedido.isHidden = false
-        
-        let alert = UIAlertController(title: "Pizza adicionada com sucesso.", message: "Clique em OK para continuar!", preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-        }))
-        
-        // show the alert
-        present(alert, animated: true, completion: nil)
     }
     
     func separaSabores() {
