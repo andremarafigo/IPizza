@@ -19,11 +19,13 @@ class PizzariaMontaPedidoViewController: UIViewController, UITableViewDataSource
     
     @IBOutlet weak var lblPizzas: UILabel!
     @IBOutlet weak var lblValorTotal: UILabel!
+    @IBOutlet weak var lblPartes: UILabel!
     
     var pizzaria : Pizzaria!
     
     var saboresSalgados : [Sabor]!
     var saboresDoces : [Sabor]!
+    var saborTableView : [Sabor]!
     var pizza : Sabor!
     var editarSabor: Sabor!
     var key : String!
@@ -38,23 +40,32 @@ class PizzariaMontaPedidoViewController: UIViewController, UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblPartes.isHidden = true
+        scPartes.isHidden = true
         pizzaria = PizzariaMontaPedidoViewModel.shared.pizzaria
         PizzariaMontaPedidoViewModel.shared.loadDataFireBase(owner: self)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        lblPartes.isHidden = true
+        scPartes.isHidden = true
+        tableView.reloadData()
+        pedido.valorTotal = 0
+        for valor in pedido.pizza {
+            pedido.valorTotal += valor.detalhes.valor
+        }
+        lblPizzas.text = "Pizzas: \(String(pedido.pizza.count))"
+        lblValorTotal.text = "Valor Total: \(String(pedido.valorTotal))"
+    }
+    
+    @IBAction func scSalgadoDoceOnClick(_ sender: Any) {
         tableView.reloadData()
     }
     
-    @IBAction func segmentedControlOnClick(_ sender: Any) {
-        if scSalgadaDoce.selectedSegmentIndex == 0 {
-            print("Salgada")
-            tableView.reloadData()
-        }else if scSalgadaDoce.selectedSegmentIndex == 1 {
-            print("Doce")
-            tableView.reloadData()
-        }
+    @IBAction func scTamanhoOnClick(_ sender: Any) {
+        tableView.reloadData()
     }
     
     @IBAction func btnAdicionarOnClick(_ sender: Any) {
@@ -65,6 +76,7 @@ class PizzariaMontaPedidoViewController: UIViewController, UITableViewDataSource
         for valor in pedido.pizza {
             pedido.valorTotal += valor.detalhes.valor
         }
+        pedido.status = "Em Construção"
         lblPizzas.text = "Pizzas: \(String(pedido.pizza.count))"
         lblValorTotal.text = "Valor Total: \(String(pedido.valorTotal))"
         //pedido.formaDePagamento =
@@ -90,13 +102,59 @@ class PizzariaMontaPedidoViewController: UIViewController, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var cells : Int = 0
+        var tamanho = ""
+        saborTableView = []
         if scSalgadaDoce.selectedSegmentIndex == 0 {
             if saboresSalgados != nil {
-                cells = saboresSalgados.count
+                switch scTamanho.selectedSegmentIndex {
+                    case 0:
+                        tamanho = "P"
+                        break
+                    case 1:
+                        tamanho = "M"
+                        break
+                    case 2:
+                        tamanho = "G"
+                        break
+                    case 3:
+                        tamanho = "GG"
+                        break
+                    default:
+                        break
+                }
+                
+                for x in saboresSalgados {
+                    if x.detalhes.tamanho == tamanho {
+                        saborTableView.append(x)
+                        cells += 1
+                    }
+                }
             }
         }else if scSalgadaDoce.selectedSegmentIndex == 1 {
             if saboresDoces != nil {
-                cells = saboresDoces.count
+                switch scTamanho.selectedSegmentIndex {
+                case 0:
+                    tamanho = "P"
+                    break
+                case 1:
+                    tamanho = "M"
+                    break
+                case 2:
+                    tamanho = "G"
+                    break
+                case 3:
+                    tamanho = "GG"
+                    break
+                default:
+                    break
+                }
+                
+                for x in saboresDoces {
+                    if x.detalhes.tamanho == tamanho {
+                        saborTableView.append(x)
+                        cells += 1
+                    }
+                }
             }
         }
         return cells
@@ -105,28 +163,27 @@ class PizzariaMontaPedidoViewController: UIViewController, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellSabor", for: indexPath)
         
-        if scSalgadaDoce.selectedSegmentIndex == 0 {
-            cell.textLabel?.text = saboresSalgados[indexPath.row].nomeSabor
-            //cell.detailTextLabel?.text = pizzas.listaPizzas[indexPath.row].tamanho!
-        }else if scSalgadaDoce.selectedSegmentIndex == 1 {
-            cell.textLabel?.text = saboresDoces[indexPath.row].nomeSabor
-            //cell.detailTextLabel?.text = pizzas.listaPizzas[indexPath.row].tamanho!
-        }
+        cell.textLabel?.text = saborTableView[indexPath.row].nomeSabor
+        cell.detailTextLabel?.text = String(saborTableView[indexPath.row].detalhes.valor)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if scSalgadaDoce.selectedSegmentIndex == 0 {
-            if novaPizza == true {
-                pedido.pizza.append(saboresSalgados[indexPath.row])
-                novaPizza = false
-            }else {
-                let qtd = pedido.pizza.count
-                pedido.pizza[qtd - 1] = saboresSalgados[indexPath.row]
-            }
-        }else if scSalgadaDoce.selectedSegmentIndex == 1 {
-            
+        if novaPizza == true {
+            pedido.pizza.append(saborTableView[indexPath.row])
+            novaPizza = false
+        }else {
+            let qtd = pedido.pizza.count
+            pedido.pizza[qtd - 1] = saborTableView[indexPath.row]
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let next = segue.destination as! FinalizarPedidoViewController
+        
+        if segue.identifier == "finalizarPedido" {
+            next.pedido = pedido
         }
     }
 }

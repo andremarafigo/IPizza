@@ -102,4 +102,19 @@ class PizzariaMontaPedidoViewModel {
             }
         })
     }
+    
+    func criaSabor() {
+        refUsuarios.child(LoginViewModel.shared.users[0].key!).child("Pizzas").child(key).setValue(json)
+        
+        let alert = UIAlertController(title: "Cadastro realizado com sucesso.", message: "Clique em OK para continuar!", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            owner.navigationController?.popViewController(animated: true)
+        }))
+        
+        // show the alert
+        owner.present(alert, animated: true, completion: nil)
+        owner.limpaCampos()
+        return
+    }
 }
