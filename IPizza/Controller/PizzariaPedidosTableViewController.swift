@@ -10,6 +10,8 @@ import UIKit
 
 class PizzariaPedidosTableViewController: UITableViewController {
 
+    var pedidos : [Pedido] = []
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         tabBarItem = UITabBarItem(title: "Pedidos", image: UIImage(named: "icons8-lista-de-tarefas-30"), tag: 0)
@@ -32,18 +34,14 @@ class PizzariaPedidosTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if PizzariaPedidosViewModel.shared.pedidosUsuario == nil {
-            return 0
-        }else {
-            return PizzariaPedidosViewModel.shared.pedidosUsuario.count
-        }
+        return pedidos.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellPedido", for: indexPath)
         
-        cell.textLabel?.text = "Pedido nº \(String(PizzariaPedidosViewModel.shared.pedidosUsuario[indexPath.row].n_pedido)) - \(String(PizzariaPedidosViewModel.shared.pedidosUsuario[indexPath.row].status))"
-        cell.detailTextLabel?.text = PizzariaPedidosViewModel.shared.pedidosUsuario[indexPath.row].dataHora
+        cell.textLabel?.text = "Pedido nº \(String(pedidos[indexPath.row].n_pedido)) - \(String(pedidos[indexPath.row].status))"
+        cell.detailTextLabel?.text = pedidos[indexPath.row].dataHora
 
         return cell
     }

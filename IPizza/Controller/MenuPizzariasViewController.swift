@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MenuPizzariasViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
@@ -64,7 +65,10 @@ class MenuPizzariasViewController: UIViewController, UITableViewDataSource, UITa
         if searching {
             return searchedCountry.count
         } else {
-            return MapaViewModel.shared.pizzarias.count
+            if MapaViewModel.shared.pizzarias != nil {
+                return MapaViewModel.shared.pizzarias.count
+            }
+            return 0
         }
         
         //        var num : Int = 0
@@ -97,6 +101,12 @@ class MenuPizzariasViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if Auth.auth().currentUser != nil {
+            PizzariaMontaPedidoViewModel.shared.pizzaria = MapaViewModel.shared.pizzarias[indexPath.row]
+            performSegue(withIdentifier: "pizzaria", sender: nil)
+        }else {
+            performSegue(withIdentifier: "fazerLogin", sender: nil)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -104,12 +114,12 @@ class MenuPizzariasViewController: UIViewController, UITableViewDataSource, UITa
         
         if segue.identifier == "mapaView" {
             let nextMapa = segue.destination as! MapaViewController
-            
+
             let botao = sender as! UIButton
             let content = botao.superview
             let cell = content!.superview as! UITableViewCell
             //let indexPath = tableView.indexPath(for: cell)
-            
+
             for pizzaria in MapaViewModel.shared.pizzarias {
                 if pizzaria.nomeFantasia == cell.textLabel?.text {
                     //pizzaria = p
@@ -118,15 +128,14 @@ class MenuPizzariasViewController: UIViewController, UITableViewDataSource, UITa
                 }
             }
         }else if segue.identifier == "pizzaria" {
-            let cell = sender as! UITableViewCell
-            
-            for pizzaria in MapaViewModel.shared.pizzarias {
-                if pizzaria.nomeFantasia == cell.textLabel?.text {
-                    //pizzaria = p
-                    
-                    PizzariaMontaPedidoViewModel.shared.pizzaria = pizzaria
-                }
-            }
+//            let cell = sender as! UITableViewCell
+//
+//            for pizzaria in MapaViewModel.shared.pizzarias {
+//                if pizzaria.nomeFantasia == cell.textLabel?.text {
+//                    PizzariaMontaPedidoViewModel.shared.pizzaria = pizzaria
+//                }
+//            }
+        }else if segue.identifier == "fazerLogin" {
         }
     }
 }

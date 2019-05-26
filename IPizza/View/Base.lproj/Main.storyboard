@@ -105,9 +105,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                        <connections>
-                                            <segue destination="mYb-30-2ar" kind="showDetail" identifier="pizzaria" id="ihE-Uh-ZDo"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -133,6 +130,8 @@
                     <tabBarItem key="tabBarItem" title="Item" id="koV-Ka-XEo"/>
                     <connections>
                         <outlet property="tableView" destination="mDs-NI-KU9" id="VFn-zT-nCS"/>
+                        <segue destination="kZR-Rz-cMs" kind="show" identifier="fazerLogin" id="u9p-Ev-bR6"/>
+                        <segue destination="mYb-30-2ar" kind="showDetail" identifier="pizzaria" id="LCs-vh-Kmb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Hd-lT-Cee" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1184,6 +1183,7 @@
                     <navigationItem key="navigationItem" id="v0z-zZ-CeO"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="btnHome" destination="Bf3-Rh-4vK" id="GPi-vM-feP"/>
                         <outlet property="viewBordaTittle" destination="YDa-zN-JOR" id="IVo-Pl-xpM"/>
                         <outlet property="viewTitle" destination="Q03-KD-vw1" id="L8W-m6-SjL"/>
                     </connections>
@@ -1248,7 +1248,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IxI-nm-ujB">
-                                <rect key="frame" x="0.0" y="112" width="414" height="735"/>
+                                <rect key="frame" x="0.0" y="112" width="414" height="784"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="T6M-J0-8s3">
                                         <rect key="frame" x="20" y="100" width="374" height="290"/>
@@ -1416,13 +1416,26 @@
                                             <constraint firstItem="66I-bn-5HZ" firstAttribute="centerX" secondItem="uy8-lk-0y5" secondAttribute="centerX" id="zK4-cW-AXW"/>
                                         </constraints>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S66-VT-n98">
+                                        <rect key="frame" x="175" y="456" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="diQ-cL-3TI"/>
+                                            <constraint firstAttribute="width" constant="64" id="oc7-TD-ZUw"/>
+                                        </constraints>
+                                        <state key="normal" image="icons8-voltar-64"/>
+                                        <connections>
+                                            <action selector="btnVoltarOnClick:" destination="kZR-Rz-cMs" eventType="touchUpInside" id="xG9-8f-piz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="uy8-lk-0y5" secondAttribute="bottom" constant="317" id="BUC-tq-gcH"/>
                                     <constraint firstItem="uy8-lk-0y5" firstAttribute="centerX" secondItem="IxI-nm-ujB" secondAttribute="centerX" id="Kmu-kD-ypD"/>
                                     <constraint firstItem="T6M-J0-8s3" firstAttribute="leading" secondItem="IxI-nm-ujB" secondAttribute="leading" constant="20" id="cuI-6b-P4X"/>
                                     <constraint firstItem="T6M-J0-8s3" firstAttribute="top" secondItem="IxI-nm-ujB" secondAttribute="top" constant="100" id="eX5-5t-RY1"/>
+                                    <constraint firstItem="S66-VT-n98" firstAttribute="top" secondItem="uy8-lk-0y5" secondAttribute="bottom" constant="8" id="gNg-VE-vDK"/>
                                     <constraint firstAttribute="trailing" secondItem="T6M-J0-8s3" secondAttribute="trailing" constant="20" id="hmt-l1-eZE"/>
+                                    <constraint firstItem="S66-VT-n98" firstAttribute="centerX" secondItem="IxI-nm-ujB" secondAttribute="centerX" id="kaz-dl-NQG"/>
                                     <constraint firstItem="uy8-lk-0y5" firstAttribute="top" secondItem="T6M-J0-8s3" secondAttribute="bottom" constant="8" id="lSf-WZ-WVn"/>
                                     <constraint firstItem="T6M-J0-8s3" firstAttribute="centerX" secondItem="IxI-nm-ujB" secondAttribute="centerX" id="mqN-eV-ZUn"/>
                                 </constraints>
@@ -1440,6 +1453,8 @@
                         <viewLayoutGuide key="safeArea" id="ndn-4U-o9D"/>
                     </view>
                     <connections>
+                        <outlet property="btnFacebook" destination="66I-bn-5HZ" id="Cb4-T4-7vU"/>
+                        <outlet property="btnVoltar" destination="S66-VT-n98" id="L1I-gV-mvB"/>
                         <outlet property="txtEmail" destination="2So-7Q-fkJ" id="JA5-fD-SqB"/>
                         <outlet property="txtSenha" destination="pae-79-rQe" id="bpA-lQ-Edv"/>
                     </connections>
@@ -1457,7 +1472,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBI-c8-ffO">
-                                <rect key="frame" x="0.0" y="44" width="414" height="2304"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="2353"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68L-bs-OwY" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="2304"/>
@@ -4501,9 +4516,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="vSD-0J-2e9" kind="relationship" relationship="viewControllers" id="xf3-Mh-YH1"/>
                         <segue destination="lhd-0q-FIZ" kind="relationship" relationship="viewControllers" id="mZm-Pu-3xH"/>
-                        <segue destination="xks-ID-Pzi" kind="relationship" relationship="viewControllers" id="O9w-D3-9Bq"/>
+                        <segue destination="vSD-0J-2e9" kind="relationship" relationship="viewControllers" id="wfg-V6-j6t"/>
+                        <segue destination="xks-ID-Pzi" kind="relationship" relationship="viewControllers" id="nme-kr-w1E"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oxp-DR-5Cx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4960,6 +4975,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="buY-41-rUf"/>
         <segue reference="uj2-4W-Tl6"/>
+        <segue reference="u9p-Ev-bR6"/>
         <segue reference="yrd-nv-RcH"/>
         <segue reference="6Q8-La-2Bz"/>
     </inferredMetricsTieBreakers>

@@ -16,16 +16,29 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtSenha: UITextField!
     
+    @IBOutlet weak var btnFacebook: UIButton!
+    @IBOutlet weak var btnVoltar: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print(MapaViewModel.shared.pizzarias.count)
+        
+        btnFacebook.isHidden = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.viewTapped(gestureRecognizer:)))
         
         view.addGestureRecognizer(tapGesture)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        btnFacebook.isHidden = true
+    }
+    
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
         view.endEditing(true)
+    }
+    
+    @IBAction func btnVoltarOnClick(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func signin(_ sender: Any) {

@@ -13,6 +13,8 @@ class TelaInicialViewController: UIViewController {
     @IBOutlet weak var viewBordaTittle: UIView!
     @IBOutlet weak var viewTitle: UIView!
     
+    @IBOutlet weak var btnHome: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,8 +23,6 @@ class TelaInicialViewController: UIViewController {
         
         viewTitle.layer.cornerRadius = viewTitle.frame.size.width/2
         viewTitle.clipsToBounds = true
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

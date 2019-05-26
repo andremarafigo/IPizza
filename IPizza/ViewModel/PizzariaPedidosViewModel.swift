@@ -26,13 +26,19 @@ class PizzariaPedidosViewModel {
     var refUsuarios: DatabaseReference!
     var refPedidos: DatabaseReference!
     
+    var pizzaria: Pizzaria!
+    
     init() {
+        pizzaria = Pizzaria()
+        pizzaria = PizzariaMontaPedidoViewModel.shared.pizzaria
         refUsuarios = Database.database().reference().child("Usuarios")
         refPedidos = Database.database().reference().child("Pedidos")
     }
     
     func loadPedidosUsuarioFireBase(owner: PizzariaPedidosTableViewController) {
         self.refPedidos.observe(.value, with: { (snapshot: DataSnapshot) in
+            self.pizzaria = Pizzaria()
+            self.pizzaria = PizzariaMontaPedidoViewModel.shared.pizzaria
             self.pedidosUsuario = []
             
             for child in snapshot.children {
@@ -71,6 +77,12 @@ class PizzariaPedidosViewModel {
                     }
                     self.pedidoUsuario.pizza = self.pizzasPedidoUsuario
                     self.pedidosUsuario.append(self.pedidoUsuario)
+                }
+            }
+            owner.pedidos = []
+            for pedido in self.pedidosUsuario {
+                if pedido.key_pizzaria == self.pizzaria.key {
+                    owner.pedidos.append(pedido)
                 }
             }
             owner.tableView.reloadData()
