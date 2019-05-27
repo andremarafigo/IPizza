@@ -46,21 +46,21 @@ class PizzariaPedidosViewModel {
                 self.pedidoUsuario = Pedido()
                 
                 let json = child as! DataSnapshot
-                let resultado2 = json.value as! [String : Any]
+                let resultado = json.value as! [String : Any]
                 
-                if (resultado2["Key_Usuario"] as? String) == Auth.auth().currentUser?.uid {
-                    self.pedidoUsuario.key = resultado2["Key"] as? String
-                    self.pedidoUsuario.n_pedido = (resultado2["N_Pedido"] as? Int)!
-                    self.pedidoUsuario.key_usuario = resultado2["Key_Usuario"] as? String
-                    self.pedidoUsuario.key_pizzaria = resultado2["Key_Pizzaria"] as? String
-                    self.pedidoUsuario.valorTotal = (resultado2["ValorTotal"] as? Double)!
-                    self.pedidoUsuario.formaDePagamento = resultado2["FormaDePagamento"] as? String
-                    self.pedidoUsuario.formaDeRetirada = resultado2["FormaDeRetirada"] as? String
-                    self.pedidoUsuario.status = resultado2["Status"] as? String
-                    self.pedidoUsuario.dataHora = resultado2["DataHora"] as? String
+                if (resultado["Key_Usuario"] as? String) == Auth.auth().currentUser?.uid {
+                    self.pedidoUsuario.key = resultado["Key"] as? String
+                    self.pedidoUsuario.n_pedido = (resultado["N_Pedido"] as? Int)!
+                    self.pedidoUsuario.key_usuario = resultado["Key_Usuario"] as? String
+                    self.pedidoUsuario.key_pizzaria = resultado["Key_Pizzaria"] as? String
+                    self.pedidoUsuario.valorTotal = (resultado["ValorTotal"] as? Double)!
+                    self.pedidoUsuario.formaDePagamento = resultado["FormaDePagamento"] as? String
+                    self.pedidoUsuario.formaDeRetirada = resultado["FormaDeRetirada"] as? String
+                    self.pedidoUsuario.status = resultado["Status"] as? String
+                    self.pedidoUsuario.dataHora = resultado["DataHora"] as? String
                     
-                    if (resultado2["Pizzas"] != nil) {
-                        for childPizzas in resultado2["Pizzas"] as! [String : Any] {
+                    if (resultado["Pizzas"] != nil) {
+                        for childPizzas in resultado["Pizzas"] as! [String : Any] {
                             self.pizzaPedidoUsuario = Sabor()
                             self.detalhesPedidoUsuario = DetalhesSabor()
                             

@@ -255,4 +255,32 @@ class PizzariaMontaPedidoViewModel {
         owner.present(alert, animated: true, completion: nil)
         return
     }
+    
+    func aceitarPedido(owner: FinalizarPedidoViewController, pedido: Pedido) {
+        self.refPedidos.child(pedido.key).child("Status").setValue(pedido.status)
+        
+        let alert = UIAlertController(title: "Pedido aceito com sucesso.", message: "Clique em OK para continuar!", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            owner.navigationController?.popViewController(animated: true)
+        }))
+        
+        // show the alert
+        owner.present(alert, animated: true, completion: nil)
+        return
+    }
+    
+    func finalizarPedido(owner: FinalizarPedidoViewController, pedido: Pedido) {
+        self.refPedidos.child(pedido.key).child("Status").setValue(pedido.status)
+        
+        let alert = UIAlertController(title: "Pedido finalizado com sucesso.", message: "Clique em OK para continuar!", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            owner.navigationController?.popViewController(animated: true)
+        }))
+        
+        // show the alert
+        owner.present(alert, animated: true, completion: nil)
+        return
+    }
 }

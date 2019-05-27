@@ -24,18 +24,21 @@ class FinalizarPedidoViewController: UIViewController, UITableViewDataSource, UI
     @IBOutlet weak var btnAddPizza: UIButton!
     @IBOutlet weak var btnCancelarPedido: UIButton!
     @IBOutlet weak var btnSobre: UIButton!
+    @IBOutlet weak var btnAceitarPedido: UIButton!
     
     var owner : PizzariaMontaPedidoViewController!
     var pedido = Pedido()
     
-    
     var verPedido : Pedido?
     var ownerPedidos : PizzariaPedidosTableViewController!
+    
+    var aceitarPedido : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         lblValorTotal.text = String("R$\(pedido.valorTotal)")
         btnCancelarPedido.isHidden = true
+        btnAceitarPedido.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,10 +70,62 @@ class FinalizarPedidoViewController: UIViewController, UITableViewDataSource, UI
             btnAddPizza.setTitle("Voltar", for: .normal)
             
             if verPedido?.status == "Enviado" {
-                scFormaDePagamento.isEnabled = false
-                scFormaDeRetirada.isEnabled = false
-                btnSobre.isHidden = true
-                btnCancelarPedido.isHidden = false
+                if aceitarPedido == true {
+                    scFormaDePagamento.isEnabled = false
+                    scFormaDeRetirada.isEnabled = false
+                    btnSobre.isHidden = true
+                    btnCancelarPedido.isHidden = true
+                    btnAceitarPedido.isHidden = false
+                }else {
+                    scFormaDePagamento.isEnabled = false
+                    scFormaDeRetirada.isEnabled = false
+                    btnSobre.isHidden = true
+                    btnCancelarPedido.isHidden = false
+                    btnAceitarPedido.isHidden = true
+                }
+            }else if verPedido?.status == "Cancelado" {
+                if aceitarPedido == true {
+                    scFormaDePagamento.isEnabled = false
+                    scFormaDeRetirada.isEnabled = false
+                    btnSobre.isHidden = true
+                    btnCancelarPedido.isHidden = true
+                    btnAceitarPedido.isHidden = true
+                }else {
+                    scFormaDePagamento.isEnabled = false
+                    scFormaDeRetirada.isEnabled = false
+                    btnSobre.isHidden = true
+                    btnCancelarPedido.isHidden = true
+                    btnAceitarPedido.isHidden = true
+                }
+            }else if verPedido?.status == "Aceito" {
+                if aceitarPedido == true {
+                    scFormaDePagamento.isEnabled = false
+                    scFormaDeRetirada.isEnabled = false
+                    btnSobre.isHidden = true
+                    btnCancelarPedido.isHidden = true
+                    btnAceitarPedido.setTitle("Finalizar", for: .normal)
+                    btnAceitarPedido.isHidden = false
+                }else {
+                    scFormaDePagamento.isEnabled = false
+                    scFormaDeRetirada.isEnabled = false
+                    btnSobre.isHidden = true
+                    btnCancelarPedido.isHidden = true
+                    btnAceitarPedido.isHidden = true
+                }
+            }else if verPedido?.status == "Finalizado" {
+                if aceitarPedido == true {
+                    scFormaDePagamento.isEnabled = false
+                    scFormaDeRetirada.isEnabled = false
+                    btnSobre.isHidden = true
+                    btnCancelarPedido.isHidden = true
+                    btnAceitarPedido.isHidden = true
+                }else {
+                    scFormaDePagamento.isEnabled = false
+                    scFormaDeRetirada.isEnabled = false
+                    btnSobre.isHidden = true
+                    btnCancelarPedido.isHidden = true
+                    btnAceitarPedido.isHidden = true
+                }
             }
             
             tableView.reloadData()
@@ -156,6 +211,32 @@ class FinalizarPedidoViewController: UIViewController, UITableViewDataSource, UI
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    @IBAction func btnAceitarPedidoOnClick(_ sender: Any) {
+        if self.verPedido?.status == "Enviado" {
+            let alert = UIAlertController(title: "Aceitar Pedido", message: "", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "NÃO", style: .default, handler: { (action) in
+            }))
+            alert.addAction(UIAlertAction(title: "SIM", style: .default, handler: { (action) in
+                self.verPedido?.status = "Aceito"
+                PizzariaMontaPedidoViewModel.shared.aceitarPedido(owner: self, pedido: self.verPedido!)
+            }))
+            
+            // show the alert
+            present(alert, animated: true, completion: nil)
+        }else if self.verPedido?.status == "Aceito" {
+            let alert = UIAlertController(title: "Finalizar Pedido", message: "", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "NÃO", style: .default, handler: { (action) in
+            }))
+            alert.addAction(UIAlertAction(title: "SIM", style: .default, handler: { (action) in
+                self.verPedido?.status = "Finalizado"
+                PizzariaMontaPedidoViewModel.shared.finalizarPedido(owner: self, pedido: self.verPedido!)
+            }))
+            
+            // show the alert
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
