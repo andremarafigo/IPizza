@@ -36,6 +36,7 @@ class FinalizarPedidoViewController: UIViewController, UITableViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        PizzariaMontaPedidoViewModel()
         lblValorTotal.text = String("R$\(pedido.valorTotal)")
         btnCancelarPedido.isHidden = true
         btnAceitarPedido.isHidden = true

@@ -158,6 +158,7 @@ class PizzariaMontaPedidoViewModel {
     func criaPedido(owner: FinalizarPedidoViewController, pedido: Pedido) {
         database = Database.database().reference()
         let key = self.refPedidos.childByAutoId().key
+        
         var validaAddPedido : Bool = false
         var validaAddPizza : Bool = false
         

@@ -3335,7 +3335,6 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                                 <connections>
                                                                                     <action selector="btnCancelarPedidoOnClick:" destination="aUn-K1-B5J" eventType="touchUpInside" id="NnY-DD-gxS"/>
-                                                                                    <action selector="btnFinalizarPedidoOnClick:" destination="aUn-K1-B5J" eventType="touchUpInside" id="hFq-mi-GN2"/>
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYU-Bz-qr0">
