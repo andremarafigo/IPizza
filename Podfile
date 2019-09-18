@@ -15,5 +15,6 @@ target 'IPizza' do
   pod "SideMenu"
   pod 'SwiftyJSON', '~> 4.2.0'
   pod 'Alamofire'
+  pod 'FLAnimatedImage'
   
 end

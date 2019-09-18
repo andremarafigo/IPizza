@@ -57,6 +57,10 @@
 		966BEB0D2291CD7B00FE56AE /* MenuPizzariaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BEB0C2291CD7B00FE56AE /* MenuPizzariaViewModel.swift */; };
 		96AC923D228E1BA2006FF1CF /* TelaInicialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC923C228E1BA2006FF1CF /* TelaInicialViewModel.swift */; };
 		96AC923F228E394E006FF1CF /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC923E228E394E006FF1CF /* MapaViewController.swift */; };
+		96CC0C7C23324FBF00469343 /* source.gif in Resources */ = {isa = PBXBuildFile; fileRef = 96CC0C7823324FBE00469343 /* source.gif */; };
+		96CC0C7D23324FBF00469343 /* cheesy-pizza-loader.gif in Resources */ = {isa = PBXBuildFile; fileRef = 96CC0C7923324FBE00469343 /* cheesy-pizza-loader.gif */; };
+		96CC0C7E23324FBF00469343 /* pizza.gif in Resources */ = {isa = PBXBuildFile; fileRef = 96CC0C7A23324FBF00469343 /* pizza.gif */; };
+		96CC0C7F23324FBF00469343 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 96CC0C7B23324FBF00469343 /* giphy.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +117,10 @@
 		966BEB0C2291CD7B00FE56AE /* MenuPizzariaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPizzariaViewModel.swift; sourceTree = "<group>"; };
 		96AC923C228E1BA2006FF1CF /* TelaInicialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaInicialViewModel.swift; sourceTree = "<group>"; };
 		96AC923E228E394E006FF1CF /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
+		96CC0C7823324FBE00469343 /* source.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = source.gif; sourceTree = "<group>"; };
+		96CC0C7923324FBE00469343 /* cheesy-pizza-loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "cheesy-pizza-loader.gif"; sourceTree = "<group>"; };
+		96CC0C7A23324FBF00469343 /* pizza.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pizza.gif; sourceTree = "<group>"; };
+		96CC0C7B23324FBF00469343 /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy.gif; sourceTree = "<group>"; };
 		F6CFF786D0BE5E814579B1EA /* Pods_IPizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IPizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -235,6 +243,7 @@
 		13D195E6227CF62400E0B8F0 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				96CC0C7723324FAA00469343 /* GIF */,
 				13D195E8227CF63600E0B8F0 /* 1024.png */,
 				13D195E7227CF63500E0B8F0 /* IPizza.png */,
 				13D195E9227CF63600E0B8F0 /* SetaDropDown.jpg */,
@@ -249,6 +258,17 @@
 				F6CFF786D0BE5E814579B1EA /* Pods_IPizza.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96CC0C7723324FAA00469343 /* GIF */ = {
+			isa = PBXGroup;
+			children = (
+				96CC0C7923324FBE00469343 /* cheesy-pizza-loader.gif */,
+				96CC0C7B23324FBF00469343 /* giphy.gif */,
+				96CC0C7A23324FBF00469343 /* pizza.gif */,
+				96CC0C7823324FBE00469343 /* source.gif */,
+			);
+			path = GIF;
 			sourceTree = "<group>";
 		};
 		F10B7FFE5AE5F714D98B8AA5 /* Pods */ = {
@@ -320,13 +340,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96CC0C7C23324FBF00469343 /* source.gif in Resources */,
 				13D195EB227CF63600E0B8F0 /* IPizza.png in Resources */,
+				96CC0C7E23324FBF00469343 /* pizza.gif in Resources */,
 				13D195F0227CF6E100E0B8F0 /* GoogleService-Info.plist in Resources */,
 				13D195B7227CF4DB00E0B8F0 /* LaunchScreen.storyboard in Resources */,
 				13D195EC227CF63600E0B8F0 /* 1024.png in Resources */,
 				13D195ED227CF63600E0B8F0 /* SetaDropDown.jpg in Resources */,
 				13D195EE227CF63600E0B8F0 /* user.png in Resources */,
+				96CC0C7D23324FBF00469343 /* cheesy-pizza-loader.gif in Resources */,
 				13D195B4227CF4DB00E0B8F0 /* Assets.xcassets in Resources */,
+				96CC0C7F23324FBF00469343 /* giphy.gif in Resources */,
 				13D195AF227CF4D800E0B8F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +390,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-IPizza/Pods-IPizza-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JMMaskTextField-Swift/JMMaskTextField_Swift.framework",
@@ -379,6 +404,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JMMaskTextField_Swift.framework",
@@ -588,6 +614,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IPizza/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -606,6 +633,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IPizza/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

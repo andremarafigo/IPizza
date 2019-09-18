@@ -46,6 +46,7 @@ PODS:
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.2)
     - GTMSessionFetcher/Core (~> 1.1)
+  - FLAnimatedImage (1.0.12)
   - GoogleAppMeasurement (5.8.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
@@ -88,6 +89,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - FLAnimatedImage
   - JMMaskTextField-Swift
   - SideMenu
   - SwiftyJSON (~> 4.2.0)
@@ -103,6 +105,7 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseInstanceID
     - FirebaseStorage
+    - FLAnimatedImage
     - GoogleAppMeasurement
     - GoogleUtilities
     - GTMSessionFetcher
@@ -122,6 +125,7 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 2c15b0ea6f2c6eb5e57413f9d6340f1e50b81ae3
   FirebaseInstanceID: a122b0c258720cf250551bb2bedf48c699f80d90
   FirebaseStorage: 6162ef4322502b818d9de0ec552f5226d283de43
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   GoogleAppMeasurement: 1624046ab1bcc5e170061a56ef5679000b079c8e
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
@@ -131,6 +135,6 @@ SPEC CHECKSUMS:
   SideMenu: 87efd943737bb83aedf0358884d09fcf5576636d
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 948991fe5b3d78379ca8faee73bcb2562c78e84f
+PODFILE CHECKSUM: 22c5ebfa615900b088b87b8c29494e75c7dc5710
 
 COCOAPODS: 1.6.1
